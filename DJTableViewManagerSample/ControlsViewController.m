@@ -10,8 +10,6 @@
 
 @interface ControlsViewController ()
 
-@property (nonatomic, strong) DJTableViewManager *manager;
-
 @end
 
 @implementation ControlsViewController
@@ -24,26 +22,23 @@
     
     __typeof (&*self) __weak weakSelf = self;
     
-    // Create manager
-    //
-    self.manager = [[DJTableViewManager alloc] initWithTableView:self.tableView];
-    self.manager.delegate = self;
-    
     // Add sections and items
     //
     DJTableViewSection *section = [DJTableViewSection section];
     [self.manager addSection:section];
     
     DJTableViewItem *item1 = [DJTableViewItem itemWithTitle:@"Forms" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
-        [item deselectRowAnimated:YES]; // same as [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
+        //[item deselectRowAnimated:YES]; // same as [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
         //[weakSelf.navigationController pushViewController:[[ControlsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
     }];
+    item1.image = [UIImage imageNamed:@"icon1"];
     
     DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"List" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
         [item deselectRowAnimated:YES];
         //[weakSelf.navigationController pushViewController:[[ListViewController alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
-    
+    item2.image = [UIImage imageNamed:@"icon2"];
+
     [section addItem:item1];
     [section addItem:item2];
 

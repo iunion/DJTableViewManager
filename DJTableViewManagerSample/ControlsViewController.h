@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DJTableViewManager.h"
+#import "SuperVC.h"
 
-@interface ControlsViewController : UITableViewController <DJTableViewManagerDelegate>
+@interface ControlsViewController : SuperVC
 
 @end

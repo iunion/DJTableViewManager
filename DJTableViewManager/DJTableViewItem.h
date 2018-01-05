@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "DJTableViewManagerDefine.h"
 
+#import "DJImageTextView.h"
+
 @class DJTableViewSection;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -39,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) NSMutableAttributedString *titleAttrStr;
 @property (nullable, nonatomic, copy) NSString *detailLabelText;
 @property (strong, nonatomic, nullable) NSMutableAttributedString *detailAttrStr;
-
+// 文本对齐方式，只适用于title，detailLabelText
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 @property (assign, nonatomic) NSTextAlignment detailTextAlignment;
 // 文本颜色
@@ -50,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIFont *detailTextFont;
 
 // 添加aaccessoryView左边额外的img
-@property (nullable, nonatomic, strong) UIImage *aaccessoryExtrImage;
+//@property (nullable, nonatomic, strong) UIImage *aaccessoryExtrImage;
 @property (nullable, nonatomic, strong) UIView *accessoryView;
 
 // 下边线
@@ -64,6 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL isShowSelectBg;
 // 选择背景颜色
 @property (strong, nonatomic, nullable) UIColor *selectBgColor;
+
 // 显示高亮状态
 @property (assign, nonatomic) BOOL isShowHighlightBg;
 // 高亮背景颜色
@@ -78,6 +81,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property (nullable, nonatomic, copy) tableViewSelectionHandler selectionHandler;
+
+// accessoryType = UITableViewCellAccessoryDetailButton 可用
 @property (nullable, nonatomic, copy) tableViewAccessoryButtonTapHandler accessoryButtonTapHandler;
 
 @property (nullable, nonatomic, copy) tableViewInsertionHandler insertionHandler;
@@ -104,6 +109,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTitle:(NSString *)title;
 - (instancetype)initWithTitle:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType selectionHandler:(nullable tableViewSelectionHandler)selectionHandler;
 - (instancetype)initWithTitle:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType selectionHandler:(nullable tableViewSelectionHandler)selectionHandler accessoryButtonTapHandler:(nullable tableViewAccessoryButtonTapHandler)accessoryButtonTapHandler;
+
+// DJImageTextView
++ (DJImageTextView *)DefaultAccessoryView;
++ (DJImageTextView *)DefaultAccessoryViewWithClicked:(nullable DJImageTextViewClicked)clicked;
 
 - (nullable NSIndexPath *)indexPath;
 

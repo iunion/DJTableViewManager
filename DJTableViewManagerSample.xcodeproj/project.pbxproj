@@ -37,6 +37,19 @@
 		5A1250941F4D311B00D71E4C /* UIButtonBarArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1250811F4D311B00D71E4C /* UIButtonBarArrowRight.png */; };
 		5A1250951F4D311B00D71E4C /* UIButtonBarArrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1250821F4D311B00D71E4C /* UIButtonBarArrowRight@2x.png */; };
 		5A1250981F4D326600D71E4C /* DJTableViewMaskTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1250971F4D326600D71E4C /* DJTableViewMaskTextCell.m */; };
+		5A4C1D211FFF0C8A004FEB97 /* icon3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D1B1FFF0C8A004FEB97 /* icon3@2x.png */; };
+		5A4C1D221FFF0C8A004FEB97 /* icon1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D1C1FFF0C8A004FEB97 /* icon1@3x.png */; };
+		5A4C1D231FFF0C8A004FEB97 /* icon1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D1D1FFF0C8A004FEB97 /* icon1@2x.png */; };
+		5A4C1D241FFF0C8A004FEB97 /* icon3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D1E1FFF0C8A004FEB97 /* icon3@3x.png */; };
+		5A4C1D251FFF0C8A004FEB97 /* icon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D1F1FFF0C8A004FEB97 /* icon2@2x.png */; };
+		5A4C1D261FFF0C8A004FEB97 /* icon2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D201FFF0C8A004FEB97 /* icon2@3x.png */; };
+		5A4C1D351FFF1AA3004FEB97 /* UnderLinesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D331FFF1AA3004FEB97 /* UnderLinesVC.m */; };
+		5A4C1D361FFF1AA3004FEB97 /* UnderLinesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D341FFF1AA3004FEB97 /* UnderLinesVC.xib */; };
+		5A4C1D391FFF1DA8004FEB97 /* SuperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D381FFF1DA8004FEB97 /* SuperVC.m */; };
+		5A4C1D3D1FFF4DDF004FEB97 /* DJImageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D3B1FFF4DDF004FEB97 /* DJImageTextView.m */; };
+		5A4C1D401FFF5031004FEB97 /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D3F1FFF5031004FEB97 /* UILabel+Category.m */; };
+		5A4C1D431FFF5485004FEB97 /* arrows_rightBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D411FFF5484004FEB97 /* arrows_rightBlack@2x.png */; };
+		5A4C1D441FFF5485004FEB97 /* arrows_rightBlack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D421FFF5485004FEB97 /* arrows_rightBlack@3x.png */; };
 		5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */; };
 		5A79DDDC1F4D66A4004ADA8A /* NSDecimalNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDB1F4D66A4004ADA8A /* NSDecimalNumber+Category.m */; };
 		5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDE1F4D66AE004ADA8A /* NSNumber+Category.m */; };
@@ -142,6 +155,23 @@
 		5A1250821F4D311B00D71E4C /* UIButtonBarArrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarArrowRight@2x.png"; sourceTree = "<group>"; };
 		5A1250961F4D326600D71E4C /* DJTableViewMaskTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJTableViewMaskTextCell.h; sourceTree = "<group>"; };
 		5A1250971F4D326600D71E4C /* DJTableViewMaskTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTableViewMaskTextCell.m; sourceTree = "<group>"; };
+		5A4C1D1B1FFF0C8A004FEB97 /* icon3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@2x.png"; sourceTree = "<group>"; };
+		5A4C1D1C1FFF0C8A004FEB97 /* icon1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@3x.png"; sourceTree = "<group>"; };
+		5A4C1D1D1FFF0C8A004FEB97 /* icon1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon1@2x.png"; sourceTree = "<group>"; };
+		5A4C1D1E1FFF0C8A004FEB97 /* icon3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon3@3x.png"; sourceTree = "<group>"; };
+		5A4C1D1F1FFF0C8A004FEB97 /* icon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@2x.png"; sourceTree = "<group>"; };
+		5A4C1D201FFF0C8A004FEB97 /* icon2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@3x.png"; sourceTree = "<group>"; };
+		5A4C1D321FFF1AA3004FEB97 /* UnderLinesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnderLinesVC.h; sourceTree = "<group>"; };
+		5A4C1D331FFF1AA3004FEB97 /* UnderLinesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnderLinesVC.m; sourceTree = "<group>"; };
+		5A4C1D341FFF1AA3004FEB97 /* UnderLinesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnderLinesVC.xib; sourceTree = "<group>"; };
+		5A4C1D371FFF1DA8004FEB97 /* SuperVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperVC.h; sourceTree = "<group>"; };
+		5A4C1D381FFF1DA8004FEB97 /* SuperVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperVC.m; sourceTree = "<group>"; };
+		5A4C1D3B1FFF4DDF004FEB97 /* DJImageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJImageTextView.m; sourceTree = "<group>"; };
+		5A4C1D3C1FFF4DDF004FEB97 /* DJImageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJImageTextView.h; sourceTree = "<group>"; };
+		5A4C1D3E1FFF5031004FEB97 /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
+		5A4C1D3F1FFF5031004FEB97 /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
+		5A4C1D411FFF5484004FEB97 /* arrows_rightBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrows_rightBlack@2x.png"; sourceTree = "<group>"; };
+		5A4C1D421FFF5485004FEB97 /* arrows_rightBlack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrows_rightBlack@3x.png"; sourceTree = "<group>"; };
 		5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJNumberTextItem.h; sourceTree = "<group>"; };
 		5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJNumberTextItem.m; sourceTree = "<group>"; };
 		5A79DDDA1F4D66A4004ADA8A /* NSDecimalNumber+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Category.h"; sourceTree = "<group>"; };
@@ -267,6 +297,8 @@
 		5A12506F1F4D311B00D71E4C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5A4C1D411FFF5484004FEB97 /* arrows_rightBlack@2x.png */,
+				5A4C1D421FFF5485004FEB97 /* arrows_rightBlack@3x.png */,
 				5A1250701F4D311B00D71E4C /* Card_Amex.png */,
 				5A1250711F4D311B00D71E4C /* Card_Amex@2x.png */,
 				5A1250721F4D311B00D71E4C /* Card_Back.png */,
@@ -288,6 +320,28 @@
 				5A1250821F4D311B00D71E4C /* UIButtonBarArrowRight@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		5A4C1D1A1FFF0C8A004FEB97 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C1D1B1FFF0C8A004FEB97 /* icon3@2x.png */,
+				5A4C1D1C1FFF0C8A004FEB97 /* icon1@3x.png */,
+				5A4C1D1D1FFF0C8A004FEB97 /* icon1@2x.png */,
+				5A4C1D1E1FFF0C8A004FEB97 /* icon3@3x.png */,
+				5A4C1D1F1FFF0C8A004FEB97 /* icon2@2x.png */,
+				5A4C1D201FFF0C8A004FEB97 /* icon2@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C1D3C1FFF4DDF004FEB97 /* DJImageTextView.h */,
+				5A4C1D3B1FFF4DDF004FEB97 /* DJImageTextView.m */,
+			);
+			path = DJImageTextView;
 			sourceTree = "<group>";
 		};
 		5A79DE781F53FDAD004ADA8A /* DJDatePicker */ = {
@@ -330,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				5A79DE781F53FDAD004ADA8A /* DJDatePicker */,
+				5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */,
 				5AEFC9861F3C3AB000077A9E /* DJSingleLineView */,
 				5AEFC9891F3C3AB000077A9E /* DJVeryifiTimeManager */,
 				5ACB4A671F3836250043A623 /* Foundation */,
@@ -370,6 +425,8 @@
 			children = (
 				5AEFC9EB1F4ACA1000077A9E /* UIColor+Category.h */,
 				5AEFC9EC1F4ACA1000077A9E /* UIColor+Category.m */,
+				5A4C1D3E1FFF5031004FEB97 /* UILabel+Category.h */,
+				5A4C1D3F1FFF5031004FEB97 /* UILabel+Category.m */,
 				5A1250531F4C1C5F00D71E4C /* UITextField+Category.h */,
 				5A1250541F4C1C5F00D71E4C /* UITextField+Category.m */,
 				5ACB4A6D1F3836250043A623 /* UIView+Positioning.h */,
@@ -404,10 +461,16 @@
 		5ADDB3041EA8600B00CFECA6 /* DJTableViewManagerSample */ = {
 			isa = PBXGroup;
 			children = (
+				5A4C1D1A1FFF0C8A004FEB97 /* images */,
 				5ADDB3081EA8600B00CFECA6 /* AppDelegate.h */,
 				5ADDB3091EA8600B00CFECA6 /* AppDelegate.m */,
+				5A4C1D371FFF1DA8004FEB97 /* SuperVC.h */,
+				5A4C1D381FFF1DA8004FEB97 /* SuperVC.m */,
 				5AEFCA2E1F4BCD9800077A9E /* RootViewController.h */,
 				5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */,
+				5A4C1D321FFF1AA3004FEB97 /* UnderLinesVC.h */,
+				5A4C1D331FFF1AA3004FEB97 /* UnderLinesVC.m */,
+				5A4C1D341FFF1AA3004FEB97 /* UnderLinesVC.xib */,
 				5A1250481F4BED9600D71E4C /* ControlsViewController.h */,
 				5A1250491F4BED9600D71E4C /* ControlsViewController.m */,
 				5A12504A1F4BED9600D71E4C /* ControlsViewController.xib */,
@@ -658,8 +721,14 @@
 				5A12508E1F4D311B00D71E4C /* Card_Visa@2x.png in Resources */,
 				5A12508A1F4D311B00D71E4C /* Card_Mastercard@2x.png in Resources */,
 				5A1250901F4D311B00D71E4C /* Ribbon_Expired@2x.png in Resources */,
+				5A4C1D261FFF0C8A004FEB97 /* icon2@3x.png in Resources */,
 				5A79DE7D1F53FDAD004ADA8A /* DJDatePicker.xib in Resources */,
+				5A4C1D441FFF5485004FEB97 /* arrows_rightBlack@3x.png in Resources */,
+				5A4C1D231FFF0C8A004FEB97 /* icon1@2x.png in Resources */,
+				5A4C1D361FFF1AA3004FEB97 /* UnderLinesVC.xib in Resources */,
 				5A1250851F4D311B00D71E4C /* Card_Back.png in Resources */,
+				5A4C1D241FFF0C8A004FEB97 /* icon3@3x.png in Resources */,
+				5A4C1D251FFF0C8A004FEB97 /* icon2@2x.png in Resources */,
 				5A12508B1F4D311B00D71E4C /* Card_Stack.png in Resources */,
 				5A1250921F4D311B00D71E4C /* UIButtonBarArrowLeft.png in Resources */,
 				5A1250951F4D311B00D71E4C /* UIButtonBarArrowRight@2x.png in Resources */,
@@ -667,7 +736,10 @@
 				5A12508D1F4D311B00D71E4C /* Card_Visa.png in Resources */,
 				5A1250461F4BD62200D71E4C /* LaunchScreen.storyboard in Resources */,
 				5A1250931F4D311B00D71E4C /* UIButtonBarArrowLeft@2x.png in Resources */,
+				5A4C1D211FFF0C8A004FEB97 /* icon3@2x.png in Resources */,
 				5A1250881F4D311B00D71E4C /* Card_Discover@2x.png in Resources */,
+				5A4C1D431FFF5485004FEB97 /* arrows_rightBlack@2x.png in Resources */,
+				5A4C1D221FFF0C8A004FEB97 /* icon1@3x.png in Resources */,
 				5A1250891F4D311B00D71E4C /* Card_Mastercard.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +772,7 @@
 				5AEFCA241F4AD56800077A9E /* SDWebImageManager.m in Sources */,
 				5AEFCA201F4AD56800077A9E /* SDWebImageCompat.m in Sources */,
 				5AEFCA251F4AD56800077A9E /* SDWebImagePrefetcher.m in Sources */,
+				5A4C1D391FFF1DA8004FEB97 /* SuperVC.m in Sources */,
 				5AEFC9901F3C3B2400077A9E /* NSDictionary+Category.m in Sources */,
 				5ADDB3871EA8AED800CFECA6 /* DJTableViewItem.m in Sources */,
 				5AEFCA261F4AD56800077A9E /* UIButton+WebCache.m in Sources */,
@@ -712,6 +785,7 @@
 				5ACB4A741F3836250043A623 /* UIView+Size.m in Sources */,
 				5AEFCA1E1F4AD56800077A9E /* SDImageCache.m in Sources */,
 				5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */,
+				5A4C1D351FFF1AA3004FEB97 /* UnderLinesVC.m in Sources */,
 				5ADDB3831EA89C0B00CFECA6 /* DJTableViewSection.m in Sources */,
 				5A79DE801F53FE0E004ADA8A /* NSDate+Category.m in Sources */,
 				5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */,
@@ -738,11 +812,13 @@
 				5A1250981F4D326600D71E4C /* DJTableViewMaskTextCell.m in Sources */,
 				5A1250551F4C1C5F00D71E4C /* UITextField+Category.m in Sources */,
 				5AEFC98C1F3C3AB000077A9E /* DJSingleLineView.m in Sources */,
+				5A4C1D3D1FFF4DDF004FEB97 /* DJImageTextView.m in Sources */,
 				5AEFCA2B1F4AD56800077A9E /* UIImageView+WebCache.m in Sources */,
 				5AEFCA2D1F4AD56800077A9E /* UIView+WebCacheOperation.m in Sources */,
 				5ADDB3821EA89C0900CFECA6 /* DJTableViewCellStyle.m in Sources */,
 				5A1250521F4C088D00D71E4C /* DJTableViewTextCell.m in Sources */,
 				5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */,
+				5A4C1D401FFF5031004FEB97 /* UILabel+Category.m in Sources */,
 				5AEFC9ED1F4ACA1000077A9E /* UIColor+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

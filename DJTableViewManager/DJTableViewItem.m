@@ -59,7 +59,7 @@
     return self;
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self)
@@ -91,6 +91,19 @@
     }
     
     return self;
+}
+
+// DJImageTextView
++ (DJImageTextView *)DefaultAccessoryView
+{
+    return [[DJImageTextView alloc] initWithImage:@"arrows_rightBlack" height:TABLE_CELL_HEIGHT];
+}
+
++ (DJImageTextView *)DefaultAccessoryViewWithClicked:(DJImageTextViewClicked)clicked
+{
+    DJImageTextView *imageTextView = [[DJImageTextView alloc] initWithImage:@"arrows_rightBlack" height:TABLE_CELL_HEIGHT];
+    imageTextView.imageTextViewClicked = clicked;
+    return imageTextView;
 }
 
 - (NSIndexPath *)indexPath
