@@ -64,12 +64,3 @@
 
 @end
 
-
-@interface NSAttributedString (Size)
-
-- (CGSize)sizeToFitWidth:(CGFloat)width;
-- (CGSize)sizeToFitHeight:(CGFloat)height;
-- (CGSize)sizeToFit:(CGSize)maxSize lineBreakMode:(NSLineBreakMode)lineBreakMode;
-
-@end
-

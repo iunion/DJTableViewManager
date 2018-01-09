@@ -9,6 +9,8 @@
 #ifndef DJTableViewManagerDefine_h
 #define DJTableViewManagerDefine_h
 
+#import "NSArray+Category.h"
+#import "NSAttributedString+Category.h"
 #import "NSDate+Category.h"
 #import "NSObject+Category.h"
 #import "NSString+Category.h"
@@ -17,6 +19,7 @@
 #import "NSNumber+Category.h"
 
 #import "UIColor+Category.h"
+#import "UIFont+Category.h"
 #import "UITextField+Category.h"
 #import "UIView+Size.h"
 #import "UIView+Positioning.h"

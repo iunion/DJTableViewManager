@@ -113,35 +113,3 @@
 
 @end
 
-
-@implementation NSAttributedString (Size)
-
-- (CGSize)sizeToFitWidth:(CGFloat)width
-{
-    CGSize maxSize = CGSizeMake(width, CGFLOAT_MAX);
-    return [self sizeToFit:maxSize lineBreakMode:NSLineBreakByCharWrapping];
-}
-
-- (CGSize)sizeToFitHeight:(CGFloat)height
-{
-    CGSize maxSize = CGSizeMake(CGFLOAT_MAX, height);
-    return [self sizeToFit:maxSize lineBreakMode:NSLineBreakByCharWrapping];
-}
-
-- (CGSize)sizeToFit:(CGSize)maxSize lineBreakMode:(NSLineBreakMode)lineBreakMode
-{
-    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
-    if (lineBreakMode ==  NSLineBreakByTruncatingHead ||
-        lineBreakMode ==  NSLineBreakByTruncatingTail ||
-        lineBreakMode ==  NSLineBreakByTruncatingMiddle )
-    {
-        options |= NSStringDrawingTruncatesLastVisibleLine;
-    }
-    
-    CGRect textRect = [self boundingRectWithSize:maxSize options:options context:nil];
-    
-    return textRect.size;
-}
-
-@end
-

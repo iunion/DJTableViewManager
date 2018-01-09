@@ -110,13 +110,33 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTitle:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType selectionHandler:(nullable tableViewSelectionHandler)selectionHandler;
 - (instancetype)initWithTitle:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType selectionHandler:(nullable tableViewSelectionHandler)selectionHandler accessoryButtonTapHandler:(nullable tableViewAccessoryButtonTapHandler)accessoryButtonTapHandler;
 
++ (instancetype)itemWithTitle:(nullable NSString *)title selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+
+- (instancetype)initWithTitle:(nullable NSString *)title selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+
 // DJImageTextView
 + (DJImageTextView *)DefaultAccessoryView;
 + (DJImageTextView *)DefaultAccessoryViewWithClicked:(nullable DJImageTextViewClicked)clicked;
 
 + (instancetype)itemWithTitle:(NSString *)title useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
 
-+ (instancetype)itemWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+
++ (instancetype)itemWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType rightAttributedText:(NSAttributedString *)attributedText rightImage:(nullable NSString *)image  imageTextViewType:(DJImageTextViewType)imageTextViewType selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+
+- (instancetype)initWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType rightAttributedText:(NSAttributedString *)attributedText rightImage:(nullable NSString *)image  imageTextViewType:(DJImageTextViewType)imageTextViewType selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
+
 
 - (nullable NSIndexPath *)indexPath;
 

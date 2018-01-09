@@ -93,6 +93,87 @@
     return self;
 }
 
++ (instancetype)itemWithTitle:(NSString *)title selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self itemWithTitle:title underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self itemWithTitle:title underLineDrawType:underLineDrawType accessoryView:nil selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self itemWithTitle:title imageName:nil underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self itemWithTitle:title subTitle:nil imageName:imageName underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [[self alloc] initWithTitle:title subTitle:subTitle imageName:imageName underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self initWithTitle:title underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self initWithTitle:title underLineDrawType:underLineDrawType accessoryView:nil selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self initWithTitle:title imageName:nil underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self initWithTitle:title subTitle:nil imageName:imageName underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    self = [self init];
+    
+    if (!self)
+    {
+        return nil;
+    }
+    
+    self.cellStyle = UITableViewCellStyleDefault;
+
+    self.title = title;
+    self.textFont = UI_DJ_FONT(16.0f);
+    self.textColor = [UIColor darkGrayColor];;
+    
+    self.detailLabelText = subTitle;
+    self.detailTextFont = UI_DJ_FONT(12.0f);
+    self.detailTextColor = [UIColor grayColor];
+    
+    self.imageW = 30;
+    self.imageH = 30;
+    
+    if ([imageName isNotEmpty])
+    {
+        self.image = [UIImage imageNamed:imageName];
+    }
+    
+    self.underLineDrawType = underLineDrawType;
+    
+    self.accessoryView = accessoryView;
+    
+    self.selectionHandler = selectionHandler;
+    
+    return self;
+}
+
 
 #pragma mark -
 #pragma mark DJImageTextView
@@ -109,49 +190,47 @@
     return imageTextView;
 }
 
-+ (instancetype)itemWithTitle:(NSString *)title imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
++ (instancetype)itemWithTitle:(NSString *)title useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
 {
-    return [self itemWithTitle:title subTitle:nil imageName:imageName isDrawUnderLine:isDrawUnderLine underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+    return [self itemWithTitle:title underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset useDefaultAccessoryView:useDefaultAccessoryView selectionHandler:selectionHandler];
 }
 
-+ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
++ (instancetype)itemWithTitle:(NSString *)title underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
 {
-    return [[self alloc] initWithTitle:title subTitle:subTitle imageName:imageName isDrawUnderLine:isDrawUnderLine underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+    return [self itemWithTitle:title imageName:nil underLineDrawType:underLineDrawType useDefaultAccessoryView:useDefaultAccessoryView selectionHandler:selectionHandler];
 }
 
-- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
++ (instancetype)itemWithTitle:(NSString *)title imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
 {
-    self = [self init];
-    
-    if (!self)
+    return [self itemWithTitle:title subTitle:nil imageName:imageName underLineDrawType:underLineDrawType useDefaultAccessoryView:useDefaultAccessoryView selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [[self alloc] initWithTitle:title subTitle:subTitle imageName:imageName underLineDrawType:underLineDrawType useDefaultAccessoryView:useDefaultAccessoryView selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    DJImageTextView *imageTextView = nil;
+    if (useDefaultAccessoryView)
     {
-        return nil;
+        imageTextView = [DJTableViewItem DefaultAccessoryView];
     }
     
-    self.cellStyle = UITableViewCellStyleDefault;
-    self.textFont = UI_DJ_FONT(16.0f);
-    self.textColor = [UIColor darkGrayColor];;
-    
-    self.detailLabelText = subTitle;
-    self.detailTextFont = UI_DJ_FONT(12.0f);
-    self.detailTextColor = [UIColor grayColor];
-    
-    self.imageW = 30;
-    self.imageH = 30;
-    
-    if ([imageName isNotEmpty])
-    {
-        self.image = [UIImage imageNamed:imageName];
-    }
-    
-    //self.isDrawUnderLine = isDrawUnderLine;
-    self.underLineDrawType = underLineDrawType;
-    
-    self.accessoryView = accessoryView;
-    
-    self.selectionHandler = selectionHandler;
-    
-    return self;
+    return [self initWithTitle:title subTitle:subTitle imageName:imageName underLineDrawType:underLineDrawType accessoryView:imageTextView selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType rightAttributedText:(NSAttributedString *)attributedText rightImage:(NSString *)image  imageTextViewType:(DJImageTextViewType)imageTextViewType selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [[self alloc] initWithTitle:title subTitle:subTitle imageName:imageName underLineDrawType:underLineDrawType rightAttributedText:attributedText rightImage:image imageTextViewType:imageTextViewType selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType rightAttributedText:(NSAttributedString *)attributedText rightImage:(NSString *)image  imageTextViewType:(DJImageTextViewType)imageTextViewType selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    DJImageTextView *imageTextView = [[DJImageTextView alloc] initWithImage:image attributedText:attributedText type:imageTextViewType height:0 gap:6.0f];
+
+    return [self initWithTitle:title subTitle:subTitle imageName:imageName underLineDrawType:underLineDrawType accessoryView:imageTextView selectionHandler:selectionHandler];
 }
 
 

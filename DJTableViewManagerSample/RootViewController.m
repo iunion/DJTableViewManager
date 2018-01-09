@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "UnderLinesVC.h"
 #import "ControlsViewController.h"
+#import "AccessoryViewVC.h"
 
 @interface RootViewController ()
 
@@ -38,14 +39,20 @@
         [weakSelf.navigationController pushViewController:[[UnderLinesVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
     
-    DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"List" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
+    DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"AccessoryView" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
+        [item deselectRowAnimated:YES];
+        [weakSelf.navigationController pushViewController:[[AccessoryViewVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
+    }];
+
+    DJTableViewItem *item3 = [DJTableViewItem itemWithTitle:@"List" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
         [item deselectRowAnimated:YES];
         [weakSelf.navigationController pushViewController:[[ControlsViewController alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
-    
+
     [section addItem:item1];
     [section addItem:item2];
-    
+    [section addItem:item3];
+
     //[self.tableView reloadData];
 }
 
