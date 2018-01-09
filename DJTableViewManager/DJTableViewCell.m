@@ -109,7 +109,7 @@
     }
     self.singleLineView.bottom = self.contentView.height;
     
-    self.singleLineView.hidden = !self.item.isDrawUnderLine;
+    //self.singleLineView.hidden = !self.item.isDrawUnderLine;
 }
 
 - (DJTableViewCell_PositionType)positionType
@@ -275,7 +275,8 @@
                 UIView *view = [[UIView alloc] initWithFrame:self.bounds];
                 view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-                if (self.item.isDrawUnderLine)
+                //if (self.item.isDrawUnderLine && self.item.underLineDrawType != DJTableViewCell_UnderLineDrawType_None)
+                if (self.item.underLineDrawType != DJTableViewCell_UnderLineDrawType_None)
                 {
                     view.height = self.height-1;
                 }
@@ -361,6 +362,7 @@
         self.singleLineView.left = separatorInset.left;
         self.singleLineView.bottom = self.contentView.height;
         
+        self.singleLineView.hidden = NO;
         if ([self.item isKindOfClass:[DJTableViewItem class]])
         {
             switch (self.item.underLineDrawType)
@@ -397,6 +399,11 @@
                     self.singleLineView.left = 0;
                     self.singleLineView.width = self.width;
                     break;
+                }
+                case DJTableViewCell_UnderLineDrawType_None:
+                default:
+                {
+                    self.singleLineView.hidden = YES;
                 }
             }
         }

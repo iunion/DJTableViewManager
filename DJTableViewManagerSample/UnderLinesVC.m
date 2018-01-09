@@ -64,12 +64,23 @@
     item6.underLineColor = [UIColor redColor];
     item6.enabled = NO;
 
+    DJTableViewItem *item7 = [DJTableViewItem itemWithTitle:@"None"];
+    item7.underLineDrawType = DJTableViewCell_UnderLineDrawType_None;
+    item7.underLineColor = [UIColor redColor];
+    item7.enabled = NO;
+
+    DJTableViewItem *item8 = [DJTableViewItem itemWithTitle:@"Default-SeparatorInset"];
+    item8.underLineColor = [UIColor redColor];
+    item8.enabled = NO;
+
     [section addItem:item1];
     [section addItem:item2];
     [section addItem:item3];
     [section addItem:item4];
     [section addItem:item5];
     [section addItem:item6];
+    [section insertItem:item7 atIndex:0];
+    [section addItem:item8];
 }
 
 - (void)didReceiveMemoryWarning

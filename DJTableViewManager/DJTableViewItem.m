@@ -80,7 +80,7 @@
         self.textAlignment = NSTextAlignmentLeft;
         self.detailTextAlignment = NSTextAlignmentLeft;
         
-        self.isDrawUnderLine = YES;
+        //self.isDrawUnderLine = YES;
         self.underLineDrawType = DJTableViewCell_UnderLineDrawType_SeparatorInset;
         self.underLineColor = UI_DEFAULT_LINECOLOR;
         
@@ -93,7 +93,10 @@
     return self;
 }
 
-// DJImageTextView
+
+#pragma mark -
+#pragma mark DJImageTextView
+
 + (DJImageTextView *)DefaultAccessoryView
 {
     return [[DJImageTextView alloc] initWithImage:@"arrows_rightBlack" height:TABLE_CELL_HEIGHT];
@@ -105,6 +108,52 @@
     imageTextView.imageTextViewClicked = clicked;
     return imageTextView;
 }
+
++ (instancetype)itemWithTitle:(NSString *)title imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [self itemWithTitle:title subTitle:nil imageName:imageName isDrawUnderLine:isDrawUnderLine underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
++ (instancetype)itemWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    return [[self alloc] initWithTitle:title subTitle:subTitle imageName:imageName isDrawUnderLine:isDrawUnderLine underLineDrawType:underLineDrawType accessoryView:accessoryView selectionHandler:selectionHandler];
+}
+
+- (instancetype)initWithTitle:(NSString *)title subTitle:(NSString *)subTitle imageName:(NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(UIView *)accessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler
+{
+    self = [self init];
+    
+    if (!self)
+    {
+        return nil;
+    }
+    
+    self.cellStyle = UITableViewCellStyleDefault;
+    self.textFont = UI_DJ_FONT(16.0f);
+    self.textColor = [UIColor darkGrayColor];;
+    
+    self.detailLabelText = subTitle;
+    self.detailTextFont = UI_DJ_FONT(12.0f);
+    self.detailTextColor = [UIColor grayColor];
+    
+    self.imageW = 30;
+    self.imageH = 30;
+    
+    if ([imageName isNotEmpty])
+    {
+        self.image = [UIImage imageNamed:imageName];
+    }
+    
+    //self.isDrawUnderLine = isDrawUnderLine;
+    self.underLineDrawType = underLineDrawType;
+    
+    self.accessoryView = accessoryView;
+    
+    self.selectionHandler = selectionHandler;
+    
+    return self;
+}
+
 
 - (NSIndexPath *)indexPath
 {

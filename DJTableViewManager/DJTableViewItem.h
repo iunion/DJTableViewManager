@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIView *accessoryView;
 
 // 下边线
-@property (nonatomic, assign) BOOL isDrawUnderLine;
+//@property (nonatomic, assign) BOOL isDrawUnderLine;
 // 下边线类型
 @property (nonatomic, assign) DJTableViewCell_UnderLineDrawType underLineDrawType;
 // 下边线颜色
@@ -113,6 +113,10 @@ NS_ASSUME_NONNULL_BEGIN
 // DJImageTextView
 + (DJImageTextView *)DefaultAccessoryView;
 + (DJImageTextView *)DefaultAccessoryViewWithClicked:(nullable DJImageTextViewClicked)clicked;
+
++ (instancetype)itemWithTitle:(NSString *)title useDefaultAccessoryView:(BOOL)useDefaultAccessoryView selectionHandler:(void(^)(DJTableViewItem *item))selectionHandler;
+
++ (instancetype)itemWithTitle:(nullable NSString *)title subTitle:(nullable NSString *)subTitle imageName:(nullable NSString *)imageName isDrawUnderLine:(BOOL)isDrawUnderLine underLineDrawType:(DJTableViewCell_UnderLineDrawType)underLineDrawType accessoryView:(nullable UIView *)accessoryView selectionHandler:(nullable void(^)(DJTableViewItem *item))selectionHandler;
 
 - (nullable NSIndexPath *)indexPath;
 

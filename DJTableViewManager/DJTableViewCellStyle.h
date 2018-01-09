@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat cellHeight;
 
 @property (nonatomic, assign) UITableViewCellSelectionStyle defaultCellSelectionStyle;
-
+// backgroundImageView/selectedBackgroundImageView边缘间隔(左右)
 @property (nonatomic, assign) CGFloat backgroundImageMargin;
+// contentView边缘间隔(左右)
 @property (nonatomic, assign) CGFloat contentViewMargin;
 
 // 背景图

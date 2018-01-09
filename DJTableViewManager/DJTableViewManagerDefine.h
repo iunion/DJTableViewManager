@@ -55,6 +55,11 @@
 #define UI_CELL_SELECT_BGCOLOR      [UIColor colorWithHex:0xCCCCCC]
 #define UI_CELL_HIGHLIGHT_BGCOLOR   [UIColor colorWithHex:0xE8373D]
 
+// 字体
+#define UI_DJFONT_MAKE(FontName, FontSize)  [UIFont fontForFontName:FontName size:FontSize]
+#define UI_NUMBER_FONT(fontSize)            UI_DJFONT_MAKE(FontNameHelveticaNeueBold, fontSize)
+#define UI_DJ_FONT(fontSize)                [UIFont systemFontOfSize:fontSize]
+#define UI_DJ_BFONT(fontSize)               [UIFont boldSystemFontOfSize:fontSize]
 
 typedef NS_OPTIONS(NSUInteger, DJTableViewCell_PositionType)
 {
@@ -68,6 +73,7 @@ typedef NS_OPTIONS(NSUInteger, DJTableViewCell_PositionType)
 
 typedef NS_ENUM(NSUInteger, DJTableViewCell_UnderLineDrawType)
 {
+    DJTableViewCell_UnderLineDrawType_None,
     DJTableViewCell_UnderLineDrawType_SeparatorAllLeftInset,
     DJTableViewCell_UnderLineDrawType_SeparatorLeftInset,
     DJTableViewCell_UnderLineDrawType_SeparatorInset,
