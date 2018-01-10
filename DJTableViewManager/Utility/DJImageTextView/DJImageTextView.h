@@ -44,6 +44,8 @@ typedef void (^DJImageTextViewClicked)(DJImageTextView *imageTextView);
 
 @property (copy, nonatomic, nullable) DJImageTextViewClicked imageTextViewClicked;
 
+@property (assign, nonatomic) BOOL showTableCellAccessoryArrow;
+
 @property (assign, nonatomic) BOOL adjustsFontSizeToFitWidth;
 
 

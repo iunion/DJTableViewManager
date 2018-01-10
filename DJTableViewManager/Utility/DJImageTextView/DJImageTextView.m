@@ -15,11 +15,15 @@
 #define IMAGE_GAP           4.0f
 #define IMAGETEXT_GAP       4.0f
 
+#define ARROWIMAGE_WIDTH    12.0f
+
 @interface DJImageTextView ()
 
 @property (strong, nonatomic) UILabel *textLabel;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIControl *controlView;
+
+@property (strong, nonatomic) UIImageView *arrowImageView;
 
 @end
 
@@ -160,10 +164,17 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.hidden = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    
     [self addSubview:imageView];
-    
     self.imageView = imageView;
+    
+    imageView = [[UIImageView alloc] init];
+    imageView.hidden = YES;
+    imageView.width = ARROWIMAGE_WIDTH;
+    imageView.height = ARROWIMAGE_WIDTH;
+    imageView.image = [UIImage imageNamed:@"arrows_rightBlack"];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:imageView];
+    self.arrowImageView = imageView;
     
     UIControl *control = [[UIControl alloc] init];
     control.backgroundColor = [UIColor clearColor];
@@ -255,20 +266,31 @@
             imageHeight = self.height - IMAGE_GAP;
             imageWidth = imageHeight;
         }
+        
+        self.imageView.width = imageWidth;
+        self.imageView.height = imageHeight;
+        
+        // 为了好计算先加上间隙
+        imageWidth = imageWidth + self.imageTextGap;
     }
     else
     {
         self.imageView.hidden = YES;
+        
+        self.imageView.width = imageWidth;
+        self.imageView.height = imageHeight;
     }
-    
-    self.imageView.width = imageWidth;
-    self.imageView.height = imageHeight;
-    
+        
+    if (self.showTableCellAccessoryArrow)
+    {
+        imageWidth = imageWidth + ARROWIMAGE_WIDTH + self.imageTextGap;
+    }
+
     if (self.maxWidth)
     {
-        if (self.maxWidth > imageWidth + self.imageTextGap)
+        if (self.maxWidth > imageWidth)
         {
-            textMaxWidth = self.maxWidth - (imageWidth + self.imageTextGap);
+            textMaxWidth = self.maxWidth - imageWidth;
             if (textMaxWidth < textSize.width)
             {
                 textSize.width = textMaxWidth;
@@ -276,17 +298,21 @@
         }
     }
     
-    self.width = imageWidth + textSize.width + self.imageTextGap;
+    self.width = imageWidth + textSize.width;
     self.controlView.frame = self.bounds;
     self.textLabel.width = textSize.width;
     
     self.textLabel.centerY = self.height*0.5;
     self.imageView.centerY = self.height*0.5;
-    
+
+    self.arrowImageView.centerY = self.height*0.5;
+    self.arrowImageView.left = self.width - ARROWIMAGE_WIDTH;
+    self.arrowImageView.hidden = !self.showTableCellAccessoryArrow;
+
     if (self.type == DJImageTextViewType_ImageLeft)
     {
         self.imageView.left = 0;
-        self.textLabel.left = imageWidth + self.imageTextGap;
+        self.textLabel.left = self.imageView.width + self.imageTextGap;
     }
     else
     {
