@@ -54,6 +54,9 @@
 		5A4C1D6220049E44004FEB97 /* NSAttributedString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6120049E44004FEB97 /* NSAttributedString+Category.m */; };
 		5A4C1D6520049F71004FEB97 /* UIFont+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6420049F71004FEB97 /* UIFont+Category.m */; };
 		5A4C1D682004A03B004FEB97 /* NSArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D662004A03A004FEB97 /* NSArray+Category.m */; };
+		5A4C1D6C2005E6E7004FEB97 /* VerifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6B2005E6E7004FEB97 /* VerifiVC.m */; };
+		5A4C1D702005E819004FEB97 /* DJVerifiTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */; };
+		5A4C1D7320060518004FEB97 /* UIView+VerifiTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */; };
 		5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */; };
 		5A79DDDC1F4D66A4004ADA8A /* NSDecimalNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDB1F4D66A4004ADA8A /* NSDecimalNumber+Category.m */; };
 		5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDE1F4D66AE004ADA8A /* NSNumber+Category.m */; };
@@ -77,7 +80,6 @@
 		5ADDB3831EA89C0B00CFECA6 /* DJTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDB3401EA8657000CFECA6 /* DJTableViewSection.m */; };
 		5ADDB3871EA8AED800CFECA6 /* DJTableViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDB3861EA8AED800CFECA6 /* DJTableViewItem.m */; };
 		5AEFC98C1F3C3AB000077A9E /* DJSingleLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC9881F3C3AB000077A9E /* DJSingleLineView.m */; };
-		5AEFC98D1F3C3AB000077A9E /* DJVeryifiTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC98B1F3C3AB000077A9E /* DJVeryifiTimeManager.m */; };
 		5AEFC9901F3C3B2400077A9E /* NSDictionary+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC98F1F3C3B2400077A9E /* NSDictionary+Category.m */; };
 		5AEFC9ED1F4ACA1000077A9E /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC9EC1F4ACA1000077A9E /* UIColor+Category.m */; };
 		5AEFCA1B1F4AD56800077A9E /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC9F41F4AD56800077A9E /* MKAnnotationView+WebCache.m */; };
@@ -184,6 +186,12 @@
 		5A4C1D6420049F71004FEB97 /* UIFont+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Category.m"; sourceTree = "<group>"; };
 		5A4C1D662004A03A004FEB97 /* NSArray+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Category.m"; sourceTree = "<group>"; };
 		5A4C1D672004A03A004FEB97 /* NSArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Category.h"; sourceTree = "<group>"; };
+		5A4C1D6A2005E6E7004FEB97 /* VerifiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifiVC.h; sourceTree = "<group>"; };
+		5A4C1D6B2005E6E7004FEB97 /* VerifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiVC.m; sourceTree = "<group>"; };
+		5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJVerifiTimeManager.m; sourceTree = "<group>"; };
+		5A4C1D6F2005E818004FEB97 /* DJVerifiTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJVerifiTimeManager.h; sourceTree = "<group>"; };
+		5A4C1D7120060518004FEB97 /* UIView+VerifiTimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VerifiTimeManager.h"; sourceTree = "<group>"; };
+		5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VerifiTimeManager.m"; sourceTree = "<group>"; };
 		5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJNumberTextItem.h; sourceTree = "<group>"; };
 		5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJNumberTextItem.m; sourceTree = "<group>"; };
 		5A79DDDA1F4D66A4004ADA8A /* NSDecimalNumber+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Category.h"; sourceTree = "<group>"; };
@@ -232,8 +240,6 @@
 		5ADDB3861EA8AED800CFECA6 /* DJTableViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTableViewItem.m; sourceTree = "<group>"; };
 		5AEFC9871F3C3AB000077A9E /* DJSingleLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJSingleLineView.h; sourceTree = "<group>"; };
 		5AEFC9881F3C3AB000077A9E /* DJSingleLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJSingleLineView.m; sourceTree = "<group>"; };
-		5AEFC98A1F3C3AB000077A9E /* DJVeryifiTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJVeryifiTimeManager.h; sourceTree = "<group>"; };
-		5AEFC98B1F3C3AB000077A9E /* DJVeryifiTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJVeryifiTimeManager.m; sourceTree = "<group>"; };
 		5AEFC98E1F3C3B2400077A9E /* NSDictionary+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Category.h"; sourceTree = "<group>"; };
 		5AEFC98F1F3C3B2400077A9E /* NSDictionary+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Category.m"; sourceTree = "<group>"; };
 		5AEFC9EB1F4ACA1000077A9E /* UIColor+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Category.h"; sourceTree = "<group>"; };
@@ -356,6 +362,15 @@
 			path = DJImageTextView;
 			sourceTree = "<group>";
 		};
+		5A4C1D6D2005E818004FEB97 /* DJVerifiTimeManager */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C1D6F2005E818004FEB97 /* DJVerifiTimeManager.h */,
+				5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */,
+			);
+			path = DJVerifiTimeManager;
+			sourceTree = "<group>";
+		};
 		5A79DE781F53FDAD004ADA8A /* DJDatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +413,7 @@
 				5A79DE781F53FDAD004ADA8A /* DJDatePicker */,
 				5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */,
 				5AEFC9861F3C3AB000077A9E /* DJSingleLineView */,
-				5AEFC9891F3C3AB000077A9E /* DJVeryifiTimeManager */,
+				5A4C1D6D2005E818004FEB97 /* DJVerifiTimeManager */,
 				5ACB4A671F3836250043A623 /* Foundation */,
 				5ACB4A6C1F3836250043A623 /* UIKit */,
 				5ACB4A751F384DAB0043A623 /* DJActionBar.h */,
@@ -451,6 +466,8 @@
 				5ACB4A6E1F3836250043A623 /* UIView+Positioning.m */,
 				5ACB4A6F1F3836250043A623 /* UIView+Size.h */,
 				5ACB4A701F3836250043A623 /* UIView+Size.m */,
+				5A4C1D7120060518004FEB97 /* UIView+VerifiTimeManager.h */,
+				5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -491,6 +508,8 @@
 				5A4C1D341FFF1AA3004FEB97 /* UnderLinesVC.xib */,
 				5A4C1D451FFF586A004FEB97 /* AccessoryViewVC.h */,
 				5A4C1D461FFF586A004FEB97 /* AccessoryViewVC.m */,
+				5A4C1D6A2005E6E7004FEB97 /* VerifiVC.h */,
+				5A4C1D6B2005E6E7004FEB97 /* VerifiVC.m */,
 				5A1250481F4BED9600D71E4C /* ControlsViewController.h */,
 				5A1250491F4BED9600D71E4C /* ControlsViewController.m */,
 				5A12504A1F4BED9600D71E4C /* ControlsViewController.xib */,
@@ -558,15 +577,6 @@
 				5AEFC9881F3C3AB000077A9E /* DJSingleLineView.m */,
 			);
 			path = DJSingleLineView;
-			sourceTree = "<group>";
-		};
-		5AEFC9891F3C3AB000077A9E /* DJVeryifiTimeManager */ = {
-			isa = PBXGroup;
-			children = (
-				5AEFC98A1F3C3AB000077A9E /* DJVeryifiTimeManager.h */,
-				5AEFC98B1F3C3AB000077A9E /* DJVeryifiTimeManager.m */,
-			);
-			path = DJVeryifiTimeManager;
 			sourceTree = "<group>";
 		};
 		5AEFC9EE1F4AD56800077A9E /* Pods */ = {
@@ -802,9 +812,11 @@
 				5AEFCA291F4AD56800077A9E /* UIImage+WebP.m in Sources */,
 				5A12506E1F4D207100D71E4C /* DJMaskTextItem.m in Sources */,
 				5A12505E1F4C242C00D71E4C /* NSRegularExpression+RegEx.m in Sources */,
+				5A4C1D6C2005E6E7004FEB97 /* VerifiVC.m in Sources */,
 				5A79DDDC1F4D66A4004ADA8A /* NSDecimalNumber+Category.m in Sources */,
 				5A79DDE21F4D693A004ADA8A /* DJTableViewNumberTextCell.m in Sources */,
 				5ACB4A741F3836250043A623 /* UIView+Size.m in Sources */,
+				5A4C1D702005E819004FEB97 /* DJVerifiTimeManager.m in Sources */,
 				5AEFCA1E1F4AD56800077A9E /* SDImageCache.m in Sources */,
 				5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */,
 				5A4C1D351FFF1AA3004FEB97 /* UnderLinesVC.m in Sources */,
@@ -829,7 +841,6 @@
 				5A12504F1F4BF3F300D71E4C /* DJTextItem.m in Sources */,
 				5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */,
 				5ACB4A631F38334C0043A623 /* DJTableViewCell.m in Sources */,
-				5AEFC98D1F3C3AB000077A9E /* DJVeryifiTimeManager.m in Sources */,
 				5AEFCA221F4AD56800077A9E /* SDWebImageDownloader.m in Sources */,
 				5ADDB3811EA89C0700CFECA6 /* DJTableViewManager.m in Sources */,
 				5AEFCA1B1F4AD56800077A9E /* MKAnnotationView+WebCache.m in Sources */,
@@ -843,6 +854,7 @@
 				5A1250521F4C088D00D71E4C /* DJTableViewTextCell.m in Sources */,
 				5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */,
 				5A4C1D401FFF5031004FEB97 /* UILabel+Category.m in Sources */,
+				5A4C1D7320060518004FEB97 /* UIView+VerifiTimeManager.m in Sources */,
 				5AEFC9ED1F4ACA1000077A9E /* UIColor+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

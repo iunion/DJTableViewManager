@@ -288,6 +288,7 @@
 
     if (self.maxWidth)
     {
+        // 如果最大宽度比图片还小，将禁用，按原宽度显示
         if (self.maxWidth > imageWidth)
         {
             textMaxWidth = self.maxWidth - imageWidth;

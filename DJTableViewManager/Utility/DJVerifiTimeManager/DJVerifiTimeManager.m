@@ -6,7 +6,7 @@
 //  Copyright © 2016年 DennisDeng. All rights reserved.
 //
 
-#import "DJVeryifiTimeManager.h"
+#import "DJVerifiTimeManager.h"
 #import "NSDictionary+Category.h"
 #import "NSObject+Category.h"
 
@@ -14,9 +14,9 @@
 #define DJVerifiTime_Wait       (60.0f)
 
 
-@interface DJVeryifiTimeManager ()
+@interface DJVerifiTimeManager ()
 
-@property (nonatomic, copy) DJVeryifiTimeBlock veryifiBlock;
+@property (nonatomic, copy) DJVerifiTimeBlock verifiBlock;
 
 @property (nonatomic, strong) NSMutableDictionary *timerDic;
 @property (nonatomic, strong) NSMutableDictionary *blockDic;
@@ -27,11 +27,11 @@
 
 @end
 
-@implementation DJVeryifiTimeManager
+@implementation DJVerifiTimeManager
 
-+ (DJVeryifiTimeManager *)manager
++ (DJVerifiTimeManager *)manager
 {
-    static DJVeryifiTimeManager *timeManager = nil;
+    static DJVerifiTimeManager *timeManager = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
@@ -55,19 +55,19 @@
     return self;
 }
 
-- (NSUInteger)getTicketWithType:(DJVerificationCodeType)type
+- (NSInteger)getTicketWithType:(DJVerificationCodeType)type
 {
-    NSUInteger tichet = [self.timerDic uintForKey:@(type) withDefault:0];
+    NSInteger tichet = [self.timerDic intForKey:@(type) withDefault:0];
     
     return tichet;
 }
 
-- (NSUInteger)startTimeWithType:(DJVerificationCodeType)type process:(DJVeryifiTimeBlock)veryifiBlock
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)veryifiBlock
 {
     return [self startTimeWithType:type duration:DJVerifiTime_Wait process:veryifiBlock];
 }
 
-- (NSUInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVeryifiTimeBlock)veryifiBlock
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVerifiTimeBlock)veryifiBlock
 {
     if (duration <= 0)
     {
@@ -75,11 +75,11 @@
     }
     
     self.durationTime = duration;
-    NSUInteger tichet = [self getTicketWithType:type];
+    NSInteger tichet = [self getTicketWithType:type];
     
     if (tichet > 0)
     {
-        DJVeryifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
+        DJVerifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
         if (oldVeryifiBlock)
         {
             oldVeryifiBlock(type, tichet, YES);
@@ -112,14 +112,30 @@
 
 - (void)stopTimeWithType:(DJVerificationCodeType)type
 {
+    [self stopTimeWithType:type stop:YES];
+}
+
+- (void)stopTimeWithType:(DJVerificationCodeType)type stop:(BOOL)stop
+{
     [self.timerDic removeObjectForKey:@(type)];
     
-    DJVeryifiTimeBlock veryifiBlock = [self.blockDic objectForKey:@(type)];
+    DJVerifiTimeBlock veryifiBlock = [self.blockDic objectForKey:@(type)];
     if (veryifiBlock)
     {
-        veryifiBlock(type, 0, YES);
+        veryifiBlock(type, 0, stop);
     }
     
+    [self.blockDic removeObjectForKey:@(type)];
+    
+    if (![self.timerDic.allKeys isNotEmpty])
+    {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+- (void)removeBlockWithType:(DJVerificationCodeType)type
+{
     [self.blockDic removeObjectForKey:@(type)];
 }
 
@@ -127,18 +143,18 @@
 {
     for (NSNumber *key in self.timerDic.allKeys)
     {
-        NSUInteger tichet = [self.timerDic uintForKey:key withDefault:0];
+        NSInteger tichet = [self.timerDic intForKey:key withDefault:0];
         tichet--;
         
         NSLog(@"%@:%@", key, @(tichet));
         
         if (tichet <= 0)
         {
-            [self stopTimeWithType:[key integerValue]];
+            [self stopTimeWithType:[key integerValue] stop:NO];
         }
         else
         {
-            DJVeryifiTimeBlock veryifiBlock = [self.blockDic objectForKey:key];
+            DJVerifiTimeBlock veryifiBlock = [self.blockDic objectForKey:key];
             if (veryifiBlock)
             {
                 veryifiBlock([key integerValue], tichet, NO);
@@ -156,6 +172,8 @@
 
 - (void)stopAllType
 {
+    // 注意：这里没有调用block
+    // 如果想调用block，请使用 stopTimeWithType:
     [self.timerDic removeAllObjects];
     [self.blockDic removeAllObjects];
     
@@ -163,28 +181,28 @@
     self.timer = nil;
 }
 
-- (NSUInteger)checkTimeWithType:(DJVerificationCodeType)type process:(DJVeryifiTimeBlock)veryifiBlock
+- (NSInteger)checkTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)verifiBlock
 {
-    NSUInteger tichet = [self getTicketWithType:type];
+    NSInteger tichet = [self getTicketWithType:type];
     
     if (tichet > 0)
     {
-        DJVeryifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
+        DJVerifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
         if (oldVeryifiBlock)
         {
             oldVeryifiBlock(type, tichet, YES);
         }
-        if (veryifiBlock)
+        if (verifiBlock)
         {
-            [self.blockDic setObject:veryifiBlock forKey:@(type)];
-            veryifiBlock(type, tichet, NO);
+            [self.blockDic setObject:verifiBlock forKey:@(type)];
+            verifiBlock(type, tichet, NO);
         }
         return tichet;
     }
 
-    if (veryifiBlock)
+    if (verifiBlock)
     {
-        veryifiBlock(type, 0, YES);
+        verifiBlock(type, 0, YES);
     }
     
     return tichet;

@@ -10,6 +10,7 @@
 #import "UnderLinesVC.h"
 #import "ControlsViewController.h"
 #import "AccessoryViewVC.h"
+#import "VerifiVC.h"
 
 @interface RootViewController ()
 
@@ -40,18 +41,21 @@
     }];
     
     DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"AccessoryView" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
-        [item deselectRowAnimated:YES];
         [weakSelf.navigationController pushViewController:[[AccessoryViewVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
 
-    DJTableViewItem *item3 = [DJTableViewItem itemWithTitle:@"List" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
-        [item deselectRowAnimated:YES];
+    DJTableViewItem *item3 = [DJTableViewItem itemWithTitle:@"Verify" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
+        [weakSelf.navigationController pushViewController:[[VerifiVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
+    }];
+
+    DJTableViewItem *item4 = [DJTableViewItem itemWithTitle:@"List" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
         [weakSelf.navigationController pushViewController:[[ControlsViewController alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
 
     [section addItem:item1];
     [section addItem:item2];
     [section addItem:item3];
+    [section addItem:item4];
 
     //[self.tableView reloadData];
 }
