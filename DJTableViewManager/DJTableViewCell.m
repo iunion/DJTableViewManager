@@ -313,6 +313,16 @@
 {
     [super layoutSubviews];
     
+    [self cellLayoutSubviews];
+    
+    if ([self.tableViewManager.delegate respondsToSelector:@selector(tableView:willLayoutCellSubviews:forRowAtIndexPath:)])
+    {
+        [self.tableViewManager.delegate tableView:self.tableViewManager.tableView willLayoutCellSubviews:self forRowAtIndexPath:[self.tableViewManager.tableView indexPathForCell:self]];
+    }
+}
+    
+- (void)cellLayoutSubviews
+{
     // Set content frame
     //
     CGRect contentFrame = self.contentView.bounds;

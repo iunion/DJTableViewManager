@@ -121,6 +121,7 @@
     self[@"DJTextItem"] = @"DJTableViewTextCell";
     self[@"DJMaskTextItem"] = @"DJTableViewMaskTextCell";
     self[@"DJNumberTextItem"] = @"DJTableViewNumberTextCell";
+    self[@"DJBoolItem"] = @"DJTableViewBoolCell";
 //    self[@"RERadioItem"] = @"RETableViewOptionCell";
 //    self[@"REBoolItem"] = @"RETableViewBoolCell";
 //    self[@"RETextItem"] = @"RETableViewTextCell";

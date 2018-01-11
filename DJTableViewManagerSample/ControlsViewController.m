@@ -70,6 +70,12 @@
     [section1 addItem:item6];
     [section1 addItem:item7];
     
+    DJBoolItem *item8 = [DJBoolItem itemWithTitle:@"外星人?" value:NO switchValueChangeHandler:^(DJBoolItem *item){
+        NSLog(@"switchValueChanged %@", @(item.value));
+    }];
+    [section1 addItem:item8];
+
+    
     DJTableViewSection *section2 = [DJTableViewSection section];
     [self.manager addSection:section2];
 

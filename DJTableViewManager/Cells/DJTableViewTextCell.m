@@ -203,16 +203,11 @@
     }
 }
 
-- (void)layoutSubviews
+- (void)cellLayoutSubviews
 {
-    [super layoutSubviews];
+    [super cellLayoutSubviews];
     
     [self layoutDetailView:self.textField minimumWidth:0];
-    
-    if ([self.tableViewManager.delegate respondsToSelector:@selector(tableView:willLayoutCellSubviews:forRowAtIndexPath:)])
-    {
-        [self.tableViewManager.delegate tableView:self.tableViewManager.tableView willLayoutCellSubviews:self forRowAtIndexPath:[self.tableViewManager.tableView indexPathForCell:self]];
-    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
