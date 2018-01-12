@@ -82,7 +82,9 @@
         
         //self.isDrawUnderLine = YES;
         self.underLineDrawType = DJTableViewCell_UnderLineDrawType_SeparatorInset;
+        self.underLineIsDash = NO;
         self.underLineColor = UI_DEFAULT_LINECOLOR;
+        self.underLineWidth = SINGLE_LINE_WIDTH;
         
         self.isShowSelectBg = NO;
         self.selectBgColor = UI_CELL_SELECT_BGCOLOR;

@@ -32,6 +32,7 @@
     DJTableViewItem *item1 = [DJTableViewItem itemWithTitle:@"SeparatorAllLeftInset"];
     item1.underLineDrawType = DJTableViewCell_UnderLineDrawType_SeparatorAllLeftInset;
     item1.underLineColor = [UIColor redColor];
+    item1.underLineWidth = 4.0f;
     item1.enabled = YES;
     item1.isShowHighlightBg = NO;
     
@@ -50,6 +51,7 @@
     DJTableViewItem *item4 = [DJTableViewItem itemWithTitle:@"Image"];
     item4.underLineDrawType = DJTableViewCell_UnderLineDrawType_Image;
     item4.underLineColor = [UIColor redColor];
+    item4.underLineIsDash = YES;
     item4.image = [UIImage imageNamed:@"icon1"];
     item4.enabled = NO;
 

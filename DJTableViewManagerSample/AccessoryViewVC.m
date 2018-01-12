@@ -26,6 +26,13 @@
     DJTableViewSection *section = [DJTableViewSection section];
     [self.manager addSection:section];
     
+    DJTableViewItem *item0 = [DJTableViewItem itemWithTitle:@"头像"];
+    DJImageTextView *imageTextView = [[DJImageTextView alloc] initWithAttributedText:nil image:@"photo"];
+    imageTextView.imageSize = CGSizeMake(50.0f, 50.0f);
+    item0.accessoryView = imageTextView;
+    item0.cellHeight = 70.0f;
+    imageTextView.showTableCellAccessoryArrow = YES;
+
     NSString *string = [NSString stringWithFormat:@"%@人", @"100"];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
     [attributedString setFont:UI_DJ_FONT(14.0f)];
@@ -33,7 +40,7 @@
     [attributedString setTextColor:[UIColor grayColor]];
     [attributedString setTextColor:[UIColor redColor] range:NSMakeRange(0, 3)];
 
-    DJImageTextView *imageTextView = [[DJImageTextView alloc] initWithAttributedText:attributedString image:@"arrows_rightBlack"];
+    imageTextView = [[DJImageTextView alloc] initWithAttributedText:attributedString image:@"arrows_rightBlack"];
     imageTextView.imageTextViewClicked = ^(DJImageTextView * imageTextView) {
         NSLog(@"ImageTextView Clicked");
     };
@@ -69,6 +76,7 @@
         NSLog(@"给钱了");
     }];
 
+    [section addItem:item0];
     [section addItem:item1];
     [section addItem:item2];
     [section addItem:item3];

@@ -99,6 +99,7 @@
         [self addSubview:self.singleLineView];
     }
     
+    self.singleLineView.isDash = self.item.underLineIsDash;
     if (self.item.underLineColor)
     {
         self.singleLineView.lineColor = self.item.underLineColor;
@@ -106,6 +107,11 @@
     else
     {
         self.singleLineView.lineColor = UI_DEFAULT_LINECOLOR;
+    }
+    self.singleLineView.lineWidth = self.item.underLineWidth;
+    if (self.item.underLineWidth > 1.0f)
+    {
+        self.singleLineView.height = self.item.underLineWidth;
     }
     self.singleLineView.bottom = self.contentView.height;
     

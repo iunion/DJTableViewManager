@@ -61,6 +61,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) DJTableViewCell_UnderLineDrawType underLineDrawType;
 // 下边线颜色
 @property (nullable, nonatomic, strong) UIColor *underLineColor;
+@property (nonatomic, assign) CGFloat underLineWidth;
+@property (nonatomic, assign) BOOL underLineIsDash;
 
 // 显示选择状态
 @property (assign, nonatomic) BOOL isShowSelectBg;
