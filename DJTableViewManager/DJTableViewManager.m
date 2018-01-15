@@ -122,21 +122,11 @@
     self[@"DJMaskTextItem"] = @"DJTableViewMaskTextCell";
     self[@"DJNumberTextItem"] = @"DJTableViewNumberTextCell";
     self[@"DJBoolItem"] = @"DJTableViewBoolCell";
-//    self[@"RERadioItem"] = @"RETableViewOptionCell";
-//    self[@"REBoolItem"] = @"RETableViewBoolCell";
-//    self[@"RETextItem"] = @"RETableViewTextCell";
-//    self[@"RENumberTextItem"] = @"RETableViewNumberTextCell";
-//    self[@"RETextItemForMQCardNum"] = @"RETableViewTextCellForMQCardNum";
-//    self[@"RELongTextItem"] = @"RETableViewLongTextCell";
-//    self[@"RENumberItem"] = @"RETableViewNumberCell";
-//    self[@"REFloatItem"] = @"RETableViewFloatCell";
-//    self[@"REDateTimeItem"] = @"RETableViewDateTimeCell";
-//    self[@"RECreditCardItem"] = @"RETableViewCreditCardCell";
-//    self[@"REMultipleChoiceItem"] = @"RETableViewOptionCell";
-//    self[@"REPickerItem"] = @"RETableViewPickerCell";
-//    self[@"RESegmentedItem"] = @"RETableViewSegmentedCell";
-//    self[@"REInlineDatePickerItem"] = @"RETableViewInlineDatePickerCell";
-//    self[@"REInlinePickerItem"] = @"RETableViewInlinePickerCell";
+    self[@"DJPickerItem"] = @"DJTableViewPickerCell";
+//    self[@"DJDateTimeItem"] = @"DJTableViewDateTimeCell";
+//    self[@"DJRadioItem"] = @"DJTableViewOptionCell";
+//    self[@"DJMultipleChoiceItem"] = @"DJTableViewOptionCell";
+//    self[@"DJSegmentedItem"] = @"DJTableViewSegmentedCell";
     
     // add your Class here
 }

@@ -19,11 +19,13 @@
 #import "DJMaskTextItem.h"
 #import "DJNumberTextItem.h"
 #import "DJBoolItem.h"
+#import "DJPickerItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
 #import "DJTableViewNumberTextCell.h"
 #import "DJTableViewBoolCell.h"
+#import "DJTableViewPickerCell.h"
 
 
 @protocol DJTableViewManagerDelegate;

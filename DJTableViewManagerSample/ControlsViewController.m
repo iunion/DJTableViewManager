@@ -79,6 +79,21 @@
     DJTableViewSection *section2 = [DJTableViewSection section];
     [self.manager addSection:section2];
 
+    NSArray *components = @[@[@"1", @"2", @"3", @"4", @"5"], @[@"A", @"B", @"C", @"D"]];
+    DJPickerItem *item9 = [DJPickerItem itemWithTitle:@"Picker" placeholder:@"Click to select" components:components];
+    [section2 addItem:item9];
+
+    components = @[@[@"1", @"2", @"3", @"4", @"5"], @[@"A", @"B", @"C", @"D"]];
+    DJPickerItem *item10 = [DJPickerItem itemWithTitle:@"Picker" placeholder:@"Click to select" components:components];
+    item10.formatPickerText = ^NSString *(DJPickerItem *item)
+    {
+        NSString *text = item.values ? [item.values componentsJoinedByString:@"+"] : @"";
+        return text;
+    };
+    item10.onChange = ^(DJPickerItem * _Nonnull item) {
+        NSLog(@"onChange");
+    };
+    [section2 addItem:item10];
 }
 
 @end
