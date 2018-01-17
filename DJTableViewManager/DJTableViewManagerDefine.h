@@ -64,6 +64,9 @@
 #define UI_DJ_FONT(fontSize)                [UIFont systemFontOfSize:fontSize]
 #define UI_DJ_BFONT(fontSize)               [UIFont boldSystemFontOfSize:fontSize]
 
+// 颜色
+#define RGBColor(r,g,b,a)   [UIColor colorWithRed:r/255. green:g/255. blue:b/255. alpha:a]
+
 typedef NS_OPTIONS(NSUInteger, DJTableViewCell_PositionType)
 {
     DJTableViewCell_PositionType_None = 0,

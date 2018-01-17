@@ -67,6 +67,8 @@
 		5A79DE7C1F53FDAD004ADA8A /* DJDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DE7A1F53FDAD004ADA8A /* DJDatePicker.m */; };
 		5A79DE7D1F53FDAD004ADA8A /* DJDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A79DE7B1F53FDAD004ADA8A /* DJDatePicker.xib */; };
 		5A79DE801F53FE0E004ADA8A /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DE7F1F53FE0E004ADA8A /* NSDate+Category.m */; };
+		5A8E6B6D200CA00C009DC4FB /* DJTableViewDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B6C200CA00C009DC4FB /* DJTableViewDateTimeCell.m */; };
+		5A8E6B70200CA02F009DC4FB /* DJDateTimeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B6F200CA02F009DC4FB /* DJDateTimeItem.m */; };
 		5ACB4A631F38334C0043A623 /* DJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A621F38334C0043A623 /* DJTableViewCell.m */; };
 		5ACB4A711F3836250043A623 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A691F3836250043A623 /* NSObject+Category.m */; };
 		5ACB4A721F3836250043A623 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A6B1F3836250043A623 /* NSString+Category.m */; };
@@ -215,6 +217,10 @@
 		5A79DE7B1F53FDAD004ADA8A /* DJDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DJDatePicker.xib; sourceTree = "<group>"; };
 		5A79DE7E1F53FE0E004ADA8A /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
 		5A79DE7F1F53FE0E004ADA8A /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		5A8E6B6B200CA00C009DC4FB /* DJTableViewDateTimeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewDateTimeCell.h; sourceTree = "<group>"; };
+		5A8E6B6C200CA00C009DC4FB /* DJTableViewDateTimeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewDateTimeCell.m; sourceTree = "<group>"; };
+		5A8E6B6E200CA02F009DC4FB /* DJDateTimeItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJDateTimeItem.h; sourceTree = "<group>"; };
+		5A8E6B6F200CA02F009DC4FB /* DJDateTimeItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJDateTimeItem.m; sourceTree = "<group>"; };
 		5ACB4A611F38334C0043A623 /* DJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJTableViewCell.h; sourceTree = "<group>"; };
 		5ACB4A621F38334C0043A623 /* DJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTableViewCell.m; sourceTree = "<group>"; };
 		5ACB4A681F3836250043A623 /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
@@ -403,6 +409,8 @@
 				5A4C1D76200712BA004FEB97 /* DJBoolItem.m */,
 				5AD9B8AF200C45E80097F17F /* DJPickerItem.h */,
 				5AD9B8B0200C45E80097F17F /* DJPickerItem.m */,
+				5A8E6B6E200CA02F009DC4FB /* DJDateTimeItem.h */,
+				5A8E6B6F200CA02F009DC4FB /* DJDateTimeItem.m */,
 				5A12504D1F4BF3F300D71E4C /* DJTextItem.h */,
 				5A12504E1F4BF3F300D71E4C /* DJTextItem.m */,
 				5A12506C1F4D207100D71E4C /* DJMaskTextItem.h */,
@@ -420,6 +428,8 @@
 				5A4C1D7920071709004FEB97 /* DJTableViewBoolCell.m */,
 				5AD9B8B2200C4FF20097F17F /* DJTableViewPickerCell.h */,
 				5AD9B8B3200C4FF20097F17F /* DJTableViewPickerCell.m */,
+				5A8E6B6B200CA00C009DC4FB /* DJTableViewDateTimeCell.h */,
+				5A8E6B6C200CA00C009DC4FB /* DJTableViewDateTimeCell.m */,
 				5A1250501F4C088D00D71E4C /* DJTableViewTextCell.h */,
 				5A1250511F4C088D00D71E4C /* DJTableViewTextCell.m */,
 				5A1250961F4D326600D71E4C /* DJTableViewMaskTextCell.h */,
@@ -849,6 +859,7 @@
 				5AD9B8B4200C4FF20097F17F /* DJTableViewPickerCell.m in Sources */,
 				5ADDB3831EA89C0B00CFECA6 /* DJTableViewSection.m in Sources */,
 				5A79DE801F53FE0E004ADA8A /* NSDate+Category.m in Sources */,
+				5A8E6B6D200CA00C009DC4FB /* DJTableViewDateTimeCell.m in Sources */,
 				5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */,
 				5A12505B1F4C240B00D71E4C /* NSString+RegEx.m in Sources */,
 				5AEFCA271F4AD56800077A9E /* UIImage+GIF.m in Sources */,
@@ -872,6 +883,7 @@
 				5AEFCA221F4AD56800077A9E /* SDWebImageDownloader.m in Sources */,
 				5ADDB3811EA89C0700CFECA6 /* DJTableViewManager.m in Sources */,
 				5AEFCA1B1F4AD56800077A9E /* MKAnnotationView+WebCache.m in Sources */,
+				5A8E6B70200CA02F009DC4FB /* DJDateTimeItem.m in Sources */,
 				5A1250981F4D326600D71E4C /* DJTableViewMaskTextCell.m in Sources */,
 				5A1250551F4C1C5F00D71E4C /* UITextField+Category.m in Sources */,
 				5AEFC98C1F3C3AB000077A9E /* DJSingleLineView.m in Sources */,

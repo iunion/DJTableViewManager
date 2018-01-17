@@ -7,16 +7,12 @@
 //
 
 #import "DJDatePicker.h"
+#import "DJTableViewManagerDefine.h"
 #import "NSDate+Category.h"
 #import "UIView+Size.h"
 
 #define Picker_MaxYear     2099
 #define Picker_MinYear     1
-
-#define UI_SCREEN_WIDTH     ([[UIScreen mainScreen] bounds].size.width)
-#define UI_SCREEN_HEIGHT    ([[UIScreen mainScreen] bounds].size.height)
-
-#define RGBColor(r,g,b,a)   [UIColor colorWithRed:r/255. green:g/255. blue:b/255. alpha:a]
 
 @interface DJDatePicker ()
 <
@@ -53,10 +49,7 @@
 
 @property (nonatomic, strong) NSMutableArray *pickerLabelArray;
 
-@property (nonatomic, assign) DJPickerStyle pickerStyle;
 @property (nonatomic, strong) NSDate *pickerDate;
-
-@property (nonatomic, copy) DJDatePickerDoneBlock completeBlock;
 
 - (IBAction)doneClick:(id)sender;
 
@@ -97,6 +90,8 @@
     _dayArray = [[NSMutableArray alloc] initWithCapacity:0];
     _hourArray = [[NSMutableArray alloc] initWithCapacity:0];
     _minuteArray = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    _showDoneBtn = YES;
     
     for (NSInteger i=0; i<60; i++)
     {
@@ -252,6 +247,27 @@
     _pickerItemColor = pickerItemColor;
     
     [self.picker reloadAllComponents];
+}
+
+- (void)setShowDoneBtn:(BOOL)showDoneBtn
+{
+    if (_showDoneBtn == showDoneBtn)
+    {
+        return;
+    }
+    
+    _showDoneBtn = showDoneBtn;
+    
+    if (_showDoneBtn)
+    {
+        self.pickerBgView.height = 210.0f;
+    }
+    else
+    {
+        self.pickerBgView.height = 260.0f;
+    }
+    
+    self.doneBtn.hidden = !_showDoneBtn;
 }
 
 - (void)setDoneBtnBgColor:(UIColor *)doneBtnBgColor

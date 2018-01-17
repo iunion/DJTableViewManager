@@ -94,6 +94,14 @@
         NSLog(@"onChange");
     };
     [section2 addItem:item10];
+    
+    DJDateTimeItem *item11 = [DJDateTimeItem itemWithTitle:@"BirthDay" placeholder:@""];
+    item11.pickerStyle = PickerStyle_YearMonthDay;
+    item11.onChange = ^(DJDateTimeItem *item) {
+        NSLog(@"onChange");
+    };
+    item11.showDoneBtn = NO;
+    [section2 addItem:item11];
 }
 
 @end

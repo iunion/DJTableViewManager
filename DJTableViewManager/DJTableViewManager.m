@@ -123,7 +123,7 @@
     self[@"DJNumberTextItem"] = @"DJTableViewNumberTextCell";
     self[@"DJBoolItem"] = @"DJTableViewBoolCell";
     self[@"DJPickerItem"] = @"DJTableViewPickerCell";
-//    self[@"DJDateTimeItem"] = @"DJTableViewDateTimeCell";
+    self[@"DJDateTimeItem"] = @"DJTableViewDateTimeCell";
 //    self[@"DJRadioItem"] = @"DJTableViewOptionCell";
 //    self[@"DJMultipleChoiceItem"] = @"DJTableViewOptionCell";
 //    self[@"DJSegmentedItem"] = @"DJTableViewSegmentedCell";

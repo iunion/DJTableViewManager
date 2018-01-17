@@ -146,6 +146,7 @@
 #pragma mark -
 #pragma mark Cell life cycle
 
+// item == nil
 - (void)cellDidLoad
 {
     self.loaded = YES;
@@ -165,6 +166,7 @@
     }
 }
 
+// item != nil
 - (void)cellWillAppear
 {
     [self updateActionBarNavigationControl];

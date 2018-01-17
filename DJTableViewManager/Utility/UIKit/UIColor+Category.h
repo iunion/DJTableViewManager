@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)colorWithHex:(UInt32)hex;
 + (UIColor *)colorWithHex:(UInt32)hex alpha:(CGFloat)alpha;
 
++ (UIColor *)randomColor;
++ (UIColor *)randomColorWithAlpha:(CGFloat)alpha;
+
 @end
 
 NS_ASSUME_NONNULL_END

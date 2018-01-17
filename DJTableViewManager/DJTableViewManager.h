@@ -20,12 +20,14 @@
 #import "DJNumberTextItem.h"
 #import "DJBoolItem.h"
 #import "DJPickerItem.h"
+#import "DJDateTimeItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
 #import "DJTableViewNumberTextCell.h"
 #import "DJTableViewBoolCell.h"
 #import "DJTableViewPickerCell.h"
+#import "DJTableViewDateTimeCell.h"
 
 
 @protocol DJTableViewManagerDelegate;
