@@ -124,9 +124,9 @@
     self[@"DJBoolItem"] = @"DJTableViewBoolCell";
     self[@"DJPickerItem"] = @"DJTableViewPickerCell";
     self[@"DJDateTimeItem"] = @"DJTableViewDateTimeCell";
+    self[@"DJSegmentItem"] = @"DJTableViewSegmentCell";
 //    self[@"DJRadioItem"] = @"DJTableViewOptionCell";
 //    self[@"DJMultipleChoiceItem"] = @"DJTableViewOptionCell";
-//    self[@"DJSegmentedItem"] = @"DJTableViewSegmentedCell";
     
     // add your Class here
 }

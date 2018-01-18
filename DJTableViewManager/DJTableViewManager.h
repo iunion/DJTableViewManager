@@ -21,6 +21,7 @@
 #import "DJBoolItem.h"
 #import "DJPickerItem.h"
 #import "DJDateTimeItem.h"
+#import "DJSegmentItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
@@ -28,6 +29,7 @@
 #import "DJTableViewBoolCell.h"
 #import "DJTableViewPickerCell.h"
 #import "DJTableViewDateTimeCell.h"
+#import "DJTableViewSegmentCell.h"
 
 
 @protocol DJTableViewManagerDelegate;

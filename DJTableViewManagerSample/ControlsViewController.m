@@ -102,6 +102,10 @@
     };
     item11.showDoneBtn = NO;
     [section2 addItem:item11];
+    
+    DJSegmentItem *item12 = [DJSegmentItem itemWithTitle:@"性别" segmentedItems:@[@"男", @"中", @"女"] selectedSegmentIndex:1];
+    item12.disableItems = @[@(0)];
+    [section2 addItem:item12];
 }
 
 @end

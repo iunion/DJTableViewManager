@@ -117,7 +117,7 @@
         
         self.enabled = newValue;
     }
-    else if ([object isKindOfClass:[DJTextItem class]] && [keyPath isEqualToString:@"switchable"])
+    else if ([object isKindOfClass:[DJBoolItem class]] && [keyPath isEqualToString:@"switchable"])
     {
         BOOL newValue = [[change objectForKey: NSKeyValueChangeNewKey] boolValue];
         
