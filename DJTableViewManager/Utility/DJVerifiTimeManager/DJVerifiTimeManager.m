@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) NSTimer *timer;
 //@property (nonatomic, strong) CADisplayLink *timer;
-@property (nonatomic, assign) CFTimeInterval durationTime;
+@property (nonatomic, assign) NSInteger durationTime;
 
 @end
 
@@ -67,7 +67,7 @@
     return [self startTimeWithType:type duration:DJVerifiTime_Wait process:veryifiBlock];
 }
 
-- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVerifiTimeBlock)veryifiBlock
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVerifiTimeBlock)verifiBlock
 {
     if (duration <= 0)
     {
@@ -79,25 +79,25 @@
     
     if (tichet > 0)
     {
-        DJVerifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
-        if (oldVeryifiBlock)
+        DJVerifiTimeBlock oldVerifiBlock = [self.blockDic objectForKey:@(type)];
+        if (oldVerifiBlock)
         {
-            oldVeryifiBlock(type, tichet, YES);
+            oldVerifiBlock(type, tichet, YES);
         }
-        if (veryifiBlock)
+        if (verifiBlock)
         {
-            [self.blockDic setObject:veryifiBlock forKey:@(type)];
-            veryifiBlock(type, tichet, NO);
+            [self.blockDic setObject:verifiBlock forKey:@(type)];
+            verifiBlock(type, tichet, NO);
         }
         return tichet;
     }
     
     [self.timerDic setObject:@(self.durationTime) forKey:@(type)];
     
-    if (veryifiBlock)
+    if (verifiBlock)
     {
-        [self.blockDic setObject:veryifiBlock forKey:@(type)];
-        veryifiBlock(type, self.durationTime, NO);
+        [self.blockDic setObject:verifiBlock forKey:@(type)];
+        verifiBlock(type, self.durationTime, NO);
     }
     
     if (!self.timer)
@@ -107,7 +107,7 @@
 //        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
     }
     
-    return DJVerifiTime_Wait;
+    return self.durationTime;
 }
 
 - (void)stopTimeWithType:(DJVerificationCodeType)type
@@ -119,10 +119,10 @@
 {
     [self.timerDic removeObjectForKey:@(type)];
     
-    DJVerifiTimeBlock veryifiBlock = [self.blockDic objectForKey:@(type)];
-    if (veryifiBlock)
+    DJVerifiTimeBlock verifiBlock = [self.blockDic objectForKey:@(type)];
+    if (verifiBlock)
     {
-        veryifiBlock(type, 0, stop);
+        verifiBlock(type, 0, stop);
     }
     
     [self.blockDic removeObjectForKey:@(type)];
@@ -154,10 +154,10 @@
         }
         else
         {
-            DJVerifiTimeBlock veryifiBlock = [self.blockDic objectForKey:key];
-            if (veryifiBlock)
+            DJVerifiTimeBlock verifiBlock = [self.blockDic objectForKey:key];
+            if (verifiBlock)
             {
-                veryifiBlock([key integerValue], tichet, NO);
+                verifiBlock([key integerValue], tichet, NO);
             }
             [self.timerDic setObject:@(tichet) forKey:key];
         }
@@ -187,10 +187,10 @@
     
     if (tichet > 0)
     {
-        DJVerifiTimeBlock oldVeryifiBlock = [self.blockDic objectForKey:@(type)];
-        if (oldVeryifiBlock)
+        DJVerifiTimeBlock oldVerifiBlock = [self.blockDic objectForKey:@(type)];
+        if (oldVerifiBlock)
         {
-            oldVeryifiBlock(type, tichet, YES);
+            oldVerifiBlock(type, tichet, YES);
         }
         if (verifiBlock)
         {

@@ -1,5 +1,5 @@
 //
-//  NSObject+Category.h
+//  NSObject+Category.m
 //  DJkit
 //
 //  Created by DennisDeng on 12-8-7.

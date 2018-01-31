@@ -27,8 +27,8 @@ typedef void(^DJVerifiTimeBlock)(DJVerificationCodeType type, NSInteger ticket, 
 + (DJVerifiTimeManager *)manager;
 
 // 启动计时
-- (NSInteger)startTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)veryifiBlock;
-- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVerifiTimeBlock)veryifiBlock;
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)verifiBlock;
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(NSInteger)duration process:(DJVerifiTimeBlock)verifiBlock;
 
 // 停止计时，并调用block
 - (void)stopTimeWithType:(DJVerificationCodeType)type;
@@ -39,6 +39,6 @@ typedef void(^DJVerifiTimeBlock)(DJVerificationCodeType type, NSInteger ticket, 
 - (void)stopAllType;
 
 // 检查当前计时状态
-- (NSInteger)checkTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)veryifiBlock;
+- (NSInteger)checkTimeWithType:(DJVerificationCodeType)type process:(DJVerifiTimeBlock)verifiBlock;
 
 @end
