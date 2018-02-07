@@ -67,7 +67,7 @@
     return [self startTimeWithType:type duration:DJVerifiTime_Wait process:veryifiBlock];
 }
 
-- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(CFTimeInterval)duration process:(DJVerifiTimeBlock)verifiBlock
+- (NSInteger)startTimeWithType:(DJVerificationCodeType)type duration:(NSInteger)duration process:(DJVerifiTimeBlock)verifiBlock
 {
     if (duration <= 0)
     {

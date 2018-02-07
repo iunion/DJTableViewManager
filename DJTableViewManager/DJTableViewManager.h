@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The array of pairs of items / cell classes.
  */
-@property (strong, nonatomic, nullable) NSMutableDictionary *registeredClasses;
+@property (nullable, nonatomic, strong) NSMutableDictionary *registeredClasses;
 
 /**
  For each custom item class that the manager will use, register a cell class.
