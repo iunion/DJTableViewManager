@@ -22,6 +22,7 @@
 #import "DJPickerItem.h"
 #import "DJDateTimeItem.h"
 #import "DJSegmentItem.h"
+#import "DJCheckBoxGroupItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
@@ -30,7 +31,7 @@
 #import "DJTableViewPickerCell.h"
 #import "DJTableViewDateTimeCell.h"
 #import "DJTableViewSegmentCell.h"
-
+#import "DJTableViewCheckBoxGroupCell.h"
 
 @protocol DJTableViewManagerDelegate;
 
@@ -63,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param objectClass The object class to be associated with a cell class.
  @param identifier The cell class identifier.
- @param bundle The resource gbundle.
+ #param bundle The resource gbundle.
  */
 - (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier;
 - (void)registerClass:(NSString *)objectClass forCellWithReuseIdentifier:(NSString *)identifier bundle:(nullable NSBundle *)bundle;

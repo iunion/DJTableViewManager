@@ -106,6 +106,16 @@
     DJSegmentItem *item12 = [DJSegmentItem itemWithTitle:@"性别" segmentedItems:@[@"男", @"中", @"女"] selectedSegmentIndex:1];
     item12.disableItems = @[@(0)];
     [section2 addItem:item12];
+    
+    NSMutableArray *boxTextArray = [NSMutableArray arrayWithObjects:@"A.", @"B.", @"C.", @"D.", nil];
+    NSMutableArray *labelTextArray = [NSMutableArray arrayWithObjects:@"A DJCheckBoxGroupItem DJCheckBoxGroupItem", @"B", @"C", @"D", nil];
+    DJCheckBoxGroupItem *item13 = [DJCheckBoxGroupItem itemWithTitle:@"1. DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem " oneLineItemCount:3 maxSelectedCount:2 boxTextArray:boxTextArray labelTextArray:labelTextArray checkBoxValueChangeHandler:^(DJCheckBoxGroupItem * _Nonnull item) {
+        NSLog(@"seleted: %@", item.selectedIndexArray);
+    }];
+    //item13.verticallyType = DJCheckBoxVerticallyType_Top;
+    item13.labelTextCheckedColor = [UIColor blueColor];
+    [item13 caleCellHeightWithTableView:self.tableView];
+    [section2 addItem:item13];
 }
 
 @end

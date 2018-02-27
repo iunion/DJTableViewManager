@@ -11,22 +11,6 @@
 #import "UIColor+Category.h"
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
-#define DJCheckboxDefaultWidth 16.0f
-
-#define DJCheckboxWidthAutomatic CGFLOAT_MAX
-
-#define kBoxRadius 0.1875
-#define kBoxStrokeWidth 0.05
-
-#define kBoxSize .875
-#define kCheckHorizontalExtention .125
-#define kCheckVerticalExtension .125
-#define kCheckIndent .125
-#define kCheckRaise .1875
-#define kCheckSize .8125
-#define kCheckBoxSpacing 0.3125
-#define kMQCheckboxMaxFontSize 100.0
-
 @interface DJCheckBoxView : UIView
 
 @property (nonatomic, weak) DJCheckBox *checkBox;
@@ -81,7 +65,7 @@
     self.boxLayer.frame = self.bounds;
     if (self.checkBox.boxShapeBlock)
     {
-        self.boxLayer.path = self.checkBox.boxShapeBlock(self.checkBox.checkState).CGPath;
+        self.boxLayer.path = self.checkBox.boxShapeBlock(self.checkBox).CGPath;
     }
     else
     {
@@ -132,7 +116,7 @@
     self.markLayer.frame = self.bounds;
     if (self.checkBox.markShapeBlock)
     {
-        self.markLayer.path = self.checkBox.markShapeBlock(self.checkBox.checkState).CGPath;
+        self.markLayer.path = self.checkBox.markShapeBlock(self.checkBox).CGPath;
     }
     else
     {
@@ -193,6 +177,8 @@
 
 
 @interface DJCheckBox ()
+
+@property (nonatomic, weak) DJCheckBoxGroup *group;
 
 @property (nonatomic, assign) BOOL isUseGesture;
 
@@ -289,12 +275,12 @@
     self.checkBoxView.userInteractionEnabled = NO;
     [self addSubview:self.checkBoxView];
     self.checkBoxView.checkBox = self;
-    [self placeCheckBoxView];
+    //[self placeCheckBoxView];
 
     // checkbox 水平位置
     self.horizontallyType = DJCheckBoxHorizontallyType_Left;
     // checkbox 垂直位置
-    self.verticallyType = DJCheckBoxVerticallyType_Center;
+    self.verticallyType = DJCheckBoxVerticallyType_Top;
     
     if (self.isUseGesture)
     {
@@ -321,6 +307,15 @@
     if (_boxType != boxType)
     {
         _boxType = boxType;
+        [self.checkBoxView setNeedsDisplay];
+    }
+}
+
+- (void)setCheckState:(DJCheckBoxState)checkState
+{
+    if (_checkState != checkState)
+    {
+        _checkState = checkState;
         [self.checkBoxView setNeedsDisplay];
     }
 }
@@ -396,6 +391,7 @@
     }
     
     _checkWidth = checkWidth;
+    [self placeCheckBoxView];
 }
 
 - (UIColor *)boxTextColor
@@ -464,6 +460,11 @@
         default:
             return self.markCheckedStrokeColor;
     }
+}
+
+- (void)setCheckBoxGroup:(DJCheckBoxGroup *)group
+{
+    self.group = group;
 }
 
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(nullable UIEvent *)event
@@ -586,6 +587,12 @@
 - (void)toggleCheckState
 {
     self.checkState = !self.checkState;
+    if (self.group)
+    {
+        [self.group groupSelectionChangedWithCheckBox:self];
+    }
+    
+    [self.checkBoxView setNeedsDisplay];
 }
 
 #pragma mark - Gesture Recognizer

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DJCheckBoxGroup.h"
+
+#define DJCheckboxDefaultWidth 16.0f
 
 typedef NS_ENUM(NSUInteger, DJCheckBoxState)
 {
@@ -49,10 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DJCheckBox;
 
-typedef UIBezierPath * _Nullable (^DJCheckBoxShapeBlock)(DJCheckBoxState checkState);
+typedef UIBezierPath * _Nullable (^DJCheckBoxShapeBlock)(DJCheckBox *checkBox);
 typedef void (^DJCheckBoxTaped)(DJCheckBox *checkBox);
 
 @interface DJCheckBox : UIControl
+
+@property (nullable, nonatomic, weak, readonly) DJCheckBoxGroup *group;
 
 #pragma mark Properties
 
@@ -151,6 +156,8 @@ typedef void (^DJCheckBoxTaped)(DJCheckBox *checkBox);
 
 - (UIBezierPath *)getDefaultBoxShape;
 - (UIBezierPath *)getDefaultMarkShape;
+
+- (void)setCheckBoxGroup:(nullable DJCheckBoxGroup *)group;
 
 @end
 

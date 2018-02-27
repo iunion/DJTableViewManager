@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5A000E7720216E98004FA5A0 /* DJCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A000E7520216E98004FA5A0 /* DJCheckBox.m */; };
+		5A000F5A202C233B004FA5A0 /* DJCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A000F59202C233B004FA5A0 /* DJCheckBoxGroup.m */; };
+		5A000F5D202C3D94004FA5A0 /* DJCheckBoxGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A000F5C202C3D94004FA5A0 /* DJCheckBoxGroupItem.m */; };
+		5A000F60202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A000F5F202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m */; };
+		5A000F63202D39C9004FA5A0 /* DJCheckBoxLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A000F62202D39C9004FA5A0 /* DJCheckBoxLabel.m */; };
 		5A1250461F4BD62200D71E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1250441F4BD62200D71E4C /* LaunchScreen.storyboard */; };
 		5A12504B1F4BED9600D71E4C /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1250491F4BED9600D71E4C /* ControlsViewController.m */; };
 		5A12504C1F4BED9600D71E4C /* ControlsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A12504A1F4BED9600D71E4C /* ControlsViewController.xib */; };
@@ -134,6 +138,14 @@
 /* Begin PBXFileReference section */
 		5A000E7520216E98004FA5A0 /* DJCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJCheckBox.m; sourceTree = "<group>"; };
 		5A000E7620216E98004FA5A0 /* DJCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJCheckBox.h; sourceTree = "<group>"; };
+		5A000F58202C233B004FA5A0 /* DJCheckBoxGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJCheckBoxGroup.h; sourceTree = "<group>"; };
+		5A000F59202C233B004FA5A0 /* DJCheckBoxGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJCheckBoxGroup.m; sourceTree = "<group>"; };
+		5A000F5B202C3D94004FA5A0 /* DJCheckBoxGroupItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJCheckBoxGroupItem.h; sourceTree = "<group>"; };
+		5A000F5C202C3D94004FA5A0 /* DJCheckBoxGroupItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJCheckBoxGroupItem.m; sourceTree = "<group>"; };
+		5A000F5E202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewCheckBoxGroupCell.h; sourceTree = "<group>"; };
+		5A000F5F202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewCheckBoxGroupCell.m; sourceTree = "<group>"; };
+		5A000F61202D39C9004FA5A0 /* DJCheckBoxLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJCheckBoxLabel.h; sourceTree = "<group>"; };
+		5A000F62202D39C9004FA5A0 /* DJCheckBoxLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJCheckBoxLabel.m; sourceTree = "<group>"; };
 		5A1250451F4BD62200D71E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A1250481F4BED9600D71E4C /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsViewController.h; sourceTree = "<group>"; };
 		5A1250491F4BED9600D71E4C /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
@@ -346,6 +358,10 @@
 			children = (
 				5A000E7620216E98004FA5A0 /* DJCheckBox.h */,
 				5A000E7520216E98004FA5A0 /* DJCheckBox.m */,
+				5A000F61202D39C9004FA5A0 /* DJCheckBoxLabel.h */,
+				5A000F62202D39C9004FA5A0 /* DJCheckBoxLabel.m */,
+				5A000F58202C233B004FA5A0 /* DJCheckBoxGroup.h */,
+				5A000F59202C233B004FA5A0 /* DJCheckBoxGroup.m */,
 			);
 			path = DJCheckBox;
 			sourceTree = "<group>";
@@ -437,6 +453,8 @@
 				5A12506D1F4D207100D71E4C /* DJMaskTextItem.m */,
 				5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */,
 				5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */,
+				5A000F5B202C3D94004FA5A0 /* DJCheckBoxGroupItem.h */,
+				5A000F5C202C3D94004FA5A0 /* DJCheckBoxGroupItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -458,6 +476,8 @@
 				5A1250971F4D326600D71E4C /* DJTableViewMaskTextCell.m */,
 				5A79DDE01F4D693A004ADA8A /* DJTableViewNumberTextCell.h */,
 				5A79DDE11F4D693A004ADA8A /* DJTableViewNumberTextCell.m */,
+				5A000F5E202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.h */,
+				5A000F5F202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -853,6 +873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AEFCA2A1F4AD56800077A9E /* UIImageView+HighlightedWebCache.m in Sources */,
+				5A000F5A202C233B004FA5A0 /* DJCheckBoxGroup.m in Sources */,
 				5ACB4A731F3836250043A623 /* UIView+Positioning.m in Sources */,
 				5A1250581F4C23CB00D71E4C /* NSString+Format.m in Sources */,
 				5A12504B1F4BED9600D71E4C /* ControlsViewController.m in Sources */,
@@ -896,6 +917,7 @@
 				5AEFCA211F4AD56800077A9E /* SDWebImageDecoder.m in Sources */,
 				5ADDB30A1EA8600B00CFECA6 /* AppDelegate.m in Sources */,
 				5AEFCA1C1F4AD56800077A9E /* NSData+ImageContentType.m in Sources */,
+				5A000F63202D39C9004FA5A0 /* DJCheckBoxLabel.m in Sources */,
 				5AEFCA231F4AD56800077A9E /* SDWebImageDownloaderOperation.m in Sources */,
 				5ADDB3071EA8600B00CFECA6 /* main.m in Sources */,
 				5AEFCA1F1F4AD56800077A9E /* SDImageCacheConfig.m in Sources */,
@@ -916,10 +938,12 @@
 				5AEFCA2B1F4AD56800077A9E /* UIImageView+WebCache.m in Sources */,
 				5AEFCA2D1F4AD56800077A9E /* UIView+WebCacheOperation.m in Sources */,
 				5ADDB3821EA89C0900CFECA6 /* DJTableViewCellStyle.m in Sources */,
+				5A000F5D202C3D94004FA5A0 /* DJCheckBoxGroupItem.m in Sources */,
 				5A1250521F4C088D00D71E4C /* DJTableViewTextCell.m in Sources */,
 				5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */,
 				5A000E7720216E98004FA5A0 /* DJCheckBox.m in Sources */,
 				5A4C1D401FFF5031004FEB97 /* UILabel+Category.m in Sources */,
+				5A000F60202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m in Sources */,
 				5A4C1D7320060518004FEB97 /* UIView+VerifiTimeManager.m in Sources */,
 				5AEFC9ED1F4ACA1000077A9E /* UIColor+Category.m in Sources */,
 			);

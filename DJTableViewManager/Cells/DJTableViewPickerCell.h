@@ -8,6 +8,8 @@
 
 #import "DJTableViewCell.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface DJTableViewPickerCell : DJTableViewCell
 
 @property (nonatomic, strong, readonly) UITextField *hidenTextField;
@@ -18,3 +20,6 @@
 @property (nonatomic, strong, readonly) UIPickerView *pickerView;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
