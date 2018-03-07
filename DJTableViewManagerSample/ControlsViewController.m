@@ -108,10 +108,17 @@
     [section2 addItem:item12];
     
     NSMutableArray *boxTextArray = [NSMutableArray arrayWithObjects:@"A.", @"B.", @"C.", @"D.", nil];
-    NSMutableArray *labelTextArray = [NSMutableArray arrayWithObjects:@"A DJCheckBoxGroupItem DJCheckBoxGroupItem", @"B", @"C", @"D", nil];
-    DJCheckBoxGroupItem *item13 = [DJCheckBoxGroupItem itemWithTitle:@"1. DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem " oneLineItemCount:3 maxSelectedCount:2 boxTextArray:boxTextArray labelTextArray:labelTextArray checkBoxValueChangeHandler:^(DJCheckBoxGroupItem * _Nonnull item) {
+    NSMutableArray *labelTextArray = [NSMutableArray arrayWithObjects:@"A DJCheckBoxGroupItem DJCheckBoxGroupItem", @"B", @"C", nil];
+    DJCheckBoxGroupImage *checkBoxImage = [[DJCheckBoxGroupImage alloc] init];
+    checkBoxImage.image = [UIImage imageNamed:@"photo"];
+    [labelTextArray addObject:checkBoxImage];
+    
+    DJCheckBoxGroupItem *item13 = [DJCheckBoxGroupItem itemWithTitle:@"1. DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem DJCheckBoxGroupItem " oneLineItemCount:3 maxSelectedCount:2 boxTextArray:boxTextArray labelContentArray:labelTextArray checkBoxValueChangeHandler:^(DJCheckBoxGroupItem * _Nonnull item) {
         NSLog(@"seleted: %@", item.selectedIndexArray);
     }];
+    item13.imageLongPress = ^(DJCheckBoxLabel *label) {
+        NSLog(@"imageLongPress");
+    };
     //item13.verticallyType = DJCheckBoxVerticallyType_Top;
     item13.labelTextCheckedColor = [UIColor blueColor];
     [item13 caleCellHeightWithTableView:self.tableView];

@@ -8,9 +8,24 @@
 
 #import "DJCheckBox.h"
 
+typedef NS_ENUM(NSUInteger, DJCheckBoxLabelType)
+{
+    // Default 文本
+    DJCheckBoxLabelType_Text,
+    DJCheckBoxLabelType_Image
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
+@class DJCheckBoxLabel;
+typedef void (^checkBoxLabelImageLongPress)(DJCheckBoxLabel *label);
+
 @interface DJCheckBoxLabel : DJCheckBox
+
+@property (nonatomic, assign, readonly) DJCheckBoxLabelType boxLabelType;
+
+// label width
+@property (nonatomic, assign, readonly) CGFloat labelWidth;
 
 // 文本和选择框的间隔
 @property (nonatomic, assign) CGFloat checkBoxGap;
@@ -33,6 +48,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIColor *labelTextUnCheckedColor;
 @property (nullable, nonatomic, strong) UIColor *labelTextMixedColor;
 @property (nullable, nonatomic, readonly) UIColor *labelTextColor;
+
+
+// 图片
+@property (nullable, nonatomic, strong) UIImage *labelImage;
+@property (nullable, nonatomic, strong) UIImage *labelBigImage;
+
+// 图片URL
+@property (nullable, nonatomic, strong) NSString *labelImageUrl;
+@property (nullable, nonatomic, strong) NSString *labelBigImageUrl;
+@property (nullable, nonatomic, strong) UIImage *placeholderLabelImage;
+
+@property (nullable, nonatomic, copy) checkBoxLabelImageLongPress imageLongPress;
 
 - (instancetype)init;
 - (instancetype)initWithFrame:(CGRect)frame;

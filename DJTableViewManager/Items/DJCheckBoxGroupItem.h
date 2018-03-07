@@ -22,6 +22,21 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJCheckBoxGroupItem;
 typedef void (^checkBoxValueChangeHandler)(DJCheckBoxGroupItem *item);
 
+@interface DJCheckBoxGroupImage : NSObject
+
+// 图片
+@property (nullable, nonatomic, strong) UIImage *image;
+@property (nullable, nonatomic, strong) UIImage *bigImage;
+
+// 图片URL
+@property (nullable, nonatomic, strong) NSString *imageUrl;
+@property (nullable, nonatomic, strong) NSString *bigImageUrl;
+
+// 图片size
+@property (nonatomic, assign) CGSize imageSize;
+
+@end
+
 @interface DJCheckBoxGroupItem : DJTableViewItem
 
 // 每行个数 default: 1
@@ -79,11 +94,11 @@ typedef void (^checkBoxValueChangeHandler)(DJCheckBoxGroupItem *item);
 // 文本和选择框的间隔
 @property (nonatomic, assign) CGFloat checkBoxGap;
 
+// 选项内容，文本NSString 图片DJCheckBoxGroupItem
+@property (nullable, nonatomic, strong) NSMutableArray *labelContentArray;
+
 // 文本
-@property (nullable, nonatomic, strong) NSMutableArray *labelTextArray;
-//@property (nullable, nonatomic, strong) NSMutableArray *labelCheckedAttrTextArray;
-//@property (nullable, nonatomic, strong) NSMutableArray *labelUnCheckedAttrTextArray;
-//@property (nullable, nonatomic, strong) NSMutableArray *labelMixedAttrTextArray;
+//@property (nullable, nonatomic, strong) NSMutableArray *labelTextArray;
 
 @property (nonatomic, assign) NSTextAlignment labelTextAlignment;
 
@@ -92,6 +107,18 @@ typedef void (^checkBoxValueChangeHandler)(DJCheckBoxGroupItem *item);
 @property (nullable, nonatomic, strong) UIColor *labelTextCheckedColor;
 @property (nullable, nonatomic, strong) UIColor *labelTextUnCheckedColor;
 @property (nullable, nonatomic, strong) UIColor *labelTextMixedColor;
+
+// 图片
+//@property (nullable, nonatomic, strong) NSMutableArray *labelImageArray;
+// 图片URL
+//@property (nullable, nonatomic, strong) NSMutableArray *labelImageUrlArray;
+// 图片size
+//@property (nullable, nonatomic, strong) NSMutableArray *labelImageSizeArray;
+
+@property (nullable, nonatomic, strong) UIImage *placeholderLabelImage;
+
+@property (nullable, nonatomic, copy) checkBoxLabelImageLongPress imageLongPress;
+
 
 // UI
 @property (nonatomic, assign, readonly) CGFloat titleWidth;
@@ -103,10 +130,10 @@ typedef void (^checkBoxValueChangeHandler)(DJCheckBoxGroupItem *item);
 @property (nullable, nonatomic, copy) checkBoxValueChangeHandler valueChangeHandler;
 
 
-+ (instancetype)itemWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray;
-+ (instancetype)itemWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray checkBoxValueChangeHandler:(nullable checkBoxValueChangeHandler)valueChangeHandler;
-- (instancetype)initWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray;
-- (instancetype)initWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray checkBoxValueChangeHandler:(nullable checkBoxValueChangeHandler)valueChangeHandler;
++ (instancetype)itemWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray;
++ (instancetype)itemWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray checkBoxValueChangeHandler:(nullable checkBoxValueChangeHandler)valueChangeHandler;
+- (instancetype)initWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray;
+- (instancetype)initWithTitle:(nullable NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(nullable NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray checkBoxValueChangeHandler:(nullable checkBoxValueChangeHandler)valueChangeHandler;
 
 - (void)caleCellHeightWithTableView:(UITableView *)tableView;
 

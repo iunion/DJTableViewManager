@@ -106,14 +106,14 @@
     
     [_item addObserver:self forKeyPath:@"enabled" options:NSKeyValueObservingOptionNew context:NULL];
     
-    NSMutableArray *checkBoxLabelArray = [NSMutableArray arrayWithCapacity:item.labelTextArray.count];
+    NSMutableArray *checkBoxLabelArray = [NSMutableArray arrayWithCapacity:item.labelContentArray.count];
     for (NSUInteger i=0; i<DJCheckBoxGroupCell_MaxItemCount; i++)
     {
         DJCheckBoxLabel *checkBoxLabel = self.checkBoxArray[i];
         checkBoxLabel.hidden = YES;
         [checkBoxLabel removeTarget:self action:@selector(checkChangedValue:) forControlEvents:UIControlEventValueChanged];
         
-        if (i < item.labelTextArray.count)
+        if (i < item.labelContentArray.count)
         {
             // checkbox 类型
             checkBoxLabel.boxType = item.boxType;
@@ -163,7 +163,20 @@
             checkBoxLabel.labelTextFont = item.labelTextFont;
             
             checkBoxLabel.boxText = item.boxTextArray[i];
-            checkBoxLabel.labelText = item.labelTextArray[i];
+            
+            id labelContent = item.labelContentArray[i];
+            if ([labelContent isKindOfClass:[NSString class]])
+            {
+                NSString *str = (NSString *)labelContent;
+                checkBoxLabel.labelText = str;
+            }
+            else
+            {
+                DJCheckBoxGroupImage *checkBoxImage = (DJCheckBoxGroupImage *)labelContent;
+                checkBoxLabel.labelImage = checkBoxImage.image;
+                checkBoxLabel.labelImageUrl = checkBoxImage.imageUrl;
+                checkBoxLabel.imageLongPress = item.imageLongPress;
+            }
             
             checkBoxLabel.checkState = item.boxStateArray[i].unsignedIntegerValue;
             

@@ -76,6 +76,7 @@
 		5A8E6B70200CA02F009DC4FB /* DJDateTimeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B6F200CA02F009DC4FB /* DJDateTimeItem.m */; };
 		5A8E6B8C200F4F4E009DC4FB /* DJSegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B8B200F4F4E009DC4FB /* DJSegmentItem.m */; };
 		5A8E6B8F200F4F77009DC4FB /* DJTableViewSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8E6B8E200F4F77009DC4FB /* DJTableViewSegmentCell.m */; };
+		5A96AD04204804EE009DC6D4 /* DJAlignedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A96AD03204804EE009DC6D4 /* DJAlignedImageView.m */; };
 		5ACB4A631F38334C0043A623 /* DJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A621F38334C0043A623 /* DJTableViewCell.m */; };
 		5ACB4A711F3836250043A623 /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A691F3836250043A623 /* NSObject+Category.m */; };
 		5ACB4A721F3836250043A623 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACB4A6B1F3836250043A623 /* NSString+Category.m */; };
@@ -242,6 +243,8 @@
 		5A8E6B8B200F4F4E009DC4FB /* DJSegmentItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSegmentItem.m; sourceTree = "<group>"; };
 		5A8E6B8D200F4F77009DC4FB /* DJTableViewSegmentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewSegmentCell.h; sourceTree = "<group>"; };
 		5A8E6B8E200F4F77009DC4FB /* DJTableViewSegmentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewSegmentCell.m; sourceTree = "<group>"; };
+		5A96AD02204804EE009DC6D4 /* DJAlignedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJAlignedImageView.h; sourceTree = "<group>"; };
+		5A96AD03204804EE009DC6D4 /* DJAlignedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJAlignedImageView.m; sourceTree = "<group>"; };
 		5ACB4A611F38334C0043A623 /* DJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJTableViewCell.h; sourceTree = "<group>"; };
 		5ACB4A621F38334C0043A623 /* DJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJTableViewCell.m; sourceTree = "<group>"; };
 		5ACB4A681F3836250043A623 /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
@@ -436,6 +439,15 @@
 			path = DJDatePicker;
 			sourceTree = "<group>";
 		};
+		5A96AD01204804EE009DC6D4 /* DJAlignedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				5A96AD02204804EE009DC6D4 /* DJAlignedImageView.h */,
+				5A96AD03204804EE009DC6D4 /* DJAlignedImageView.m */,
+			);
+			path = DJAlignedImageView;
+			sourceTree = "<group>";
+		};
 		5ACB4A641F3834B40043A623 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +497,7 @@
 		5ACB4A661F3834C00043A623 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5A96AD01204804EE009DC6D4 /* DJAlignedImageView */,
 				5A000E7420216E98004FA5A0 /* DJCheckBox */,
 				5A79DE781F53FDAD004ADA8A /* DJDatePicker */,
 				5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */,
@@ -933,6 +946,7 @@
 				5A8E6B70200CA02F009DC4FB /* DJDateTimeItem.m in Sources */,
 				5A1250981F4D326600D71E4C /* DJTableViewMaskTextCell.m in Sources */,
 				5A1250551F4C1C5F00D71E4C /* UITextField+Category.m in Sources */,
+				5A96AD04204804EE009DC6D4 /* DJAlignedImageView.m in Sources */,
 				5AEFC98C1F3C3AB000077A9E /* DJSingleLineView.m in Sources */,
 				5A4C1D3D1FFF4DDF004FEB97 /* DJImageTextView.m in Sources */,
 				5AEFCA2B1F4AD56800077A9E /* UIImageView+WebCache.m in Sources */,

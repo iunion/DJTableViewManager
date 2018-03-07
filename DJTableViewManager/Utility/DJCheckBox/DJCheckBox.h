@@ -157,6 +157,8 @@ typedef void (^DJCheckBoxTaped)(DJCheckBox *checkBox);
 - (UIBezierPath *)getDefaultBoxShape;
 - (UIBezierPath *)getDefaultMarkShape;
 
+- (void)handleTapCheckBox:(UIGestureRecognizer *)recognizer;
+
 - (void)setCheckBoxGroup:(nullable DJCheckBoxGroup *)group;
 
 @end

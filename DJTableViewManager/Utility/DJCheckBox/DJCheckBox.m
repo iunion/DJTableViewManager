@@ -231,6 +231,7 @@
 
 - (void)setup
 {
+    self.exclusiveTouch = YES;
     self.backgroundColor = [UIColor clearColor];
     
     // checkbox 状态
@@ -597,7 +598,7 @@
 
 #pragma mark - Gesture Recognizer
 
-- (void)handleTapCheckBox:(UITapGestureRecognizer *)recognizer
+- (void)handleTapCheckBox:(UIGestureRecognizer *)recognizer
 {
     if (UIGestureRecognizerStateBegan == recognizer.state || UIGestureRecognizerStateChanged == recognizer.state)
     {

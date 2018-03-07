@@ -8,13 +8,26 @@
 
 #import "DJCheckBoxGroupItem.h"
 
-//#define DJCheckBoxGroupCell_MaxItemCount    (6)
-//#define DJCheckBoxGroupCell_TitleTop        (6.0f)
-//#define DJCheckBoxGroupCell_TitleLeft       (16.0f)
-//#define DJCheckBoxGroupCell_ItemTopGap      (4.0f)
-//#define DJCheckBoxGroupCell_ItemVGap        (4.0f)
-//#define DJCheckBoxGroupCell_ItemHGap        (6.0f)
-//#define DJCheckBoxGroupCell_ItemHeight      (30.0f)
+#define CheckBoxGroupImageDefaultSize   CGSizeMake(40.0f, 40.0f)
+
+#define CheckBoxGroupImageMaxHeight     200.0f
+
+
+@implementation DJCheckBoxGroupImage
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.imageSize = CheckBoxGroupImageDefaultSize;
+    }
+    
+    return self;
+}
+
+@end
 
 @interface DJCheckBoxGroupItem ()
 
@@ -28,36 +41,35 @@
 @property (nonatomic, assign) CGFloat itemWidth;
 @property (nonatomic, strong) NSMutableArray<NSMutableDictionary *> *itemFrameArray;
 
-
 @end
 
 @implementation DJCheckBoxGroupItem
 
-+ (instancetype)itemWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray
++ (instancetype)itemWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray
 {
-    return [[self alloc] initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelTextArray:labelTextArray];
+    return [[self alloc] initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelContentArray:labelContentArray];
 }
 
-+ (instancetype)itemWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray checkBoxValueChangeHandler:(checkBoxValueChangeHandler)valueChangeHandler
++ (instancetype)itemWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray checkBoxValueChangeHandler:(checkBoxValueChangeHandler)valueChangeHandler
 {
-    return [[self alloc] initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelTextArray:labelTextArray checkBoxValueChangeHandler:valueChangeHandler];
+    return [[self alloc] initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelContentArray:labelContentArray checkBoxValueChangeHandler:valueChangeHandler];
 }
 
-- (instancetype)initWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray
+- (instancetype)initWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray
 {
-    return [self initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelTextArray:labelTextArray checkBoxValueChangeHandler:nil];
+    return [self initWithTitle:title oneLineItemCount:oneLineItemCount maxSelectedCount:maxSelectedCount boxTextArray:boxTextArray labelContentArray:labelContentArray checkBoxValueChangeHandler:nil];
 }
 
-- (instancetype)initWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelTextArray:(NSMutableArray *)labelTextArray checkBoxValueChangeHandler:(checkBoxValueChangeHandler)valueChangeHandler
+- (instancetype)initWithTitle:(NSString *)title oneLineItemCount:(NSUInteger)oneLineItemCount maxSelectedCount:(NSUInteger)maxSelectedCount boxTextArray:(NSMutableArray<NSString *> *)boxTextArray labelContentArray:(NSMutableArray *)labelContentArray checkBoxValueChangeHandler:(checkBoxValueChangeHandler)valueChangeHandler
 {
-    if (![labelTextArray isNotEmpty])
+    if (![labelContentArray isNotEmpty])
     {
         return nil;
     }
     
     if ([boxTextArray isNotEmpty])
     {
-        if (labelTextArray.count != boxTextArray.count)
+        if (labelContentArray.count != boxTextArray.count)
         {
             return nil;
         }
@@ -127,11 +139,11 @@
     self.oneLineItemCount = oneLineItemCount;
     self.maxSelectedCount = maxSelectedCount;
     self.boxTextArray = boxTextArray;
-    self.labelTextArray = labelTextArray;
+    self.labelContentArray = labelContentArray;
     
     self.boxStateArray = [NSMutableArray array];
 
-    for (NSUInteger i=0; i<self.labelTextArray.count; i++)
+    for (NSUInteger i=0; i<self.labelContentArray.count; i++)
     {
         [self.boxStateArray addObject:@(DJCheckBoxState_UnChecked)];
     }
@@ -191,10 +203,42 @@
     
     self.itemFrameArray = [NSMutableArray array];
     NSMutableArray *frameArray = [NSMutableArray arrayWithCapacity:self.oneLineItemCount];
-    for (NSUInteger i=0; i<self.labelTextArray.count; i++)
+    for (NSUInteger i=0; i<self.labelContentArray.count; i++)
     {
-        NSString *str = self.labelTextArray[i];
-        CGFloat itemHeight = ceil([str heightForFont:self.labelTextFont width:itemWidth]);
+        CGFloat itemHeight = 0.0f;
+        id labelContent = self.labelContentArray[i];
+        if ([labelContent isKindOfClass:[NSString class]])
+        {
+            NSString *str = (NSString *)labelContent;
+            itemHeight = ceil([str heightForFont:self.labelTextFont width:itemWidth]);
+        }
+        else
+        {
+            DJCheckBoxGroupImage *checkBoxImage = (DJCheckBoxGroupImage *)labelContent;
+            CGSize imageSize = CheckBoxGroupImageDefaultSize;
+            if (checkBoxImage.image)
+            {
+                imageSize = checkBoxImage.image.size;
+            }
+            else if (!CGSizeEqualToSize(checkBoxImage.imageSize, CGSizeZero))
+            {
+                imageSize = checkBoxImage.imageSize;
+            }
+            
+            CGSize maxSize = CGSizeMake(itemWidth-self.checkWidth-self.checkBoxGap, CheckBoxGroupImageMaxHeight);
+            CGFloat scaleWidth = imageSize.width/maxSize.width;
+            CGFloat scaleHeight = imageSize.height/maxSize.height;
+            CGFloat scaleMax = MAX(scaleWidth, scaleHeight);
+            if (scaleMax > 1)
+            {
+                itemHeight = ceil(imageSize.height/scaleMax);
+            }
+            else
+            {
+                itemHeight = imageSize.height;
+            }
+        }
+        
         if (itemHeight > maxItemHeight)
         {
             maxItemHeight = itemHeight;
