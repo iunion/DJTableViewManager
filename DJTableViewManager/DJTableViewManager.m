@@ -126,8 +126,7 @@
     self[@"DJDateTimeItem"] = @"DJTableViewDateTimeCell";
     self[@"DJSegmentItem"] = @"DJTableViewSegmentCell";
     self[@"DJCheckBoxGroupItem"] = @"DJTableViewCheckBoxGroupCell";
-//    self[@"DJRadioItem"] = @"DJTableViewOptionCell";
-//    self[@"DJMultipleChoiceItem"] = @"DJTableViewOptionCell";
+    self[@"DJSliderItem"] = @"DJTableViewSliderCell";
     
     // add your Class here
 }

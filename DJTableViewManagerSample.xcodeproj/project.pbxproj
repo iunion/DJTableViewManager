@@ -65,6 +65,8 @@
 		5A4C1D77200712BA004FEB97 /* DJBoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D76200712BA004FEB97 /* DJBoolItem.m */; };
 		5A4C1D7A20071709004FEB97 /* DJTableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7920071709004FEB97 /* DJTableViewBoolCell.m */; };
 		5A4C1D7C2008530D004FEB97 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7B2008530C004FEB97 /* photo@2x.png */; };
+		5A6DA535205F6698000CFB8D /* DJSliderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DA534205F6698000CFB8D /* DJSliderItem.m */; };
+		5A6DA538205F670A000CFB8D /* DJTableViewSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */; };
 		5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */; };
 		5A79DDDC1F4D66A4004ADA8A /* NSDecimalNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDB1F4D66A4004ADA8A /* NSDecimalNumber+Category.m */; };
 		5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDE1F4D66AE004ADA8A /* NSNumber+Category.m */; };
@@ -222,6 +224,10 @@
 		5A4C1D7820071709004FEB97 /* DJTableViewBoolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewBoolCell.h; sourceTree = "<group>"; };
 		5A4C1D7920071709004FEB97 /* DJTableViewBoolCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewBoolCell.m; sourceTree = "<group>"; };
 		5A4C1D7B2008530C004FEB97 /* photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@2x.png"; sourceTree = "<group>"; };
+		5A6DA533205F6698000CFB8D /* DJSliderItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJSliderItem.h; sourceTree = "<group>"; };
+		5A6DA534205F6698000CFB8D /* DJSliderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSliderItem.m; sourceTree = "<group>"; };
+		5A6DA536205F670A000CFB8D /* DJTableViewSliderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewSliderCell.h; sourceTree = "<group>"; };
+		5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewSliderCell.m; sourceTree = "<group>"; };
 		5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJNumberTextItem.h; sourceTree = "<group>"; };
 		5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJNumberTextItem.m; sourceTree = "<group>"; };
 		5A79DDDA1F4D66A4004ADA8A /* NSDecimalNumber+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Category.h"; sourceTree = "<group>"; };
@@ -459,6 +465,8 @@
 				5A8E6B6F200CA02F009DC4FB /* DJDateTimeItem.m */,
 				5A8E6B8A200F4F4E009DC4FB /* DJSegmentItem.h */,
 				5A8E6B8B200F4F4E009DC4FB /* DJSegmentItem.m */,
+				5A6DA533205F6698000CFB8D /* DJSliderItem.h */,
+				5A6DA534205F6698000CFB8D /* DJSliderItem.m */,
 				5A12504D1F4BF3F300D71E4C /* DJTextItem.h */,
 				5A12504E1F4BF3F300D71E4C /* DJTextItem.m */,
 				5A12506C1F4D207100D71E4C /* DJMaskTextItem.h */,
@@ -482,6 +490,8 @@
 				5A8E6B6C200CA00C009DC4FB /* DJTableViewDateTimeCell.m */,
 				5A8E6B8D200F4F77009DC4FB /* DJTableViewSegmentCell.h */,
 				5A8E6B8E200F4F77009DC4FB /* DJTableViewSegmentCell.m */,
+				5A6DA536205F670A000CFB8D /* DJTableViewSliderCell.h */,
+				5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */,
 				5A1250501F4C088D00D71E4C /* DJTableViewTextCell.h */,
 				5A1250511F4C088D00D71E4C /* DJTableViewTextCell.m */,
 				5A1250961F4D326600D71E4C /* DJTableViewMaskTextCell.h */,
@@ -917,6 +927,7 @@
 				5A4C1D6520049F71004FEB97 /* UIFont+Category.m in Sources */,
 				5AD9B8B4200C4FF20097F17F /* DJTableViewPickerCell.m in Sources */,
 				5ADDB3831EA89C0B00CFECA6 /* DJTableViewSection.m in Sources */,
+				5A6DA538205F670A000CFB8D /* DJTableViewSliderCell.m in Sources */,
 				5A79DE801F53FE0E004ADA8A /* NSDate+Category.m in Sources */,
 				5A8E6B6D200CA00C009DC4FB /* DJTableViewDateTimeCell.m in Sources */,
 				5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */,
@@ -938,6 +949,7 @@
 				5A4C1D7A20071709004FEB97 /* DJTableViewBoolCell.m in Sources */,
 				5A79DE7C1F53FDAD004ADA8A /* DJDatePicker.m in Sources */,
 				5A12504F1F4BF3F300D71E4C /* DJTextItem.m in Sources */,
+				5A6DA535205F6698000CFB8D /* DJSliderItem.m in Sources */,
 				5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */,
 				5ACB4A631F38334C0043A623 /* DJTableViewCell.m in Sources */,
 				5AEFCA221F4AD56800077A9E /* SDWebImageDownloader.m in Sources */,

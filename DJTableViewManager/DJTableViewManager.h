@@ -23,6 +23,7 @@
 #import "DJDateTimeItem.h"
 #import "DJSegmentItem.h"
 #import "DJCheckBoxGroupItem.h"
+#import "DJSliderItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
@@ -32,6 +33,7 @@
 #import "DJTableViewDateTimeCell.h"
 #import "DJTableViewSegmentCell.h"
 #import "DJTableViewCheckBoxGroupCell.h"
+#import "DJTableViewSliderCell.h"
 
 @protocol DJTableViewManagerDelegate;
 

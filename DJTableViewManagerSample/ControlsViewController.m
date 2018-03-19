@@ -7,6 +7,7 @@
 //
 
 #import "ControlsViewController.h"
+#import "NSDecimalNumber+Category.h"
 
 @interface ControlsViewController ()
 
@@ -62,6 +63,7 @@
 
     DJNumberTextItem *item7 = [DJNumberTextItem itemWithTitle:@"NumberText" numberValue:nil placeholder:@"0.00"];
     item7.showWithDecimalStyle = YES;
+    item7.minNumberValue = [NSDecimalNumber decimalNumberWithFloat:100.0f];
 
 
     [section1 addItem:item3];
@@ -123,6 +125,10 @@
     item13.labelTextCheckedColor = [UIColor blueColor];
     [item13 caleCellHeightWithTableView:self.tableView];
     [section2 addItem:item13];
+    
+    
+    DJSliderItem *item14 = [DJSliderItem itemWithTitle:@"slider" value:0.3f];
+    [section2 addItem:item14];
 }
 
 @end
