@@ -49,7 +49,7 @@
     self.verifyCodeItem.keyboardType = UIKeyboardTypeNumberPad;
     self.verifyCodeItem.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.verifyCodeItem.underLineDrawType = DJTableViewCell_UnderLineDrawType_SeparatorAllLeftInset;
-    self.verifyCodeItem.onChangeCharacterInRange =  ^ BOOL (DJTextItem *item, NSRange range, NSString *replacementString) {
+    self.verifyCodeItem.onChangeCharacterInRange =  ^ BOOL (DJInputItem *item, NSRange range, NSString *replacementString) {
         
         if (range.length == 1)
         {
@@ -102,7 +102,7 @@
     self.verifyCodeItem1.keyboardType = UIKeyboardTypeNumberPad;
     self.verifyCodeItem1.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.verifyCodeItem1.underLineDrawType = DJTableViewCell_UnderLineDrawType_SeparatorAllLeftInset;
-    self.verifyCodeItem1.onChangeCharacterInRange =  ^ BOOL (DJTextItem *item, NSRange range, NSString *replacementString) {
+    self.verifyCodeItem1.onChangeCharacterInRange =  ^ BOOL (DJInputItem *item, NSRange range, NSString *replacementString) {
         
         if (range.length == 1)
         {

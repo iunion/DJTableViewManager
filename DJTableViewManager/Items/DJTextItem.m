@@ -10,48 +10,16 @@
 
 @implementation DJTextItem
 
-+ (instancetype)itemWithTitle:(NSString *)title value:(NSString *)value
-{
-    return [[self alloc] initWithTitle:title value:value];
-}
-
-+ (instancetype)itemWithTitle:(NSString *)title value:(NSString *)value placeholder:(NSString *)placeholder
-{
-    return [[self alloc] initWithTitle:title value:value placeholder:placeholder];
-}
-
-- (instancetype)initWithTitle:(NSString *)title value:(NSString *)value
-{
-    return [self initWithTitle:title value:value placeholder:nil];
-}
-
 - (instancetype)initWithTitle:(NSString *)title value:(NSString *)value placeholder:(NSString *)placeholder
 {
-    self = [super init];
+    self = [super initWithTitle:title value:value placeholder:placeholder];
     
     if (self)
     {
-        self.isShowHighlightBg = NO;
-        
-        self.editable = YES;
-        self.title = title;
-        self.value = value;
-        self.placeholder = placeholder;
         self.textFieldSeparatorInset = UIEdgeInsetsZero;
     }
     
     return self;
-}
-
-- (void)setEditable:(BOOL)editable
-{
-    if (!self.enabled)
-    {
-        NSLog(@"Item is disabled");
-        editable = NO;
-    }
-    
-    _editable = editable;
 }
 
 @end

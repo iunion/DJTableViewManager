@@ -67,6 +67,10 @@
 		5A4C1D7C2008530D004FEB97 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7B2008530C004FEB97 /* photo@2x.png */; };
 		5A6DA535205F6698000CFB8D /* DJSliderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DA534205F6698000CFB8D /* DJSliderItem.m */; };
 		5A6DA538205F670A000CFB8D /* DJTableViewSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */; };
+		5A7443A320889E0B00615371 /* DJPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7443A220889E0B00615371 /* DJPlaceholderTextView.m */; };
+		5A7443A62089900D00615371 /* DJLongTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7443A52089900D00615371 /* DJLongTextItem.m */; };
+		5A7443AA208998E100615371 /* DJInputItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7443A9208998E100615371 /* DJInputItem.m */; };
+		5A7443AD2089C00600615371 /* DJTableViewLongTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7443AC2089C00600615371 /* DJTableViewLongTextCell.m */; };
 		5A79DDD91F4D61CC004ADA8A /* DJNumberTextItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */; };
 		5A79DDDC1F4D66A4004ADA8A /* NSDecimalNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDB1F4D66A4004ADA8A /* NSDecimalNumber+Category.m */; };
 		5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A79DDDE1F4D66AE004ADA8A /* NSNumber+Category.m */; };
@@ -228,6 +232,14 @@
 		5A6DA534205F6698000CFB8D /* DJSliderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJSliderItem.m; sourceTree = "<group>"; };
 		5A6DA536205F670A000CFB8D /* DJTableViewSliderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewSliderCell.h; sourceTree = "<group>"; };
 		5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewSliderCell.m; sourceTree = "<group>"; };
+		5A7443A120889E0B00615371 /* DJPlaceholderTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJPlaceholderTextView.h; sourceTree = "<group>"; };
+		5A7443A220889E0B00615371 /* DJPlaceholderTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJPlaceholderTextView.m; sourceTree = "<group>"; };
+		5A7443A42089900D00615371 /* DJLongTextItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJLongTextItem.h; sourceTree = "<group>"; };
+		5A7443A52089900D00615371 /* DJLongTextItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJLongTextItem.m; sourceTree = "<group>"; };
+		5A7443A8208998E100615371 /* DJInputItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJInputItem.h; sourceTree = "<group>"; };
+		5A7443A9208998E100615371 /* DJInputItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJInputItem.m; sourceTree = "<group>"; };
+		5A7443AB2089C00600615371 /* DJTableViewLongTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewLongTextCell.h; sourceTree = "<group>"; };
+		5A7443AC2089C00600615371 /* DJTableViewLongTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewLongTextCell.m; sourceTree = "<group>"; };
 		5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJNumberTextItem.h; sourceTree = "<group>"; };
 		5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJNumberTextItem.m; sourceTree = "<group>"; };
 		5A79DDDA1F4D66A4004ADA8A /* NSDecimalNumber+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Category.h"; sourceTree = "<group>"; };
@@ -435,6 +447,24 @@
 			path = DJVerifiTimeManager;
 			sourceTree = "<group>";
 		};
+		5A7443A020889DED00615371 /* DJPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				5A7443A120889E0B00615371 /* DJPlaceholderTextView.h */,
+				5A7443A220889E0B00615371 /* DJPlaceholderTextView.m */,
+			);
+			path = DJPlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		5A7443A7208998CB00615371 /* DJInputItem */ = {
+			isa = PBXGroup;
+			children = (
+				5A7443A8208998E100615371 /* DJInputItem.h */,
+				5A7443A9208998E100615371 /* DJInputItem.m */,
+			);
+			path = DJInputItem;
+			sourceTree = "<group>";
+		};
 		5A79DE781F53FDAD004ADA8A /* DJDatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +487,7 @@
 		5ACB4A641F3834B40043A623 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				5A7443A7208998CB00615371 /* DJInputItem */,
 				5A4C1D75200712BA004FEB97 /* DJBoolItem.h */,
 				5A4C1D76200712BA004FEB97 /* DJBoolItem.m */,
 				5AD9B8AF200C45E80097F17F /* DJPickerItem.h */,
@@ -473,6 +504,8 @@
 				5A12506D1F4D207100D71E4C /* DJMaskTextItem.m */,
 				5A79DDD71F4D61CC004ADA8A /* DJNumberTextItem.h */,
 				5A79DDD81F4D61CC004ADA8A /* DJNumberTextItem.m */,
+				5A7443A42089900D00615371 /* DJLongTextItem.h */,
+				5A7443A52089900D00615371 /* DJLongTextItem.m */,
 				5A000F5B202C3D94004FA5A0 /* DJCheckBoxGroupItem.h */,
 				5A000F5C202C3D94004FA5A0 /* DJCheckBoxGroupItem.m */,
 			);
@@ -498,6 +531,8 @@
 				5A1250971F4D326600D71E4C /* DJTableViewMaskTextCell.m */,
 				5A79DDE01F4D693A004ADA8A /* DJTableViewNumberTextCell.h */,
 				5A79DDE11F4D693A004ADA8A /* DJTableViewNumberTextCell.m */,
+				5A7443AB2089C00600615371 /* DJTableViewLongTextCell.h */,
+				5A7443AC2089C00600615371 /* DJTableViewLongTextCell.m */,
 				5A000F5E202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.h */,
 				5A000F5F202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m */,
 			);
@@ -511,6 +546,7 @@
 				5A000E7420216E98004FA5A0 /* DJCheckBox */,
 				5A79DE781F53FDAD004ADA8A /* DJDatePicker */,
 				5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */,
+				5A7443A020889DED00615371 /* DJPlaceholderTextView */,
 				5AEFC9861F3C3AB000077A9E /* DJSingleLineView */,
 				5A4C1D6D2005E818004FEB97 /* DJVerifiTimeManager */,
 				5ACB4A671F3836250043A623 /* Foundation */,
@@ -900,6 +936,7 @@
 				5ACB4A731F3836250043A623 /* UIView+Positioning.m in Sources */,
 				5A1250581F4C23CB00D71E4C /* NSString+Format.m in Sources */,
 				5A12504B1F4BED9600D71E4C /* ControlsViewController.m in Sources */,
+				5A7443AA208998E100615371 /* DJInputItem.m in Sources */,
 				5AEFCA241F4AD56800077A9E /* SDWebImageManager.m in Sources */,
 				5AEFCA201F4AD56800077A9E /* SDWebImageCompat.m in Sources */,
 				5AEFCA251F4AD56800077A9E /* SDWebImagePrefetcher.m in Sources */,
@@ -938,12 +975,15 @@
 				5A4C1D471FFF586A004FEB97 /* AccessoryViewVC.m in Sources */,
 				5AEFCA281F4AD56800077A9E /* UIImage+MultiFormat.m in Sources */,
 				5AD9B8B1200C45E80097F17F /* DJPickerItem.m in Sources */,
+				5A7443A62089900D00615371 /* DJLongTextItem.m in Sources */,
 				5AEFCA211F4AD56800077A9E /* SDWebImageDecoder.m in Sources */,
 				5ADDB30A1EA8600B00CFECA6 /* AppDelegate.m in Sources */,
+				5A7443AD2089C00600615371 /* DJTableViewLongTextCell.m in Sources */,
 				5AEFCA1C1F4AD56800077A9E /* NSData+ImageContentType.m in Sources */,
 				5A000F63202D39C9004FA5A0 /* DJCheckBoxLabel.m in Sources */,
 				5AEFCA231F4AD56800077A9E /* SDWebImageDownloaderOperation.m in Sources */,
 				5ADDB3071EA8600B00CFECA6 /* main.m in Sources */,
+				5A7443A320889E0B00615371 /* DJPlaceholderTextView.m in Sources */,
 				5AEFCA1F1F4AD56800077A9E /* SDImageCacheConfig.m in Sources */,
 				5ACB4A711F3836250043A623 /* NSObject+Category.m in Sources */,
 				5A4C1D7A20071709004FEB97 /* DJTableViewBoolCell.m in Sources */,
@@ -1114,6 +1154,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DJTableViewManagerSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1128,6 +1172,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DJTableViewManagerSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

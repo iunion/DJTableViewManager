@@ -144,7 +144,7 @@
     [super cellWillAppear];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    self.textLabel.text = self.item.title.length == 0 ? @" " : self.item.title;
+    //self.textLabel.text = self.item.title.length == 0 ? @" " : self.item.title;
     self.textField.text = self.item.value;
 
     if (self.item.textFieldTextColor)
@@ -189,7 +189,6 @@
     self.actionBar.barStyle = self.item.keyboardAppearance == UIKeyboardAppearanceAlert ? UIBarStyleBlack : UIBarStyleDefault;
     
     self.enabled = self.item.enabled;
-    // add by dj
     self.editable = self.item.editable;
 }
 

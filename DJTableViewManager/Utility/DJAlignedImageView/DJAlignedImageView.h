@@ -55,11 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)startAnimating;
 - (void)stopAnimating;
-#if UIKIT_DEFINE_AS_PROPERTIES
-@property(nonatomic, readonly, getter=isAnimating) BOOL animating;
-#else
 - (BOOL)isAnimating;
-#endif
 
 - (instancetype)initWithImage:(nullable UIImage *)image;
 - (instancetype)initWithImage:(nullable UIImage *)image highlightedImage:(nullable UIImage *)highlightedImage;
