@@ -129,6 +129,17 @@
     
     DJSliderItem *item14 = [DJSliderItem itemWithTitle:@"slider" value:0.3f];
     [section2 addItem:item14];
+    
+    DJLongTextItem *item15 = [DJLongTextItem itemWithTitle:@"Multiline text item:" value:nil placeholder:@"DJLongTextItem"];
+    item15.charactersLimit = 2000;
+    item15.editable = NO;
+    item15.textViewLeftGap = 0.0f;
+    item15.textViewTopGap = 0.0f;
+    item15.showTextViewBorder = NO;
+    item15.textViewFont = [UIFont systemFontOfSize:16.0f];
+    item15.value = @"DJSliderItem *item14 = [DJSliderItem itemWithTitle:@\"slider\" value:0.3f]";
+    item15.cellHeight = 100;
+    [section2 addItem:item15];
 }
 
 @end

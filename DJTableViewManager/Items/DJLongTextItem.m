@@ -24,6 +24,8 @@
         self.textLabelTopGap = 8.0f;
         self.textViewTopGap = 8.0f;
         self.textViewLeftGap = 4.0f;
+        
+        self.showTextViewBorder = YES;
     }
     
     return self;

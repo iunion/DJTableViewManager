@@ -53,14 +53,15 @@
     self.textLabel.backgroundColor = [UIColor clearColor];
     
     self.textView = [[DJPlaceholderTextView alloc] initWithFrame:CGRectZero];
+    self.textView.backgroundColor = [UIColor clearColor];
     self.textView.inputAccessoryView = self.actionBar;
     self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.textView.delegate = self;
 
-    self.textView.layer.cornerRadius = 4.0f;
-    self.textView.layer.borderWidth = SINGLE_LINE_WIDTH;
-    self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.textView.layer.masksToBounds = YES;
+//    self.textView.layer.cornerRadius = 4.0f;
+//    self.textView.layer.borderWidth = SINGLE_LINE_WIDTH;
+//    self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+//    self.textView.layer.masksToBounds = YES;
 
     [self.contentView addSubview:self.textView];
 }
@@ -118,7 +119,20 @@
     
     self.enabled = self.item.enabled;
     self.editable = self.item.editable;
-    
+
+    if (self.item.showTextViewBorder)
+    {
+        self.textView.layer.cornerRadius = 4.0f;
+        self.textView.layer.borderWidth = SINGLE_LINE_WIDTH;
+        self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        self.textView.layer.masksToBounds = YES;
+    }
+    else
+    {
+        self.textView.layer.cornerRadius = 0.0f;
+        self.textView.layer.borderWidth = 0.0f;
+        self.textView.layer.masksToBounds = NO;
+    }
     //self.textView.backgroundColor = [UIColor redColor];
 }
 
