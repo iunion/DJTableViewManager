@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, strong) UIFont *textViewFont;
 @property (nullable, nonatomic, strong) UIColor *textViewTextColor;
 @property (nonatomic, assign) NSTextAlignment textViewTextAlignment;
+@property (nullable, nonatomic, strong) UIColor *textViewBgColor;
 
 @property (nonatomic, assign) NSRange textViewSelectedRange;
 @property (nonatomic, assign) BOOL textViewSelectable;

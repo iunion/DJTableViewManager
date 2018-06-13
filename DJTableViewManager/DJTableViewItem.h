@@ -40,16 +40,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, strong) NSMutableAttributedString *titleAttrStr;
 @property (nullable, nonatomic, copy) NSString *detailLabelText;
-@property (strong, nonatomic, nullable) NSMutableAttributedString *detailAttrStr;
+@property (nullable, nonatomic, strong) NSMutableAttributedString *detailAttrStr;
 // 文本对齐方式，只适用于title，detailLabelText
 @property (nonatomic, assign) NSTextAlignment textAlignment;
-@property (assign, nonatomic) NSTextAlignment detailTextAlignment;
+@property (nonatomic, assign) NSTextAlignment detailTextAlignment;
 // 文本颜色
 @property (nullable, nonatomic, strong) UIColor *textColor;
 @property (nullable, nonatomic, strong) UIColor *detailTextColor;
 // 字体
 @property (nullable, nonatomic, strong) UIFont *textFont;
 @property (nullable, nonatomic, strong) UIFont *detailTextFont;
+// detailLabel文本行数
+@property (nonatomic, assign) NSInteger detailNumberOfLines;
 
 // 添加aaccessoryView左边额外的img
 //@property (nullable, nonatomic, strong) UIImage *aaccessoryExtrImage;
@@ -147,6 +149,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deselectRowAnimated:(BOOL)animated;
 - (void)reloadRowWithAnimation:(UITableViewRowAnimation)animation;
 - (void)deleteRowWithAnimation:(UITableViewRowAnimation)animation;
+
+- (void)caleCellHeightWithTableView:(UITableView *)tableView;
+
 
 @end
 

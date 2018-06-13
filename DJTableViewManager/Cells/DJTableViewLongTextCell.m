@@ -94,18 +94,29 @@
         self.textView.placeholderColor = self.item.textViewPlaceholderColor;
     }
     self.textView.placeholderLineBreakMode = self.item.textViewPlaceholderLineBreakMode;
-    
-    self.textView.font = self.item.textViewFont;
-    if (self.item.textViewTextColor)
+
+    // 分开设置typingAttributes
+    if (self.item.textViewLinkTextAttributes)
     {
-        self.textView.textColor = self.item.textViewTextColor;
+        self.textView.typingAttributes = self.item.textViewLinkTextAttributes;
     }
-    self.textView.textAlignment = self.item.textViewTextAlignment;
+    else
+    {
+        self.textView.font = self.item.textViewFont;
+        if (self.item.textViewTextColor)
+        {
+            self.textView.textColor = self.item.textViewTextColor;
+        }
+        self.textView.textAlignment = self.item.textViewTextAlignment;
+    }
     
+    if (self.item.textViewBgColor)
+    {
+        self.textView.backgroundColor = self.item.textViewBgColor;
+    }
+
     self.textView.selectable = self.item.textViewSelectable;
     
-    self.textView.typingAttributes = self.item.textViewLinkTextAttributes;
-
     self.textView.autocapitalizationType = self.item.autocapitalizationType;
     self.textView.autocorrectionType = self.item.autocorrectionType;
     self.textView.spellCheckingType = self.item.spellCheckingType;

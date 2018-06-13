@@ -112,10 +112,12 @@
     
     self[@"__NSCFConstantString"] = @"DJTableViewCell";
     self[@"__NSCFString"] = @"DJTableViewCell";
-    if (IS_IOS_9_OR_LATER)
+    
+    if (NSClassFromString(@"NSTaggedPointerString"))
     {
         self[@"NSTaggedPointerString"] = @"DJTableViewCell";
     }
+
     self[@"NSString"] = @"DJTableViewCell";
     self[@"DJTableViewItem"] = @"DJTableViewCell";
     self[@"DJTextItem"] = @"DJTableViewTextCell";

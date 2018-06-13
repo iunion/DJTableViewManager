@@ -183,6 +183,11 @@
     {
         DJTableViewItem *item = (DJTableViewItem *)self.item;
         
+        if (self.selectionStyle != UITableViewCellSelectionStyleNone)
+        {
+            self.selectionStyle = item.selectionStyle;
+        }
+        
         if (item.titleAttrStr)
         {
             self.textLabel.attributedText = item.titleAttrStr;
@@ -243,13 +248,10 @@
         }
         self.detailTextLabel.textAlignment = item.detailTextAlignment;
         
+        self.detailTextLabel.numberOfLines = item.detailNumberOfLines;
+
         self.accessoryType = item.accessoryType;
         self.accessoryView = item.accessoryView;
-        
-        if (self.selectionStyle != UITableViewCellSelectionStyleNone)
-        {
-            self.selectionStyle = item.selectionStyle;
-        }
         
         self.imageView.image = item.image;
         if (item.imageUrl)
@@ -453,6 +455,11 @@
     backgroundFrame.size.width = self.backgroundView.frame.size.width - self.section.style.backgroundImageMargin * 2;
     self.backgroundImageView.frame = backgroundFrame;
     self.selectedBackgroundImageView.frame = backgroundFrame;
+    
+    if (self.item.cellStyle == UITableViewCellStyleValue2)
+    {
+        self.textLabel.textAlignment = self.item.textAlignment;
+    }
 }
 
 - (void)layoutDetailView:(UIView *)view minimumWidth:(CGFloat)minimumWidth

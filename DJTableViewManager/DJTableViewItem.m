@@ -158,6 +158,7 @@
     self.detailLabelText = subTitle;
     self.detailTextFont = UI_DJ_FONT(12.0f);
     self.detailTextColor = [UIColor grayColor];
+    self.detailNumberOfLines = 1;
     
     self.imageW = 30;
     self.imageH = 30;
@@ -271,6 +272,55 @@
     NSInteger row = self.indexPath.row;
     [section removeItemAtIndex:self.indexPath.row];
     [section.tableViewManager.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section.index]] withRowAnimation:animation];
+}
+
+- (void)caleCellHeightWithTableView:(UITableView *)tableView
+{
+    if (self.cellStyle == UITableViewCellStyleDefault)
+    {
+        return;
+    }
+    if (self.detailNumberOfLines == 1)
+    {
+        return;
+    }
+    
+    CGFloat height = 10.0f;
+    
+    CGFloat titleWidth = UI_SCREEN_WIDTH-(tableView.contentInset.left+tableView.contentInset.right)-30.0f;
+    
+    CGFloat titleHeight;
+    if (self.titleAttrStr)
+    {
+        CGSize maxSize = CGSizeMake(titleWidth, CGFLOAT_MAX);
+        titleHeight = ceil([self.titleAttrStr sizeToFit:maxSize lineBreakMode:NSLineBreakByCharWrapping].height);
+    }
+    else
+    {
+        titleHeight = ceil([self.title heightForFont:self.textFont width:titleWidth]);
+    }
+    
+    height += titleHeight;
+    
+    height += 8.0f;
+    
+    CGFloat itemWidth = titleWidth;
+    CGFloat itemHeight;
+    if (self.detailAttrStr)
+    {
+        CGSize maxSize = CGSizeMake(itemWidth, CGFLOAT_MAX);
+        itemHeight = ceil([self.detailAttrStr sizeToFit:maxSize lineBreakMode:NSLineBreakByCharWrapping].height);
+    }
+    else
+    {
+        itemHeight = ceil([self.detailLabelText heightForFont:self.detailTextFont width:itemWidth]);
+    }
+    
+    height += itemHeight;
+    
+    height += 10.0f;
+    
+    self.cellHeight = height;
 }
 
 @end
