@@ -53,6 +53,13 @@ NS_ASSUME_NONNULL_BEGIN
 // detailLabel文本行数
 @property (nonatomic, assign) NSInteger detailNumberOfLines;
 
+// for UITableViewCellStyleSubtitle with caleCellHeightWithTableView
+// 使用caleCellHeightWithTableView计算时的上下间距
+@property (nonatomic, assign) CGFloat contentTopBottomGap;
+// UITableViewCellStyleSubtitle类型的title和subTitle间距
+@property (nonatomic, assign) CGFloat contentMiddleGap;
+
+
 // 添加aaccessoryView左边额外的img
 //@property (nullable, nonatomic, strong) UIImage *aaccessoryExtrImage;
 @property (nullable, nonatomic, strong) UIView *accessoryView;

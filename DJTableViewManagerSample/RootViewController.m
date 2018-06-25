@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "UnderLinesVC.h"
 #import "ControlsViewController.h"
+#import "StandardViewVC.h"
 #import "AccessoryViewVC.h"
 #import "VerifiVC.h"
 
@@ -35,11 +36,15 @@
     DJTableViewSection *section = [DJTableViewSection section];
     [self.manager addSection:section];
     
-    DJTableViewItem *item1 = [DJTableViewItem itemWithTitle:@"UnderLines" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
+    DJTableViewItem *item0 = [DJTableViewItem itemWithTitle:@"UnderLines" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
         [item deselectRowAnimated:YES]; // same as [weakSelf.tableView deselectRowAtIndexPath:item.indexPath animated:YES];
         [weakSelf.navigationController pushViewController:[[UnderLinesVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
     
+    DJTableViewItem *item1 = [DJTableViewItem itemWithTitle:@"StandardView" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
+        [weakSelf.navigationController pushViewController:[[StandardViewVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
+    }];
+
     DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"AccessoryView" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(DJTableViewItem *item) {
         [weakSelf.navigationController pushViewController:[[AccessoryViewVC alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
@@ -52,6 +57,7 @@
         [weakSelf.navigationController pushViewController:[[ControlsViewController alloc] initWithStyle:UITableViewStylePlain] animated:YES];
     }];
 
+    [section addItem:item0];
     [section addItem:item1];
     [section addItem:item2];
     [section addItem:item3];

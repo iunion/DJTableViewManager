@@ -123,6 +123,7 @@
 		5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA171F4AD56800077A9E /* UIView+WebCache.m */; };
 		5AEFCA2D1F4AD56800077A9E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */; };
 		5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */; };
+		87E2C7AA20E099E100F8E254 /* StandardViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E2C7A920E099E100F8E254 /* StandardViewVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +348,8 @@
 		5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5AEFCA2E1F4BCD9800077A9E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		87E2C7A820E099E100F8E254 /* StandardViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandardViewVC.h; sourceTree = "<group>"; };
+		87E2C7A920E099E100F8E254 /* StandardViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardViewVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -641,6 +644,8 @@
 				5A4C1D321FFF1AA3004FEB97 /* UnderLinesVC.h */,
 				5A4C1D331FFF1AA3004FEB97 /* UnderLinesVC.m */,
 				5A4C1D341FFF1AA3004FEB97 /* UnderLinesVC.xib */,
+				87E2C7A820E099E100F8E254 /* StandardViewVC.h */,
+				87E2C7A920E099E100F8E254 /* StandardViewVC.m */,
 				5A4C1D451FFF586A004FEB97 /* AccessoryViewVC.h */,
 				5A4C1D461FFF586A004FEB97 /* AccessoryViewVC.m */,
 				5A4C1D6A2005E6E7004FEB97 /* VerifiVC.h */,
@@ -971,6 +976,7 @@
 				5A12505B1F4C240B00D71E4C /* NSString+RegEx.m in Sources */,
 				5AEFCA271F4AD56800077A9E /* UIImage+GIF.m in Sources */,
 				5AEFCA1D1F4AD56800077A9E /* NSImage+WebCache.m in Sources */,
+				87E2C7AA20E099E100F8E254 /* StandardViewVC.m in Sources */,
 				5ACB4A721F3836250043A623 /* NSString+Category.m in Sources */,
 				5A4C1D471FFF586A004FEB97 /* AccessoryViewVC.m in Sources */,
 				5AEFCA281F4AD56800077A9E /* UIImage+MultiFormat.m in Sources */,

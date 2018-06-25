@@ -90,6 +90,9 @@
         self.selectBgColor = UI_CELL_SELECT_BGCOLOR;
         self.isShowHighlightBg = YES;
         self.highlightBgColor = [UI_CELL_HIGHLIGHT_BGCOLOR colorWithAlphaComponent:0.15];
+
+        self.contentTopBottomGap = 10.0f;
+        self.contentMiddleGap = 8.0f;
     }
     
     return self;
@@ -285,7 +288,7 @@
         return;
     }
     
-    CGFloat height = 10.0f;
+    CGFloat height = self.contentTopBottomGap;
     
     CGFloat titleWidth = UI_SCREEN_WIDTH-(tableView.contentInset.left+tableView.contentInset.right)-30.0f;
     
@@ -302,7 +305,7 @@
     
     height += titleHeight;
     
-    height += 8.0f;
+    height += self.contentMiddleGap;
     
     CGFloat itemWidth = titleWidth;
     CGFloat itemHeight;
@@ -318,7 +321,7 @@
     
     height += itemHeight;
     
-    height += 10.0f;
+    height += self.contentTopBottomGap;
     
     self.cellHeight = height;
 }

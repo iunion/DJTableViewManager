@@ -460,6 +460,11 @@
     {
         self.textLabel.textAlignment = self.item.textAlignment;
     }
+    else if (self.item.cellStyle == UITableViewCellStyleSubtitle)
+    {
+        self.textLabel.top = self.textLabel.top-self.item.contentMiddleGap*0.5;
+        self.detailTextLabel.top = self.textLabel.bottom+self.item.contentMiddleGap;
+    }
 }
 
 - (void)layoutDetailView:(UIView *)view minimumWidth:(CGFloat)minimumWidth
