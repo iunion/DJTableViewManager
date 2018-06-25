@@ -93,6 +93,7 @@
 
         self.contentTopBottomGap = 10.0f;
         self.contentMiddleGap = 8.0f;
+        self.subtitleStyleImageAlignment = DJTableViewCell_SubtitleStyleImageAlignmentCenter;
     }
     
     return self;

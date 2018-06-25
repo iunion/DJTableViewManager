@@ -56,8 +56,10 @@ NS_ASSUME_NONNULL_BEGIN
 // for UITableViewCellStyleSubtitle with caleCellHeightWithTableView
 // 使用caleCellHeightWithTableView计算时的上下间距
 @property (nonatomic, assign) CGFloat contentTopBottomGap;
-// UITableViewCellStyleSubtitle类型的title和subTitle间距
+// UITableViewCellStyleSubtitle类型时的title和subTitle间距
 @property (nonatomic, assign) CGFloat contentMiddleGap;
+// UITableViewCellStyleSubtitle类型时的image位置
+@property (nonatomic, assign) DJTableViewCell_SubtitleStyleImageAlignment subtitleStyleImageAlignment;
 
 
 // 添加aaccessoryView左边额外的img

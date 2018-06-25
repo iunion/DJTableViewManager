@@ -464,6 +464,21 @@
     {
         self.textLabel.top = self.textLabel.top-self.item.contentMiddleGap*0.5;
         self.detailTextLabel.top = self.textLabel.bottom+self.item.contentMiddleGap;
+        
+        switch (self.item.subtitleStyleImageAlignment)
+        {
+            case DJTableViewCell_SubtitleStyleImageAlignmentTop:
+                self.imageView.top = self.textLabel.top;
+                break;
+                
+            case DJTableViewCell_SubtitleStyleImageAlignmentBottom:
+                self.imageView.top = self.detailTextLabel.bottom-self.imageView.height;
+                break;
+                
+            case DJTableViewCell_SubtitleStyleImageAlignmentCenter:
+            default:
+                break;
+        }
     }
 }
 

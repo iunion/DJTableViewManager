@@ -79,8 +79,32 @@
     item31.detailNumberOfLines = 0;
     item31.contentTopBottomGap = 30.0f;
     item31.contentMiddleGap = 20.0f;
+    item31.subtitleStyleImageAlignment = DJTableViewCell_SubtitleStyleImageAlignmentTop;
     [item31 caleCellHeightWithTableView:self.tableView];
     item31.underLineColor = [UIColor redColor];
+
+    DJTableViewItem *item32 = [DJTableViewItem itemWithTitle:@"个人介绍:" subTitle:@"UITableView是iOS开发中用的非常多的一个控件，UITableview用来展示列表数据，相当于安卓中的listview。不同于安卓中的listview自定义item来定义列表显示的样式，iOS中系统自带了四种样式在很多场合都够我们使用了。" imageName:@"icon2" underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset accessoryView:nil selectionHandler:^(DJTableViewItem * _Nonnull item) {
+        
+    }];
+    [section addItem:item32];
+    item32.cellStyle = UITableViewCellStyleSubtitle;
+    item32.detailNumberOfLines = 0;
+    item32.contentTopBottomGap = 30.0f;
+    item32.contentMiddleGap = 20.0f;
+    [item32 caleCellHeightWithTableView:self.tableView];
+    item32.underLineColor = [UIColor redColor];
+
+    DJTableViewItem *item33 = [DJTableViewItem itemWithTitle:@"个人介绍:" subTitle:@"UITableView是iOS开发中用的非常多的一个控件，UITableview用来展示列表数据，相当于安卓中的listview。不同于安卓中的listview自定义item来定义列表显示的样式，iOS中系统自带了四种样式在很多场合都够我们使用了。" imageName:@"icon2" underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset accessoryView:nil selectionHandler:^(DJTableViewItem * _Nonnull item) {
+        
+    }];
+    [section addItem:item33];
+    item33.cellStyle = UITableViewCellStyleSubtitle;
+    item33.detailNumberOfLines = 0;
+    item33.contentTopBottomGap = 30.0f;
+    item33.contentMiddleGap = 20.0f;
+    item33.subtitleStyleImageAlignment = DJTableViewCell_SubtitleStyleImageAlignmentBottom;
+    [item33 caleCellHeightWithTableView:self.tableView];
+    item33.underLineColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {

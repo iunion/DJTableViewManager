@@ -88,6 +88,16 @@ typedef NS_ENUM(NSUInteger, DJTableViewCell_UnderLineDrawType)
     DJTableViewCell_UnderLineDrawType_Full
 };
 
+typedef NS_ENUM(NSUInteger, DJTableViewCell_SubtitleStyleImageAlignment)
+{
+    // 上
+    DJTableViewCell_SubtitleStyleImageAlignmentTop = 0,
+    // Default 中
+    DJTableViewCell_SubtitleStyleImageAlignmentCenter,
+    // 下
+    DJTableViewCell_SubtitleStyleImageAlignmentBottom
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^tableViewSelectionHandler)(id item);
