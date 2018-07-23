@@ -67,6 +67,13 @@
     [self setNeedsDisplay];
 }
 
+- (void)setAttributePlaceholder:(NSAttributedString *)attributePlaceholder
+{
+    _attributePlaceholder = attributePlaceholder;
+    
+    [self setNeedsDisplay];
+}
+
 - (void)setPlaceholderColor:(UIColor *)placeholderColor
 {
     _placeholderColor = placeholderColor;
@@ -101,8 +108,12 @@
     {
         return;
     }
-    
-    self.placeholderLabel.hidden = self.hasText;
+
+    if (self.hasText != self.placeholderLabel.hidden)
+    {
+        self.placeholderLabel.hidden = self.hasText;
+        [self setNeedsDisplay];
+    }
 }
 
 - (void)drawRect:(CGRect)rect
@@ -122,13 +133,23 @@
         self.placeholderLabel.lineBreakMode = self.placeholderLineBreakMode;
         self.placeholderLabel.textColor = self.placeholderColor;
         self.placeholderLabel.textAlignment = self.textAlignment;
-        self.placeholderLabel.text = self.placeholder;
+        if (self.attributePlaceholder)
+        {
+            self.placeholderLabel.attributedText = self.attributePlaceholder;
+        }
+        else
+        {
+            self.placeholderLabel.text = self.placeholder;
+        }
 
+        // 边距
+        CGFloat lineFragmentPadding =  self.textContainer.lineFragmentPadding;
         // self.contentInset
         UIEdgeInsets edgeInsets = self.textContainerInset;
-        edgeInsets = UIEdgeInsetsMake(edgeInsets.top, edgeInsets.left+PlaceholderLabel_Offset, edgeInsets.bottom, edgeInsets.right+PlaceholderLabel_Offset);
+        edgeInsets = UIEdgeInsetsMake(edgeInsets.top, edgeInsets.left+lineFragmentPadding, edgeInsets.bottom, edgeInsets.right+lineFragmentPadding);
         CGFloat width = self.frame.size.width - edgeInsets.left - edgeInsets.right;
-        CGFloat height = [self.placeholderLabel labelSizeToFitWidth:width].height;
+        CGSize maxSize = CGSizeMake(width, CGFLOAT_MAX);
+        CGFloat height = [self.placeholderLabel sizeThatFits:maxSize].height;
         CGFloat maxHeight = self.frame.size.height - edgeInsets.top - edgeInsets.bottom;
         if (height>maxHeight)
         {

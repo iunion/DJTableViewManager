@@ -13,8 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DJPlaceholderTextView : UITextView
 
 @property (nonatomic, strong, readonly) UILabel *placeholderLabel;
+
 @property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, strong) NSAttributedString *attributePlaceholder;
+
 @property (nonatomic, strong) UIColor *placeholderColor;
+
 @property (nonatomic, assign) NSLineBreakMode placeholderLineBreakMode;
 
 - (void)textChanged:(NSNotification *)notification;

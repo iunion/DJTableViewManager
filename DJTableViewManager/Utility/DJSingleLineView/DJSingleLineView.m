@@ -44,7 +44,7 @@
         _lineColor = [UIColor lightGrayColor];
         _lineWidth = SINGLE_LINE_WIDTH;
         _needGap = YES;
-        _lineGap = 1.0f-SINGLE_LINE_WIDTH;
+        _lineGap = SINGLE_LINE_ADJUST_OFFSET;//1.0f-SINGLE_LINE_WIDTH;
         _isDash = NO;
         _lineLength = SINGLE_LINE_LINELENGTH;
         _lineSpacing = SINGLE_LINE_LINESPACING;

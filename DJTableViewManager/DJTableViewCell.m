@@ -113,7 +113,7 @@
     {
         self.singleLineView.height = self.item.underLineWidth;
     }
-    self.singleLineView.bottom = self.contentView.height;
+    self.singleLineView.top = self.contentView.height;
     
     //self.singleLineView.hidden = !self.item.isDrawUnderLine;
 }
