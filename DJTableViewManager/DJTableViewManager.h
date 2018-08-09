@@ -25,6 +25,7 @@
 #import "DJSegmentItem.h"
 #import "DJCheckBoxGroupItem.h"
 #import "DJSliderItem.h"
+#import "DJImageDetailItem.h"
 
 #import "DJTableViewTextCell.h"
 #import "DJTableViewMaskTextCell.h"
@@ -36,6 +37,7 @@
 #import "DJTableViewSegmentCell.h"
 #import "DJTableViewCheckBoxGroupCell.h"
 #import "DJTableViewSliderCell.h"
+#import "DJTableViewImageDetailCell.h"
 
 @protocol DJTableViewManagerDelegate;
 

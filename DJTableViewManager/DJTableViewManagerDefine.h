@@ -100,6 +100,8 @@ typedef NS_ENUM(NSUInteger, DJTableViewCell_SubtitleStyleImageAlignment)
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^tableViewImageLoadedHandler)(id item);
+
 typedef void (^tableViewSelectionHandler)(id item);
 typedef void (^tableViewAccessoryButtonTapHandler)(id item);
 typedef void (^tableViewInsertionHandler)(id item);

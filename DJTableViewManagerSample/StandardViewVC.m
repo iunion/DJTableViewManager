@@ -105,6 +105,16 @@
     item33.subtitleStyleImageAlignment = DJTableViewCell_SubtitleStyleImageAlignmentBottom;
     [item33 caleCellHeightWithTableView:self.tableView];
     item33.underLineColor = [UIColor redColor];
+    
+    DJImageDetailItem *item4 = [DJImageDetailItem itemWithTitle:@"测试:" underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset selectionHandler:^(DJTableViewItem * _Nonnull item) {
+        
+    }];
+    item4.image = [UIImage imageNamed:@"icon2"];
+    item4.cellStyle = UITableViewCellStyleValue1;
+    item4.detailLabelText = @"dsgs.doc";
+    item4.detailImage = @"Card_Stack";
+    item4.underLineColor = [UIColor redColor];
+    [section addItem:item4];
 }
 
 - (void)didReceiveMemoryWarning {

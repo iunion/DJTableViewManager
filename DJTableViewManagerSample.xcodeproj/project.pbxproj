@@ -123,6 +123,8 @@
 		5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA171F4AD56800077A9E /* UIView+WebCache.m */; };
 		5AEFCA2D1F4AD56800077A9E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */; };
 		5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */; };
+		8758E5DC210F3C7E00283DE1 /* DJImageDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8758E5DB210F3C7E00283DE1 /* DJImageDetailItem.m */; };
+		8758E5DF210F3F2C00283DE1 /* DJTableViewImageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8758E5DE210F3F2C00283DE1 /* DJTableViewImageDetailCell.m */; };
 		87E2C7AA20E099E100F8E254 /* StandardViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E2C7A920E099E100F8E254 /* StandardViewVC.m */; };
 /* End PBXBuildFile section */
 
@@ -348,6 +350,10 @@
 		5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5AEFCA2E1F4BCD9800077A9E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		8758E5DA210F3C7E00283DE1 /* DJImageDetailItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJImageDetailItem.h; sourceTree = "<group>"; };
+		8758E5DB210F3C7E00283DE1 /* DJImageDetailItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJImageDetailItem.m; sourceTree = "<group>"; };
+		8758E5DD210F3F2C00283DE1 /* DJTableViewImageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewImageDetailCell.h; sourceTree = "<group>"; };
+		8758E5DE210F3F2C00283DE1 /* DJTableViewImageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewImageDetailCell.m; sourceTree = "<group>"; };
 		87E2C7A820E099E100F8E254 /* StandardViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandardViewVC.h; sourceTree = "<group>"; };
 		87E2C7A920E099E100F8E254 /* StandardViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardViewVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -501,6 +507,8 @@
 				5A8E6B8B200F4F4E009DC4FB /* DJSegmentItem.m */,
 				5A6DA533205F6698000CFB8D /* DJSliderItem.h */,
 				5A6DA534205F6698000CFB8D /* DJSliderItem.m */,
+				8758E5DA210F3C7E00283DE1 /* DJImageDetailItem.h */,
+				8758E5DB210F3C7E00283DE1 /* DJImageDetailItem.m */,
 				5A12504D1F4BF3F300D71E4C /* DJTextItem.h */,
 				5A12504E1F4BF3F300D71E4C /* DJTextItem.m */,
 				5A12506C1F4D207100D71E4C /* DJMaskTextItem.h */,
@@ -528,6 +536,8 @@
 				5A8E6B8E200F4F77009DC4FB /* DJTableViewSegmentCell.m */,
 				5A6DA536205F670A000CFB8D /* DJTableViewSliderCell.h */,
 				5A6DA537205F670A000CFB8D /* DJTableViewSliderCell.m */,
+				8758E5DD210F3F2C00283DE1 /* DJTableViewImageDetailCell.h */,
+				8758E5DE210F3F2C00283DE1 /* DJTableViewImageDetailCell.m */,
 				5A1250501F4C088D00D71E4C /* DJTableViewTextCell.h */,
 				5A1250511F4C088D00D71E4C /* DJTableViewTextCell.m */,
 				5A1250961F4D326600D71E4C /* DJTableViewMaskTextCell.h */,
@@ -950,6 +960,7 @@
 				5ADDB3871EA8AED800CFECA6 /* DJTableViewItem.m in Sources */,
 				5A4C1D6220049E44004FEB97 /* NSAttributedString+Category.m in Sources */,
 				5A4C1D682004A03B004FEB97 /* NSArray+Category.m in Sources */,
+				8758E5DF210F3F2C00283DE1 /* DJTableViewImageDetailCell.m in Sources */,
 				5AEFCA261F4AD56800077A9E /* UIButton+WebCache.m in Sources */,
 				5ACB4A771F384DAB0043A623 /* DJActionBar.m in Sources */,
 				5AEFCA291F4AD56800077A9E /* UIImage+WebP.m in Sources */,
@@ -966,6 +977,7 @@
 				5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */,
 				5A4C1D351FFF1AA3004FEB97 /* UnderLinesVC.m in Sources */,
 				5A8E6B8C200F4F4E009DC4FB /* DJSegmentItem.m in Sources */,
+				8758E5DC210F3C7E00283DE1 /* DJImageDetailItem.m in Sources */,
 				5A4C1D6520049F71004FEB97 /* UIFont+Category.m in Sources */,
 				5AD9B8B4200C4FF20097F17F /* DJTableViewPickerCell.m in Sources */,
 				5ADDB3831EA89C0B00CFECA6 /* DJTableViewSection.m in Sources */,

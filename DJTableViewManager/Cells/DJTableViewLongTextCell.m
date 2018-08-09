@@ -260,6 +260,38 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
+    if (self.item.charactersLimit)
+    {
+        NSString *textViewText = textView.text;
+        
+        // ios7之前使用 [UITextInputMode currentInputMode].primaryLanguage
+        NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage;
+        
+        if ([lang isEqualToString:@"zh-Hans"])
+        {
+            // 中文输入
+            UITextRange *selectedRange = textView.markedTextRange;
+            UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
+            // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+            if (!position)
+            {
+                // 判断是否超过最大字数限制，如果超过就截断
+                if (textViewText.length > self.item.charactersLimit)
+                {
+                    textView.text = [textViewText substringToIndex:self.item.charactersLimit];
+                }
+            }
+        }
+        else
+        {
+            // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
+            if (textViewText.length > self.item.charactersLimit)
+            {
+                textView.text = [textViewText substringToIndex:self.item.charactersLimit];
+            }
+        }
+    }
+
     self.item.value = textView.text;
     if (self.item.onChange)
     {
@@ -321,11 +353,13 @@
 {
     BOOL shouldChange = YES;
     
+#if (0)
     if (self.item.charactersLimit)
     {
         NSUInteger newLength = textView.text.length + text.length - range.length;
         shouldChange = newLength <= self.item.charactersLimit;
     }
+#endif
     
     if (self.item.onChangeCharacterInRange && shouldChange)
     {

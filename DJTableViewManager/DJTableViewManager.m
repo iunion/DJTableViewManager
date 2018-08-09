@@ -80,6 +80,9 @@
         
         self.tableView = tableView;
         
+        // 开始拖拽滑动时，收起键盘
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        
         self.registeredClasses = [[NSMutableDictionary alloc] init];
         self.registeredXIBs = [[NSMutableDictionary alloc] init];
 
@@ -130,7 +133,8 @@
     self[@"DJSegmentItem"] = @"DJTableViewSegmentCell";
     self[@"DJCheckBoxGroupItem"] = @"DJTableViewCheckBoxGroupCell";
     self[@"DJSliderItem"] = @"DJTableViewSliderCell";
-    
+    self[@"DJImageDetailItem"] = @"DJTableViewImageDetailCell";
+
     // add your Class here
 }
 

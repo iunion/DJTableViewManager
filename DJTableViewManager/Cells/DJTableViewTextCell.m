@@ -289,6 +289,38 @@
 
 - (void)textFieldDidChanged:(UITextField *)textField
 {
+    if (self.item.charactersLimit)
+    {
+        NSString *textFieldText = textField.text;
+        
+        // ios7之前使用 [UITextInputMode currentInputMode].primaryLanguage
+        NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage;
+        
+        if ([lang isEqualToString:@"zh-Hans"])
+        {
+            // 中文输入
+            UITextRange *selectedRange = textField.markedTextRange;
+            UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+            // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+            if (!position)
+            {
+                // 判断是否超过最大字数限制，如果超过就截断
+                if (textFieldText.length > self.item.charactersLimit)
+                {
+                    textField.text = [textFieldText substringToIndex:self.item.charactersLimit];
+                }
+            }
+        }
+        else
+        {
+            // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
+            if (textFieldText.length > self.item.charactersLimit)
+            {
+                textField.text = [textFieldText substringToIndex:self.item.charactersLimit];
+            }
+        }
+    }
+    
     self.item.value = textField.text;
     if (self.item.onChange)
     {
@@ -346,15 +378,24 @@
     return YES;
 }
 
+// 选择待选字不触发此函数，在textFieldDidChanged中截取
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     BOOL shouldChange = YES;
     
+#if (0)
     if (self.item.charactersLimit)
     {
-        NSUInteger newLength = textField.text.length + string.length - range.length;
-        shouldChange = newLength <= self.item.charactersLimit;
+        // 判断是否存在高亮字符，如果有，则不进行字数统计和字符串截断
+        UITextRange *selectedRange = textField.markedTextRange;
+        UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+        if (!position)
+        {
+            NSUInteger newLength = textField.text.length + string.length - range.length;
+            shouldChange = newLength <= self.item.charactersLimit;
+        }
     }
+#endif
     
     if (self.item.onChangeCharacterInRange && shouldChange)
     {
