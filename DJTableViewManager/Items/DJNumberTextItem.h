@@ -13,18 +13,22 @@
 // 保留小数位
 #define DJNumberText_MaxDecimalPlaces  2
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface DJNumberTextItem : DJTextItem
 
-@property (strong, nonatomic) NSDecimalNumber *numberValue;
+@property (nullable, nonatomic, strong) NSDecimalNumber *numberValue;
 
-@property (copy, nonatomic) NSDecimalNumber *maxNumberValue;
-@property (copy, nonatomic) NSDecimalNumber *minNumberValue;
+@property (nullable, nonatomic, copy) NSDecimalNumber *maxNumberValue;
+@property (nullable, nonatomic, copy) NSDecimalNumber *minNumberValue;
 
 @property (assign, nonatomic) BOOL showWithDecimalStyle;
 
-+ (instancetype)itemWithTitle:(NSString *)title numberValue:(NSDecimalNumber *)numberValue;
-+ (instancetype)itemWithTitle:(NSString *)title numberValue:(NSDecimalNumber *)numberValue placeholder:(NSString *)placeholder;
-- (id)initWithTitle:(NSString *)title numberValue:(NSDecimalNumber *)numberValue;
-- (id)initWithTitle:(NSString *)title numberValue:(NSDecimalNumber *)numberValue placeholder:(NSString *)placeholder;
++ (instancetype)itemWithTitle:(nullable NSString *)title numberValue:(nullable NSDecimalNumber *)numberValue;
++ (instancetype)itemWithTitle:(nullable NSString *)title numberValue:(nullable NSDecimalNumber *)numberValue placeholder:(nullable NSString *)placeholder;
+- (id)initWithTitle:(nullable NSString *)title numberValue:(nullable NSDecimalNumber *)numberValue;
+- (id)initWithTitle:(nullable NSString *)title numberValue:(nullable NSDecimalNumber *)numberValue placeholder:(nullable NSString *)placeholder;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSLineBreakMode placeholderLineBreakMode;
 
+@property (nonatomic, assign) BOOL autoHeight;
+@property (nonatomic, assign) CGFloat maxAutoHeight;
+@property (nonatomic, assign) CGFloat minAutoHeight;
+
+
 - (void)textChanged:(NSNotification *)notification;
 
 @end

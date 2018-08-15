@@ -9,6 +9,8 @@
 #import "DJPlaceholderTextView.h"
 #import "UILabel+Category.h"
 
+#define DefaultMaxAutoHeight        80.0f
+#define DefaultMinAutoHeight        20.0f
 #define PlaceholderLabel_Offset     4.0f
 
 @interface DJPlaceholderTextView ()
@@ -58,6 +60,10 @@
     self.placeholderLabel.numberOfLines = 0;
     self.placeholderLabel.backgroundColor = [UIColor clearColor];
     [self addSubview:self.placeholderLabel];
+    
+    self.autoHeight = NO;
+    self.minAutoHeight = DefaultMinAutoHeight;
+    self.maxAutoHeight = DefaultMaxAutoHeight;
 }
 
 - (void)setPlaceholder:(NSString *)placeholder
@@ -102,8 +108,62 @@
     [self setNeedsDisplay];
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    
+    if (self.minAutoHeight < frame.size.height)
+    {
+        self.minAutoHeight = frame.size.height;
+    }
+
+    if (self.maxAutoHeight < frame.size.height)
+    {
+        self.maxAutoHeight = frame.size.height;
+    }
+}
+
+- (void)setMinAutoHeight:(CGFloat)minAutoHeight
+{
+    if (minAutoHeight < self.frame.size.height)
+    {
+        minAutoHeight = self.frame.size.height;
+    }
+    
+    _minAutoHeight = minAutoHeight;
+}
+
+- (void)setMaxAutoHeight:(CGFloat)maxAutoHeight
+{
+    if (maxAutoHeight < self.frame.size.height)
+    {
+        maxAutoHeight = self.frame.size.height;
+    }
+    
+    _maxAutoHeight = maxAutoHeight;
+}
+
 - (void)textChanged:(NSNotification *)notification
 {
+    if (self.autoHeight && self.hasText)
+    {
+        // 计算高度
+        NSInteger currentHeight = ceil([self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
+        
+        if (currentHeight < self.minAutoHeight)
+        {
+            currentHeight = self.minAutoHeight;
+        }
+        else if (currentHeight > self.maxAutoHeight)
+        {
+            currentHeight = self.maxAutoHeight;
+        }
+        
+        CGRect frame = self.frame;
+        frame.size.height = currentHeight;
+        self.frame = frame;
+    }
+    
     if (self.placeholder.length == 0)
     {
         return;
