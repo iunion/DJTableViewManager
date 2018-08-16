@@ -105,7 +105,7 @@
     self.sliderView.enabled = _enabled;
 }
 
-- (void)setSwitchable:(BOOL)enabled
+- (void)setSliderable:(BOOL)enabled
 {
     if (!_enabled)
     {
