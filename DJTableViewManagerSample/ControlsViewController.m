@@ -141,6 +141,15 @@
     item15.placeholder = @"dfsd gdfg adg asd";
     item15.cellHeight = 100;
     [section2 addItem:item15];
+    
+    DJStepperInputItem *item16 = [[DJStepperInputItem alloc] initWithTitle:@"酱香猪蹄" numberValue:nil stepperInputValueChangeHandler:^(DJStepperInputItem *item, DJStepperInputViewStepStatus stepStatus) {
+        NSLog(@"%@: %@", @(stepStatus), item.numberValue);
+    }];
+    item16.secondTimeCount = 5;
+    item16.minHideDecrease = YES;
+    item16.limitShakeAnimation = YES;
+    item16.stepperInputSize = CGSizeMake(100, 30);
+    [section2 addItem:item16];
 }
 
 @end

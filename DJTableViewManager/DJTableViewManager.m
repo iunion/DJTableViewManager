@@ -126,6 +126,7 @@
     self[@"DJTextItem"] = @"DJTableViewTextCell";
     self[@"DJMaskTextItem"] = @"DJTableViewMaskTextCell";
     self[@"DJNumberTextItem"] = @"DJTableViewNumberTextCell";
+    self[@"DJStepperInputItem"] = @"DJStepperInputCell";
     self[@"DJLongTextItem"] = @"DJTableViewLongTextCell";
     self[@"DJBoolItem"] = @"DJTableViewBoolCell";
     self[@"DJPickerItem"] = @"DJTableViewPickerCell";
