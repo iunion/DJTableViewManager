@@ -120,7 +120,7 @@
     NSMutableAttributedString *allString = [[NSMutableAttributedString alloc] init];
     NSTextAttachment *attch = [[NSTextAttachment alloc] init];
     attch.image = [UIImage imageNamed:@"Card_Stack"];
-    attch.bounds = CGRectMake(0, 0, 20, 20);
+    attch.bounds = CGRectMake(0, -4, 20, 20);
     // 创建带有图片的富文本
     NSAttributedString *phoneString = [NSAttributedString attributedStringWithAttachment:attch];
     [allString appendAttributedString:phoneString];

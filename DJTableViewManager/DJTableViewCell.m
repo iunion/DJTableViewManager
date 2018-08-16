@@ -486,7 +486,7 @@
 {
     CGFloat cellOffset = 10.0;
     CGFloat fieldOffset = 6.0;
-
+    
     if (self.section.style.contentViewMargin <= 0)
     {
         cellOffset += 5.0;
