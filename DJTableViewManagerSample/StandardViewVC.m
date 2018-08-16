@@ -44,6 +44,7 @@
     item1.cellStyle = UITableViewCellStyleValue1;
     item1.cellHeight = 80;
     item1.underLineColor = [UIColor redColor];
+    item1.detailTextAlignment = NSTextAlignmentLeft;
 
     DJTableViewItem *item2 = [DJTableViewItem itemWithTitle:@"姓名:" subTitle:@"XXX" imageName:@"icon2" underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset accessoryView:nil selectionHandler:^(DJTableViewItem * _Nonnull item) {
         
@@ -115,6 +116,28 @@
     item4.detailImage = @"Card_Stack";
     item4.underLineColor = [UIColor redColor];
     [section addItem:item4];
+    
+    NSMutableAttributedString *allString = [[NSMutableAttributedString alloc] init];
+    NSTextAttachment *attch = [[NSTextAttachment alloc] init];
+    attch.image = [UIImage imageNamed:@"Card_Stack"];
+    attch.bounds = CGRectMake(0, 0, 20, 20);
+    // 创建带有图片的富文本
+    NSAttributedString *phoneString = [NSAttributedString attributedStringWithAttachment:attch];
+    [allString appendAttributedString:phoneString];
+    NSMutableAttributedString *numberString = [[NSMutableAttributedString alloc] initWithString:@" 186******38"];
+    [numberString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:[UIColor grayColor]} range:NSMakeRange(0, numberString.string.length)];
+    [allString appendAttributedString:numberString];
+
+    DJImageDetailItem *item41 = [DJImageDetailItem itemWithTitle:@"测试测试测试:" underLineDrawType:DJTableViewCell_UnderLineDrawType_SeparatorInset selectionHandler:^(DJTableViewItem * _Nonnull item) {
+        
+    }];
+    item41.image = [UIImage imageNamed:@"icon2"];
+    item41.cellStyle = UITableViewCellStyleValue1;
+    item41.detailAttrStr = allString;
+    //item41.detailLabelText = @"dsgs.doc";
+    //item41.detailImage = @"Card_Stack";
+    item41.underLineColor = [UIColor redColor];
+    [section addItem:item41];
 }
 
 - (void)didReceiveMemoryWarning {

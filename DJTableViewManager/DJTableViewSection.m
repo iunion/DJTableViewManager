@@ -118,6 +118,11 @@ CGFloat const DJTableViewCellTitlePadding = 5.0f;
             }
             else if (item.title)
             {
+                if (item.textFont)
+                {
+                    font = item.textFont;
+                }
+                
                 size = [item.title sizeToFitWidth:CGFLOAT_MAX withFont:font];
             }
             
