@@ -207,7 +207,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([object isKindOfClass:[DJBoolItem class]] && [keyPath isEqualToString:@"enabled"])
+    if ([object isKindOfClass:[DJCheckBoxGroupItem class]] && [keyPath isEqualToString:@"enabled"])
     {
         BOOL newValue = [[change objectForKey: NSKeyValueChangeNewKey] boolValue];
         

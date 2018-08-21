@@ -90,8 +90,8 @@
     self.borderColor = DefaultBorderColor;
     self.borderWidth = DefaultBorderWidth;
     
-    self.increaseImage = [UIImage imageNamed:@"plus_icon"];
-    self.decreaseImage = [UIImage imageNamed:@"minus_icon"];
+    self.increaseImage = [UIImage imageNamed:@"steppersinput_plusicon"];
+    self.decreaseImage = [UIImage imageNamed:@"steppersinput_minusicon"];
     
     self.longPressSpaceTime = 0.2f;
     self.firstMultiple = 1;

@@ -121,13 +121,13 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([object isKindOfClass:[DJBoolItem class]] && [keyPath isEqualToString:@"enabled"])
+    if ([object isKindOfClass:[DJSliderItem class]] && [keyPath isEqualToString:@"enabled"])
     {
         BOOL newValue = [[change objectForKey: NSKeyValueChangeNewKey] boolValue];
         
         self.enabled = newValue;
     }
-    else if ([object isKindOfClass:[DJBoolItem class]] && [keyPath isEqualToString:@"sliderable"])
+    else if ([object isKindOfClass:[DJSliderItem class]] && [keyPath isEqualToString:@"sliderable"])
     {
         BOOL newValue = [[change objectForKey: NSKeyValueChangeNewKey] boolValue];
         
