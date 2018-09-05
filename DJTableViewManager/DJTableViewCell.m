@@ -468,7 +468,7 @@
         switch (self.item.subtitleStyleImageAlignment)
         {
             case DJTableViewCell_SubtitleStyleImageAlignmentTop:
-                self.imageView.top = self.textLabel.top;
+                self.imageView.top = self.textLabel.top + (self.textLabel.height-self.imageView.height)*0.5;
                 break;
                 
             case DJTableViewCell_SubtitleStyleImageAlignmentBottom:
