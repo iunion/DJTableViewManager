@@ -7,8 +7,10 @@
 //
 
 #import "VerifiVC.h"
-#import "DJVerifiTimeManager.h"
-#import "UIView+VerifiTimeManager.h"
+//#import "DJVerifiTimeManager.h"
+//#import "UIView+VerifiTimeManager.h"
+#import "DJCountDownManager.h"
+#import "UIView+DJCountDownManager.h"
 
 #define VERIFICATIONCODE_LENGTH     6
 
@@ -80,23 +82,33 @@
     clockBtn.layer.masksToBounds = YES;
 
     __weak typeof(self) weakSelf = self;
-    [[DJVerifiTimeManager manager] checkTimeWithType:DJVerificationCodeType_Type1 process:^(DJVerificationCodeType type, NSInteger ticket, BOOL stop) {
-        if (ticket>0)
-        {
-            weakSelf.clockBtn.userInteractionEnabled = NO;
-            weakSelf.clockBtn.selected = YES;
-            weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(10.0f);
-            weakSelf.clockBtn.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)];
-            [weakSelf.clockBtn setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)] forState:UIControlStateSelected];
-        }
-        else
-        {
-            weakSelf.clockBtn.userInteractionEnabled = YES;
-            weakSelf.clockBtn.selected = NO;
-            weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(14.0f);
-            [weakSelf.clockBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
-        }
-    }];
+    if ([[DJCountDownManager manager] isCountDownWithIdentifier:@"verifyCode"])
+    {
+        [[DJCountDownManager manager] startCountDownWithIdentifier:@"verifyCode" timeInterval:10 processBlock:^(NSString * _Nonnull identifier, NSInteger timeInterval, BOOL forcedStop) {
+            if (timeInterval>0 && !forcedStop)
+            {
+                weakSelf.clockBtn.userInteractionEnabled = NO;
+                weakSelf.clockBtn.selected = YES;
+                weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(10.0f);
+                weakSelf.clockBtn.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)];
+                [weakSelf.clockBtn setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)] forState:UIControlStateSelected];
+            }
+            else
+            {
+                weakSelf.clockBtn.userInteractionEnabled = YES;
+                weakSelf.clockBtn.selected = NO;
+                weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(14.0f);
+                [weakSelf.clockBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+            }
+        }];
+    }
+    else
+    {
+            self.clockBtn.userInteractionEnabled = YES;
+            self.clockBtn.selected = NO;
+            self.clockBtn.titleLabel.font = UI_DJ_FONT(14.0f);
+            [self.clockBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    }
 
     self.verifyCodeItem1 = [DJTextItem itemWithTitle:nil value:nil placeholder:@"验证码"];
     self.verifyCodeItem1.keyboardType = UIKeyboardTypeNumberPad;
@@ -131,15 +143,15 @@
     clockBtn1.layer.borderColor = [[UIColor redColor] CGColor];
     clockBtn1.layer.masksToBounds = YES;
     
-    clockBtn1.verifiManagerdDuration = 60.0f;
-    clockBtn1.verifiManagerBlock = ^(DJVerificationCodeType type, NSInteger ticket, BOOL stop) {
-        if (ticket>0)
+    clockBtn1.countDownIdentifier = @"verifyCode1";
+    clockBtn1.countDownProcessBlock = ^(NSString *identifier, NSInteger timeInterval, BOOL forcedStop) {
+        if (timeInterval>0 && !forcedStop)
         {
             weakSelf.clockBtn1.userInteractionEnabled = NO;
             weakSelf.clockBtn1.selected = YES;
             weakSelf.clockBtn1.titleLabel.font = UI_DJ_FONT(10.0f);
-            weakSelf.clockBtn1.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)];
-            [weakSelf.clockBtn1 setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)] forState:UIControlStateSelected];
+            weakSelf.clockBtn1.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)];
+            [weakSelf.clockBtn1 setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)] forState:UIControlStateSelected];
         }
         else
         {
@@ -149,8 +161,7 @@
             [weakSelf.clockBtn1 setTitle:@"获取验证码" forState:UIControlStateNormal];
         }
     };
-    clockBtn1.verifiManagerType = DJVerificationCodeType_Type2;
-
+    
     [section addItem:self.phoneNumItem];
     [section addItem:self.verifyCodeItem];
     [section addItem:self.verifyCodeItem1];
@@ -195,22 +206,21 @@
     [self.view endEditing:YES];
     
     __weak typeof(self) weakSelf = self;
-    [[DJVerifiTimeManager manager] startTimeWithType:DJVerificationCodeType_Type1 process:^(DJVerificationCodeType type, NSInteger ticket, BOOL stop) {
-        if (ticket>0)
+    [[DJCountDownManager manager] startCountDownWithIdentifier:@"verifyCode" timeInterval:10 processBlock:^(NSString * _Nonnull identifier, NSInteger timeInterval, BOOL forcedStop) {
+        if (timeInterval>0 && !forcedStop)
         {
             weakSelf.clockBtn.userInteractionEnabled = NO;
             weakSelf.clockBtn.selected = YES;
             weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(10.0f);
-            weakSelf.clockBtn.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)];
-            [weakSelf.clockBtn setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(ticket)] forState:UIControlStateSelected];
+            weakSelf.clockBtn.titleLabel.text = [NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)];
+            [weakSelf.clockBtn setTitle:[NSString stringWithFormat:@"%@ 秒后重新获取", @(timeInterval)] forState:UIControlStateSelected];
         }
         else
         {
             weakSelf.clockBtn.userInteractionEnabled = YES;
             weakSelf.clockBtn.selected = NO;
             weakSelf.clockBtn.titleLabel.font = UI_DJ_FONT(14.0f);
-            //weakSelf.clockBtn.titleLabel.text = @"重新获取";
-            [weakSelf.clockBtn setTitle:@"重新获取" forState:UIControlStateNormal];
+            [weakSelf.clockBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         }
     }];
 }
@@ -219,14 +229,14 @@
 {
     [self.view endEditing:YES];
     
-    [self.clockBtn1 startVerifiTimeManager];
+    [self.clockBtn1 startCountDownWithTimeInterval:10];
 }
 
 - (void)confirmClick:(UIButton *)btn
 {
     [self.view endEditing:YES];
     
-    [[DJVerifiTimeManager manager] stopAllType];
+    [[DJCountDownManager manager] stopAllCountDown];
 }
 
 @end

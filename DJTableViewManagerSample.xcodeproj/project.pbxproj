@@ -60,8 +60,6 @@
 		5A4C1D6520049F71004FEB97 /* UIFont+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6420049F71004FEB97 /* UIFont+Category.m */; };
 		5A4C1D682004A03B004FEB97 /* NSArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D662004A03A004FEB97 /* NSArray+Category.m */; };
 		5A4C1D6C2005E6E7004FEB97 /* VerifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6B2005E6E7004FEB97 /* VerifiVC.m */; };
-		5A4C1D702005E819004FEB97 /* DJVerifiTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */; };
-		5A4C1D7320060518004FEB97 /* UIView+VerifiTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */; };
 		5A4C1D77200712BA004FEB97 /* DJBoolItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D76200712BA004FEB97 /* DJBoolItem.m */; };
 		5A4C1D7A20071709004FEB97 /* DJTableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7920071709004FEB97 /* DJTableViewBoolCell.m */; };
 		5A4C1D7C2008530D004FEB97 /* photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4C1D7B2008530C004FEB97 /* photo@2x.png */; };
@@ -123,6 +121,7 @@
 		5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA171F4AD56800077A9E /* UIView+WebCache.m */; };
 		5AEFCA2D1F4AD56800077A9E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */; };
 		5AEFCA301F4BCD9800077A9E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */; };
+		8704B37B219BF80E00DBBC53 /* UIView+DJCountDownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8704B37A219BF80E00DBBC53 /* UIView+DJCountDownManager.m */; };
 		8742CAA62122BCEA0059210E /* DJStepperInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742CAA52122BCEA0059210E /* DJStepperInputView.m */; };
 		8742CAAB2123C52B0059210E /* steppersinput_minusicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8742CAA72123C52A0059210E /* steppersinput_minusicon@2x.png */; };
 		8742CAAC2123C52B0059210E /* steppersinput_plusicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8742CAA82123C52B0059210E /* steppersinput_plusicon@3x.png */; };
@@ -148,6 +147,7 @@
 		8742CAD421250D350059210E /* DJStepperInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742CAD321250D350059210E /* DJStepperInputCell.m */; };
 		8758E5DC210F3C7E00283DE1 /* DJImageDetailItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8758E5DB210F3C7E00283DE1 /* DJImageDetailItem.m */; };
 		8758E5DF210F3F2C00283DE1 /* DJTableViewImageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8758E5DE210F3F2C00283DE1 /* DJTableViewImageDetailCell.m */; };
+		878427AE2199609D003A8BA1 /* DJCountDownManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 878427AD2199609D003A8BA1 /* DJCountDownManager.m */; };
 		87E2C7AA20E099E100F8E254 /* StandardViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E2C7A920E099E100F8E254 /* StandardViewVC.m */; };
 /* End PBXBuildFile section */
 
@@ -245,10 +245,6 @@
 		5A4C1D672004A03A004FEB97 /* NSArray+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Category.h"; sourceTree = "<group>"; };
 		5A4C1D6A2005E6E7004FEB97 /* VerifiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerifiVC.h; sourceTree = "<group>"; };
 		5A4C1D6B2005E6E7004FEB97 /* VerifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerifiVC.m; sourceTree = "<group>"; };
-		5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJVerifiTimeManager.m; sourceTree = "<group>"; };
-		5A4C1D6F2005E818004FEB97 /* DJVerifiTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJVerifiTimeManager.h; sourceTree = "<group>"; };
-		5A4C1D7120060518004FEB97 /* UIView+VerifiTimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+VerifiTimeManager.h"; sourceTree = "<group>"; };
-		5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+VerifiTimeManager.m"; sourceTree = "<group>"; };
 		5A4C1D75200712BA004FEB97 /* DJBoolItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJBoolItem.h; sourceTree = "<group>"; };
 		5A4C1D76200712BA004FEB97 /* DJBoolItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJBoolItem.m; sourceTree = "<group>"; };
 		5A4C1D7820071709004FEB97 /* DJTableViewBoolCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewBoolCell.h; sourceTree = "<group>"; };
@@ -373,6 +369,8 @@
 		5AEFCA191F4AD56800077A9E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5AEFCA2E1F4BCD9800077A9E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5AEFCA2F1F4BCD9800077A9E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		8704B379219BF80E00DBBC53 /* UIView+DJCountDownManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DJCountDownManager.h"; sourceTree = "<group>"; };
+		8704B37A219BF80E00DBBC53 /* UIView+DJCountDownManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+DJCountDownManager.m"; sourceTree = "<group>"; };
 		8742CAA42122BCEA0059210E /* DJStepperInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJStepperInputView.h; sourceTree = "<group>"; };
 		8742CAA52122BCEA0059210E /* DJStepperInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJStepperInputView.m; sourceTree = "<group>"; };
 		8742CAA72123C52A0059210E /* steppersinput_minusicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "steppersinput_minusicon@2x.png"; sourceTree = "<group>"; };
@@ -403,6 +401,8 @@
 		8758E5DB210F3C7E00283DE1 /* DJImageDetailItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJImageDetailItem.m; sourceTree = "<group>"; };
 		8758E5DD210F3F2C00283DE1 /* DJTableViewImageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJTableViewImageDetailCell.h; sourceTree = "<group>"; };
 		8758E5DE210F3F2C00283DE1 /* DJTableViewImageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJTableViewImageDetailCell.m; sourceTree = "<group>"; };
+		878427AC2199609D003A8BA1 /* DJCountDownManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DJCountDownManager.h; sourceTree = "<group>"; };
+		878427AD2199609D003A8BA1 /* DJCountDownManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DJCountDownManager.m; sourceTree = "<group>"; };
 		87E2C7A820E099E100F8E254 /* StandardViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandardViewVC.h; sourceTree = "<group>"; };
 		87E2C7A920E099E100F8E254 /* StandardViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardViewVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,15 +516,6 @@
 			path = DJImageTextView;
 			sourceTree = "<group>";
 		};
-		5A4C1D6D2005E818004FEB97 /* DJVerifiTimeManager */ = {
-			isa = PBXGroup;
-			children = (
-				5A4C1D6F2005E818004FEB97 /* DJVerifiTimeManager.h */,
-				5A4C1D6E2005E818004FEB97 /* DJVerifiTimeManager.m */,
-			);
-			path = DJVerifiTimeManager;
-			sourceTree = "<group>";
-		};
 		5A7443A020889DED00615371 /* DJPlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,12 +621,12 @@
 			children = (
 				5A96AD01204804EE009DC6D4 /* DJAlignedImageView */,
 				5A000E7420216E98004FA5A0 /* DJCheckBox */,
+				878427AB21996088003A8BA1 /* DJCountDownManager */,
 				5A79DE781F53FDAD004ADA8A /* DJDatePicker */,
 				5A4C1D3A1FFF4DDF004FEB97 /* DJImageTextView */,
 				5A7443A020889DED00615371 /* DJPlaceholderTextView */,
 				5AEFC9861F3C3AB000077A9E /* DJSingleLineView */,
 				8742CAA32122BCC20059210E /* DJStepperInputView */,
-				5A4C1D6D2005E818004FEB97 /* DJVerifiTimeManager */,
 				5ACB4A671F3836250043A623 /* Foundation */,
 				5ACB4A6C1F3836250043A623 /* UIKit */,
 				5ACB4A751F384DAB0043A623 /* DJActionBar.h */,
@@ -688,8 +679,6 @@
 				5ACB4A6E1F3836250043A623 /* UIView+Positioning.m */,
 				5ACB4A6F1F3836250043A623 /* UIView+Size.h */,
 				5ACB4A701F3836250043A623 /* UIView+Size.m */,
-				5A4C1D7120060518004FEB97 /* UIView+VerifiTimeManager.h */,
-				5A4C1D7220060518004FEB97 /* UIView+VerifiTimeManager.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -864,6 +853,17 @@
 				8742CAA52122BCEA0059210E /* DJStepperInputView.m */,
 			);
 			path = DJStepperInputView;
+			sourceTree = "<group>";
+		};
+		878427AB21996088003A8BA1 /* DJCountDownManager */ = {
+			isa = PBXGroup;
+			children = (
+				878427AC2199609D003A8BA1 /* DJCountDownManager.h */,
+				878427AD2199609D003A8BA1 /* DJCountDownManager.m */,
+				8704B379219BF80E00DBBC53 /* UIView+DJCountDownManager.h */,
+				8704B37A219BF80E00DBBC53 /* UIView+DJCountDownManager.m */,
+			);
+			path = DJCountDownManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1076,7 +1076,6 @@
 				5A8E6B8F200F4F77009DC4FB /* DJTableViewSegmentCell.m in Sources */,
 				5A79DDE21F4D693A004ADA8A /* DJTableViewNumberTextCell.m in Sources */,
 				5ACB4A741F3836250043A623 /* UIView+Size.m in Sources */,
-				5A4C1D702005E819004FEB97 /* DJVerifiTimeManager.m in Sources */,
 				5AEFCA1E1F4AD56800077A9E /* SDImageCache.m in Sources */,
 				8742CAD1212426850059210E /* DJStepperInputItem.m in Sources */,
 				5AEFCA2C1F4AD56800077A9E /* UIView+WebCache.m in Sources */,
@@ -1110,10 +1109,12 @@
 				5AEFCA1F1F4AD56800077A9E /* SDImageCacheConfig.m in Sources */,
 				5ACB4A711F3836250043A623 /* NSObject+Category.m in Sources */,
 				5A4C1D7A20071709004FEB97 /* DJTableViewBoolCell.m in Sources */,
+				8704B37B219BF80E00DBBC53 /* UIView+DJCountDownManager.m in Sources */,
 				5A79DE7C1F53FDAD004ADA8A /* DJDatePicker.m in Sources */,
 				5A12504F1F4BF3F300D71E4C /* DJTextItem.m in Sources */,
 				5A6DA535205F6698000CFB8D /* DJSliderItem.m in Sources */,
 				5A79DDDF1F4D66AE004ADA8A /* NSNumber+Category.m in Sources */,
+				878427AE2199609D003A8BA1 /* DJCountDownManager.m in Sources */,
 				5ACB4A631F38334C0043A623 /* DJTableViewCell.m in Sources */,
 				5AEFCA221F4AD56800077A9E /* SDWebImageDownloader.m in Sources */,
 				5ADDB3811EA89C0700CFECA6 /* DJTableViewManager.m in Sources */,
@@ -1134,7 +1135,6 @@
 				5A000E7720216E98004FA5A0 /* DJCheckBox.m in Sources */,
 				5A4C1D401FFF5031004FEB97 /* UILabel+Category.m in Sources */,
 				5A000F60202C5654004FA5A0 /* DJTableViewCheckBoxGroupCell.m in Sources */,
-				5A4C1D7320060518004FEB97 /* UIView+VerifiTimeManager.m in Sources */,
 				5AEFC9ED1F4ACA1000077A9E /* UIColor+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1223,7 +1223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1265,7 +1265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
