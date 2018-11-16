@@ -9,8 +9,6 @@
 #import "DJCountDownManager.h"
 #import "NSObject+Category.h"
 
-#define DJCountDown_DefaultTimeInterval     (60)
-
 @interface DJCountDownItem ()
 
 // 倒计时标识
@@ -28,7 +26,7 @@
 @property (nonatomic, strong) NSTimer *timer;
 
 /// 倒计时项目存储
-@property (nonatomic, strong) NSMutableDictionary<NSString *, DJCountDownItem *> *countDownDict;
+@property (nonatomic, strong) NSMutableDictionary<id, DJCountDownItem *> *countDownDict;
 
 @end
 
@@ -63,18 +61,23 @@
 }
 
 // 获取倒计时
-- (NSInteger)timeIntervalWithIdentifier:(NSString *)identifier
+- (NSInteger)timeIntervalWithIdentifier:(id)identifier
 {
     return self.countDownDict[identifier].timeInterval;
 }
 
-- (BOOL)isCountDownWithIdentifier:(NSString *)identifier
+- (BOOL)isCountDownWithIdentifier:(id)identifier
 {
     DJCountDownItem *countDownItem = self.countDownDict[identifier];
     return (countDownItem.timeInterval > 0);
 }
 
-- (void)startCountDownWithIdentifier:(NSString *)identifier timeInterval:(NSInteger)timeInterval processBlock:(DJCountDownProcessBlock)processBlock
+- (void)startCountDownWithIdentifier:(id)identifier processBlock:(DJCountDownProcessBlock)processBlock
+{
+    [self startCountDownWithIdentifier:identifier timeInterval:DJCountDown_DefaultTimeInterval processBlock:processBlock];
+}
+
+- (void)startCountDownWithIdentifier:(id)identifier timeInterval:(NSInteger)timeInterval processBlock:(DJCountDownProcessBlock)processBlock
 {
     // 倒计时时间判断
     if (timeInterval <= 0)
@@ -128,7 +131,7 @@
     }
 }
 
-- (void)setProcessBlock:(nullable DJCountDownProcessBlock)processBlock WithIdentifier:(NSString *)identifier
+- (void)setProcessBlock:(DJCountDownProcessBlock)processBlock withIdentifier:(id)identifier
 {
     DJCountDownItem *countDownItem = self.countDownDict[identifier];
     if (countDownItem)
@@ -137,18 +140,18 @@
     }
 }
 
-- (void)removeProcessBlockWithIdentifier:(NSString *)identifier
+- (void)removeProcessBlockWithIdentifier:(id)identifier
 {
     // 移除响应事件
-    [self setProcessBlock:nil WithIdentifier:identifier];
+    [self setProcessBlock:nil withIdentifier:identifier];
 }
 
-- (void)stopCountDownIdentifier:(NSString *)identifier
+- (void)stopCountDownIdentifier:(id)identifier
 {
     [self stopCountDownIdentifier:identifier forcedStop:YES];
 }
 
-- (void)stopCountDownIdentifier:(NSString *)identifier forcedStop:(BOOL)stop
+- (void)stopCountDownIdentifier:(id)identifier forcedStop:(BOOL)stop
 {
     DJCountDownItem *countDownItem = self.countDownDict[identifier];
     if (countDownItem)
@@ -166,11 +169,10 @@
 
 - (void)stopAllCountDown
 {
-    for (NSString *identifier in self.countDownDict.allKeys)
+    for (id identifier in self.countDownDict.allKeys)
     {
         [self stopCountDownIdentifier:identifier];
     }
-    
 }
 
 - (void)stopAllCountDownDoNothing
@@ -192,7 +194,7 @@
 
 - (void)countDownTime:(NSTimer *)theTimer
 {
-    for (NSString *identifier in self.countDownDict.allKeys)
+    for (id identifier in self.countDownDict.allKeys)
     {
         DJCountDownItem *countDownItem = self.countDownDict[identifier];
 

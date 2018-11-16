@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (DJCountDownManager)
 
 // 倒计时标识
-@property (nullable, nonatomic, copy) NSString *countDownIdentifier;
+@property (nullable, nonatomic, copy) id countDownIdentifier;
 // 每秒触发响应事件
 @property (nullable, nonatomic, copy) DJCountDownProcessBlock countDownProcessBlock;
 

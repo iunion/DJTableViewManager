@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^DJCountDownProcessBlock)(NSString *identifier, NSInteger timeInterval, BOOL forcedStop);
+#define DJCountDown_DefaultTimeInterval     (60)
+
+typedef void(^DJCountDownProcessBlock)(id identifier, NSInteger timeInterval, BOOL forcedStop);
 
 // 注意启动多个倒计时，在计时器启动情况下会有1秒内的误差(快了不到1秒)
 
@@ -19,26 +21,27 @@ typedef void(^DJCountDownProcessBlock)(NSString *identifier, NSInteger timeInter
 + (instancetype)manager;
 
 // 开始倒计时
-- (void)startCountDownWithIdentifier:(NSString *)identifier timeInterval:(NSInteger)timeInterval processBlock:(nullable DJCountDownProcessBlock)processBlock;
+- (void)startCountDownWithIdentifier:(id)identifier processBlock:(nullable DJCountDownProcessBlock)processBlock;
+- (void)startCountDownWithIdentifier:(id)identifier timeInterval:(NSInteger)timeInterval processBlock:(nullable DJCountDownProcessBlock)processBlock;
 
 // 获取倒计时
-- (NSInteger)timeIntervalWithIdentifier:(NSString *)identifier;
+- (NSInteger)timeIntervalWithIdentifier:(id)identifier;
 
 // 设置processBlock调用
-- (void)setProcessBlock:(nullable DJCountDownProcessBlock)processBlock WithIdentifier:(NSString *)identifier;
+- (void)setProcessBlock:(nullable DJCountDownProcessBlock)processBlock withIdentifier:(id)identifier;
 
 // 不停止计时，只去除processBlock调用
-- (void)removeProcessBlockWithIdentifier:(NSString *)identifier;
+- (void)removeProcessBlockWithIdentifier:(id)identifier;
 
 // 停止倒计时，并调用processBlock
-- (void)stopCountDownIdentifier:(NSString *)identifier;
+- (void)stopCountDownIdentifier:(id)identifier;
 // 停止所有倒计时，调用所有processBlock
 - (void)stopAllCountDown;
 // 停止所有倒计时，不会调用processBlock
 - (void)stopAllCountDownDoNothing;
 
 // 是否正在倒计时
-- (BOOL)isCountDownWithIdentifier:(NSString *)identifier;
+- (BOOL)isCountDownWithIdentifier:(id)identifier;
 
 @end
 

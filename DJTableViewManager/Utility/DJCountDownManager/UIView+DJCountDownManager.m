@@ -16,15 +16,23 @@
 @dynamic countDownProcessBlock;
 
 
-- (NSString *)countDownIdentifier
+- (id)countDownIdentifier
 {
     id obj = objc_getAssociatedObject(self, _cmd);
     return obj;
 }
 
-- (void)setCountDownIdentifier:(NSString *)identifier
+- (void)setCountDownIdentifier:(id)identifier
 {
-    if (![identifier isNotEmpty])
+    if ([identifier isKindOfClass:[NSNumber class]])
+    {
+        if ([identifier unsignedIntegerValue] == 0)
+        {
+            // identifier == 0，停止倒计时
+            [self stopCountDown];
+        }
+    }
+    else if (![identifier isNotEmpty])
     {
         // identifier标识设置nil时，停止倒计时
         [self stopCountDown];
@@ -41,18 +49,27 @@
 
 - (void)setCountDownProcessBlock:(DJCountDownProcessBlock)processBlock
 {
-    if ([self.countDownIdentifier isNotEmpty])
+    if ([self.countDownIdentifier isKindOfClass:[NSNumber class]])
     {
-        if ([[DJCountDownManager manager] isCountDownWithIdentifier:self.countDownIdentifier])
+        if ([self.countDownIdentifier unsignedIntegerValue] == 0)
         {
-            // 倒计时运行时，设置每秒触发响应事件并调用一次
-            if (processBlock)
-            {
-                NSInteger timeInterval = [[DJCountDownManager manager] timeIntervalWithIdentifier:self.countDownIdentifier];
-                processBlock(self.countDownIdentifier, timeInterval, NO);
-            }
-            [[DJCountDownManager manager] setProcessBlock:processBlock WithIdentifier:self.countDownIdentifier];
+            return;
         }
+    }
+    else if (![self.countDownIdentifier isNotEmpty])
+    {
+        return;
+    }
+    
+    if ([[DJCountDownManager manager] isCountDownWithIdentifier:self.countDownIdentifier])
+    {
+        // 倒计时运行时，设置每秒触发响应事件并调用一次
+        if (processBlock)
+        {
+            NSInteger timeInterval = [[DJCountDownManager manager] timeIntervalWithIdentifier:self.countDownIdentifier];
+            processBlock(self.countDownIdentifier, timeInterval, NO);
+        }
+        [[DJCountDownManager manager] setProcessBlock:processBlock withIdentifier:self.countDownIdentifier];
     }
 
     objc_setAssociatedObject(self, @selector(countDownProcessBlock), processBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -60,7 +77,14 @@
 
 - (void)startCountDownWithTimeInterval:(NSInteger)timeInterval
 {
-    if (![self.countDownIdentifier isNotEmpty])
+    if ([self.countDownIdentifier isKindOfClass:[NSNumber class]])
+    {
+        if ([self.countDownIdentifier unsignedIntegerValue] == 0)
+        {
+            return;
+        }
+    }
+    else if (![self.countDownIdentifier isNotEmpty])
     {
         return;
     }
@@ -70,10 +94,19 @@
 
 - (void)stopCountDown
 {
-    if ([self.countDownIdentifier isNotEmpty])
+    if ([self.countDownIdentifier isKindOfClass:[NSNumber class]])
     {
-        [[DJCountDownManager manager] stopCountDownIdentifier:self.countDownIdentifier];
+        if ([self.countDownIdentifier unsignedIntegerValue] == 0)
+        {
+            return;
+        }
     }
+    else if (![self.countDownIdentifier isNotEmpty])
+    {
+        return;
+    }
+
+    [[DJCountDownManager manager] stopCountDownIdentifier:self.countDownIdentifier];
 }
 
 @end

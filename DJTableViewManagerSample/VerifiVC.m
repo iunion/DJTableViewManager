@@ -143,7 +143,7 @@
     clockBtn1.layer.borderColor = [[UIColor redColor] CGColor];
     clockBtn1.layer.masksToBounds = YES;
     
-    clockBtn1.countDownIdentifier = @"verifyCode1";
+    clockBtn1.countDownIdentifier = @(1);
     clockBtn1.countDownProcessBlock = ^(NSString *identifier, NSInteger timeInterval, BOOL forcedStop) {
         if (timeInterval>0 && !forcedStop)
         {
